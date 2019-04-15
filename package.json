@@ -7,7 +7,7 @@
 		"build": "webpack --env production -p",
 		"serv": "static www",
 		"tunnel": "lt --port 9000",
-		"gh-pages": "gh-pages -d www"
+		"gh-pages": "npm run build && gh-pages -d www"
 	},
 	"keywords": [],
 	"author": "",
