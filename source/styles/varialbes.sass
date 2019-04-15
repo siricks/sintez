@@ -1,0 +1,29 @@
+//colors
+$accent-color: #EF4C4C
+$secondary-color: #f7b740
+$error-color: #ff0000
+$gray-color: #798189
+$black-color: #000000
+$white-color: #ffffff
+
+//etc
+$min-width: 768px
+$common-transition-duration: .2s
+
+//breakpoints
+$max-width_desktop-min: 1280px
+$max-width_desktop-max: 1920px
+
+
+//mixin
+=media-query($breakpoint)
+  @media (min-width: $breakpoint)
+    @content
+
+=border-radius($radius: 3px)
+  border-radius: $radius
+
+=hover
+  transition: $common-transition-duration
+  &:hover
+    opacity: .6
