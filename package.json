@@ -52,7 +52,8 @@
 		"date-input-polyfill": "^2.14.0",
 		"gulp": "^4.0.0",
 		"gulp-svg-sprite": "^1.5.0",
-		"pug-html-loader": "^1.1.5"
+		"pug-html-loader": "^1.1.5",
+		"lodash": ">=4.17.11"
 	},
 	"browserslist": "> 0.25%, not dead"
 }
