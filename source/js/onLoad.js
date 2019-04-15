@@ -3,5 +3,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	setTimeout(() => {
 		body.style.opacity = '1'
-	}, 100)
+	}, 250)
 })

@@ -6,8 +6,6 @@ body
     family: 'Rubik', sans-serif
   min-width: $min-width
   transition: opacity $common-transition-duration
-  background:
-    color: #f8f8f8
 
 .d-none
   display: none
@@ -20,12 +18,13 @@ body
   align-items: center
   justify-content: center
   font:
-    weight: 700
+    weight: 400
   color: $white-color
   +border-radius
   cursor: pointer
   +hover
-  height: 45px
+  height: 48px
+  padding: 0 1.145rem
 
 .btn_accent
   background:
@@ -52,8 +51,9 @@ input
 
 .wrapper__inner
   width: $min-width
-  +media-query($max-width_desktop-min)
-    width: $max-width_desktop-min
-  +media-query($max-width_desktop-max)
-    width: $max-width_desktop-max
+// адаптив?
+//+media-query($max-width_desktop-min)
+//  width: $max-width_desktop-min
+//+media-query($max-width_desktop-max)
+//  width: $max-width_desktop-max
 /*eo global styles*/
