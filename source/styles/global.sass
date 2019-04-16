@@ -22,7 +22,7 @@ body
   color: $white-color
   +border-radius
   cursor: pointer
-  +hover
+  +hoverOpacity
   height: 48px
   padding: 0 1.145rem
 
@@ -58,6 +58,15 @@ input
 //+media-query($max-width_desktop-max)
 //  width: $max-width_desktop-max
 
+.title
+  font:
+    size: 50px
+    family: 'Bebas Neue', sans-serif
+  color: $black-color
+  text-align: center
+  margin:
+    bottom: 3.7rem
+
 .title_big
   font:
     family: 'Bebas Neue', sans-serif
@@ -66,5 +75,14 @@ input
   text-transform: uppercase
   line-height: 66px
   letter-spacing: 0.02rem
+
+.margin-top
+  margin-top: 3.3rem
+
+.link
+  +hoverOpacity
+  font:
+    weight: 700
+  color: $accent-color
 
 /*eo global styles*/
