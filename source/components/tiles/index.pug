@@ -1,0 +1,33 @@
+mixin tiles(tiles)
+	-for(var tile of tiles)
+		.tiles__tile
+			.tiles__tile-title !{tile.title}
+			img.tiles__tile-img(src=require(`../../components/tiles/${tile.image}.png`))
+
+section.tiles.wrapper
+	+tiles([
+		{
+			title: 'Аренда VR<br>(Виртуальная реальность)',
+			image: 'tile-1'
+		},
+		{
+			title: 'Готовые решения<br>для мероприятий',
+			image: 'tile-2'
+		},
+		{
+			title: 'Индустриальные<br>решения с VR/AR',
+			image: 'tile-3'
+		},
+		{
+			title: 'VR/AR<br>для маркетинга',
+			image: 'tile-4'
+		},
+		{
+			title: 'Разработка<br>приложений и игр',
+			image: 'tile-5'
+		},
+		{
+			title: 'AR<br>(дополненная реальность)',
+			image: 'tile-6'
+		},
+	])
