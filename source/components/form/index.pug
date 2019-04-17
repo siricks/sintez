@@ -1,0 +1,12 @@
+include ../form-wrapper/index
+
++form-wrapper({img: 1, title: 'Связаться с командой'})
+	form.form
+		fieldset.form__fieldset
+			legend.form__title Оставьте заявку, и мы свяжемся с вами
+				br
+				| в течение 5-ти минут!
+			input.form__input.input(placeholder="Имя")
+			input.form__input.input(type="email" placeholder="Email")
+			textarea.form__input.input.textarea(placeholder="Расскажите о проекте")
+			button.form__btn.btn.btn_accent Отправить

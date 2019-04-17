@@ -39,10 +39,18 @@ body
 input
   &::placeholder
     transition: $common-transition-duration
-
   &:focus
     &::placeholder
       color: transparent
+
+.input
+  height: 48px
+  +input
+
+.textarea
+  height: 129px
+  +input
+  resize: none
 
 .wrapper
   display: flex

@@ -1,0 +1,4 @@
+mixin form-wrapper(params)
+	section.form-wrapper.wrapper(style=`background: linear-gradient(180deg, rgba(32, 16, 66, 0.6) 0%, rgba(20, 39, 48, 0) 100%), url(${require(`../../components/form-wrapper/form-wrapper-background-${params.img}.jpg`)}); background-size: cover; background-position: center;`)
+		.form-wrapper__title.title=params.title
+		block
