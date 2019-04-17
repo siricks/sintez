@@ -4,6 +4,11 @@
 .carousel
   overflow: hidden
 
+.carousel__inner
+  display: flex
+  flex-flow: column
+  align-items: center
+
 .swiper-outer
   position: relative
 
@@ -24,6 +29,9 @@
   transform: translate(0, -50%)
   +hoverOpacity
   cursor: pointer
+  &.swiper-button-disabled
+    opacity: 0
+    pointer-events: none
 
 .swiper__arrow_next
   left: -3.8rem
@@ -35,11 +43,6 @@
 .swiper-slide
   display: flex
   flex-flow: column
-  height: 625px
-  background-color: $gray-light-color
-  &:hover
-    .swiper-slide__img
-      +hoverScale
 
 .swiper-slide__img-wrapper
   display: flex
@@ -47,7 +50,6 @@
   justify-content: center
   overflow: hidden
   position: relative
-  height: 367px
 
 .swiper-slide__img
   transition: $common-transition-duration
@@ -81,3 +83,12 @@
 .carousel__inner-link
   margin:
     top: 2.5rem
+
+.carousel_with-box-shadow-wrapper
+  margin:
+    top: -3rem
+  transform: translate(-3rem)
+  overflow: visible
+
+.carousel_with-box-shadow
+  padding: 3rem

@@ -1,0 +1,32 @@
+@import "../../styles/varialbes"
+
+.reviews
+  background:
+    color: #F4F6F8
+
+.reviews-slide
+  width: 212px
+  text-align: center
+  opacity: 0
+  transition: opacity $common-transition-duration
+
+.reviews-slide
+  &.swiper-slide-active
+    opacity: 1
+    & + .swiper-slide
+      opacity: 1
+      & + .swiper-slide
+        opacity: 1
+        & + .swiper-slide
+          opacity: 1
+          & + .swiper-slide
+            opacity: 1
+
+.reviews-slide__img-wrapper
+  box-shadow: 0 0 47px rgba(51, 46, 79, 0.2)
+  height: 295px
+
+.reviews-slide__text-wrapper
+  margin:
+    top: 1rem
+  color: $gray-color

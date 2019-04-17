@@ -1,0 +1,58 @@
+mixin slides(slides)
+	-for(var slide of slides)
+		.reviews-slide.swiper-slide
+			.reviews-slide__img-wrapper.swiper-slide__img-wrapper
+				img.reviews-slide__.swiper-slide__img(src=require(`../../components/reviews/review-${slide.img}.png`) alt="")
+			.reviews-slide__text-wrapper
+				.reviews-slide__text=slide.text
+
+section.reviews.carousel.padding-top.padding-bottom.wrapper
+	.carousel__inner
+		h2.title Отзывы клиентов
+		.swiper-outer
+			.swiper-container.carousel_with-box-shadow-wrapper(data-slidesPerView="5" data-spaceBetween="22")
+				.swiper-wrapper.carousel_with-box-shadow
+					+slides([
+						{
+							img: 1,
+							text: 'SEMrush'
+						},
+						{
+							img: 2,
+							text: 'Грузовичкоф'
+						},
+						{
+							img: 1,
+							text: 'SEMrush'
+						},
+						{
+							img: 2,
+							text: 'Грузовичкоф'
+						}
+						, {
+							img: 1,
+							text: 'SEMrush'
+						},
+						{
+							img: 1,
+							text: 'SEMrush'
+						},
+						{
+							img: 2,
+							text: 'Грузовичкоф'
+						},
+						{
+							img: 1,
+							text: 'SEMrush'
+						},
+						{
+							img: 2,
+							text: 'Грузовичкоф'
+						}
+						, {
+							img: 1,
+							text: 'SEMrush'
+						}
+					])
+			.swiper__arrow.swiper__arrow_prev
+			.swiper__arrow.swiper__arrow_next

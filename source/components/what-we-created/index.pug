@@ -1,41 +1,32 @@
-section.what-we-created.carousel.margin-top.margin-bottom.wrapper
-	.what-we-created__inner.carousel__inner
+mixin slides(slides)
+	-for(var slide of slides)
+		.what-we-created-slide.swiper-slide
+			.what-we-created-slide__img-wrapper.swiper-slide__img-wrapper
+				img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-${slide.img}.png`) alt="")
+			.swiper-slide__text-wrapper
+				.swiper-slide__title=slide.title
+				.swiper-slide__text=slide.text
+				.swiper-slide__bottom
+					a.link(href="/slide").swiper-slide__link Подробнее
+
+section.what-we-created.carousel.padding-top.padding-bottom.wrapper
+	.carousel__inner
 		h2.title Что мы создавали?
 		.swiper-outer
-			.swiper-container
+			.swiper-container(data-slidesPerView="2" data-spaceBetween="20" data-loop="true")
 				.swiper-wrapper
-					.swiper-slide
-						.swiper-slide__img-wrapper
-							img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-1.png`) alt="")
-						.swiper-slide__text-wrapper
-							.swiper-slide__title Разработка домашнего VR-кинотеатра
-							.swiper-slide__text Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.
-							.swiper-slide__bottom
-								a.link(href="/slide").swiper-slide__link Подробнее
-					.swiper-slide
-						.swiper-slide__img-wrapper
-							img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-2.png`) alt="")
-						.swiper-slide__text-wrapper
-							.swiper-slide__title Разработка домашнего VR-кинотеатра
-							.swiper-slide__text Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.
-							.swiper-slide__bottom
-								a.link(href="/slide").swiper-slide__link Подробнее
-					.swiper-slide
-						.swiper-slide__img-wrapper
-							img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-1.png`) alt="")
-						.swiper-slide__text-wrapper
-							.swiper-slide__title Разработка домашнего VR-кинотеатра
-							.swiper-slide__text Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.
-							.swiper-slide__bottom
-								a.link(href="/slide").swiper-slide__link Подробнее
-					.swiper-slide
-						.swiper-slide__img-wrapper
-							img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-2.png`) alt="")
-						.swiper-slide__text-wrapper
-							.swiper-slide__title Разработка домашнего VR-кинотеатра
-							.swiper-slide__text Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.
-							.swiper-slide__bottom
-								a.link(href="/slide").swiper-slide__link Подробнее
+					+slides([
+						{
+							img: 1,
+							title: 'Разработка домашнего VR-кинотеатра',
+							text: 'Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.'
+						},
+						{
+							img: 2,
+							title: 'Разработка домашнего VR-кинотеатра',
+							text: 'Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.'
+						}
+					])
 			.swiper__arrow.swiper__arrow_prev
 			.swiper__arrow.swiper__arrow_next
 		a.carousel__inner-link.btn.btn_accent(href="/more") Больше наших работ
