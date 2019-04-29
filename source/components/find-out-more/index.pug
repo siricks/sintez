@@ -1,33 +1,9 @@
-mixin slides(slides)
-	-for(var slide of slides)
-	.what-we-created-slide.swiper-slide
-		.what-we-created-slide__img-wrapper.swiper-slide__img-wrapper
-			img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-${slide.img}.png`) alt="")
-		.swiper-slide__text-wrapper
-			.swiper-slide__title=slide.title
-			.swiper-slide__text=slide.text
-			.swiper-slide__bottom
-				a.link(href="/slide").swiper-slide__link Подробнее
+include ../carousel-with-cards/index
 
-section.find-out-more.carousel.padding-top.padding-bottom.wrapper
-	.carousel__inner
-		h2.title.carousel__title Узнайте больше
-		.carousel__sub-title про виртуальную и дополненную реальность
-		.swiper-outer.swiper-outer_with-subtitle
-			.swiper-container(data-slidesPerView="2" data-spaceBetween="20" data-loop="true")
-				.swiper-wrapper
-					+slides([
-						{
-							img: 1,
-							title: 'Разработка домашнего VR-кинотеатра',
-							text: 'Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.'
-						},
-						{
-							img: 2,
-							title: 'Разработка домашнего VR-кинотеатра',
-							text: 'Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из Университета Северной Каролины считают, что это устройство может на самом деле обеспечить отличную конфиденциальность владельцу через канал связи.'
-						}
-					])
-			.swiper__arrow.swiper__arrow_prev
-			.swiper__arrow.swiper__arrow_next
-		a.carousel__inner-link.btn.btn_accent(href="/more") Больше статей
++carouselWithCards({
+	sectionClass: 'find-out-more',
+	title: 'Узнайте больше',
+	carouselTitle: true,
+	subtitle: 'про виртуальную и дополненную реальность',
+	carouselLinkContent: 'Больше статей'
+})
