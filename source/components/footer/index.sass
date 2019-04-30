@@ -1,0 +1,92 @@
+@import "../../styles/varialbes"
+
+.footer
+  padding:
+    top: 2.7rem
+    bottom: 2.1rem
+  background:
+    color: #0D1922
+
+.footer__inner
+  position: relative
+  display: flex
+  flex-flow: column
+
+  &:after
+    pointer-events: none
+    content: ''
+    position: absolute
+    left: -10.5rem
+    top: -3rem
+    width: 528px
+    height: 317px
+    background:
+      image: url(footer-img.png)
+      repeat: no-repeat
+      position: left
+
+.footer__logo
+  margin:
+    bottom: 2rem
+
+.footer__socials
+  display: flex
+  align-items: center
+
+.footer-soc-ico-wrapper
+  &:not(:last-of-type)
+    margin:
+      right: 1rem
+  +hoverOpacity
+
+.footer-soc-ico
+  fill: #ee4d50
+
+.vk-ico
+  width: 34px
+  height: 34px
+
+.insta-ico
+  width: 32px
+  height: 30px
+
+.fb-ico
+  width: 25px
+  height: 29px
+
+.footer__side
+  display: flex
+
+.footer__row
+  display: flex
+  flex: 1
+  justify-content: space-between
+
+.footer__col
+  display: flex
+  flex-flow: column
+  position: relative
+  z-index: 1
+  color: #F2F2F2
+
+.footer__col-title
+  margin:
+    bottom: 1rem
+  text-transform: uppercase
+  font:
+    size: 26px
+
+.footer__col-address, .footer__col-tel, .footer__col-email
+  margin:
+    bottom: .7rem
+
+.footer__address
+  &:not(:first-of-type)
+    margin:
+      left: 3.5rem
+
+.footer__copyrights-wrapper
+  justify-content: flex-end
+  color: #6e7479
+  margin:
+    top: 6rem

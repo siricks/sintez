@@ -16,5 +16,4 @@ import '../../js/onLoad'
  * components
  */
 import '../../components/header'
-// import '../../components/overlay'
-// import '../../components/footer'
+import '../../components/footer'

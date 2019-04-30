@@ -1,0 +1,40 @@
+mixin footerSocialLinks(params)
+	-var {id, className} = params
+	a.footer-soc-ico-wrapper(href="/social")
+		+svgIco({id: id, className: className})
+
+mixin footerCol(params)
+	-var {title, address, tel, telHref, email} = params
+		.footer__col.footer__address
+			.footer__col-title=title
+			.footer__col-address=address
+			a(href=`tel:${telHref}`).footer__col-tel=tel
+			a.link.link_thin(href=`mailto:${email}`).footer__col-email=email
+
+footer.footer.wrapper
+	.footer__inner.wrapper__inner
+		.footer__row
+			.footer__side
+				.footer__col
+					img.footer__logo(src=require(`../../components/footer/logo_white.png`))
+					.footer__socials
+						+footerSocialLinks({id: 'vk', className: 'footer-soc-ico'})
+						+footerSocialLinks({id: 'insta', className: 'footer-soc-ico'})
+						+footerSocialLinks({id: 'fb', className: 'footer-soc-ico'})
+			.footer__side
+				+footerCol({
+					title: 'Москва',
+					address: 'Нижний Сусальный пер., дом 5, с. 4.',
+					telHref: '+74951184399',
+					tel: '+7 (495) 118-43-99',
+					email: 'start@sintezevent.ru'
+				})
+				+footerCol({
+					title: 'Санкт-Петербург',
+					address: 'Обуховской обороны пр., 76, к. 4А',
+					telHref: '+78124251388',
+					tel: '+7 (812) 425-13-88',
+					email: 'start@sintezevent.ru'
+				})
+		.footer__row.footer__copyrights-wrapper
+			.footer__copyrights © Sintez Event, 2019
