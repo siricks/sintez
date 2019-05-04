@@ -1,0 +1,18 @@
+extends ../base/index
+include ../../components/teaser/index
+
+block title
+	| Наши решения
+block content
+	+teaser({
+		title: 'Готовые решения <br> для мероприятий',
+		sectionClass: 'teaser_solutions',
+		text: 'У нас есть приложения и игры для любого типа мероприятий и аудитории. Специализированные решения для детей и VIP-клиентов.',
+		teaserImgClass: 'teaser-img-2'
+	})
+	include ../../components/tiles/index
+	include ../../components/what-we-created/index
+	include ../../components/reviews/index
+	include ../../components/form/index
+	include ../../components/find-out-more/index
+	include ../../components/our-customers/index

@@ -1,9 +1,15 @@
 extends ../base/index
+include ../../components/teaser/index
 
 block title
-	| Sintez
+	| Sintez event
 block content
-	include ../../components/teaser/index
+	+teaser({
+		title: 'ВИРТУАЛЬНАЯ <br> И ДОПОЛНЕННАЯ <br> РЕАЛЬНОСТЬ ДЛЯ БИЗНЕСА',
+		sectionClass: 'teaser_index',
+		text: 'Предлагаем полный спектр решений с VR и AR: от аренды оборудования до разработки уникальных приложений',
+		teaserImgClass: 'teaser-img-1'
+	})
 	include ../../components/tiles/index
 	include ../../components/what-we-created/index
 	include ../../components/reviews/index

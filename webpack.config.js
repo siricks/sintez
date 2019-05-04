@@ -16,7 +16,8 @@ const path = require('path'),
 		{
 			mode: 'development',
 			entry: {
-				'index': PATHS.src + '/pages/index/index.js'
+				'index': PATHS.src + '/pages/index/index.js',
+				'solutions': PATHS.src + '/pages/solutions/index.js',
 			},
 			output: {
 				publicPath: '',
@@ -40,6 +41,11 @@ const path = require('path'),
 					filename: 'index.html',
 					chunks: ['index', 'common'],
 					template: PATHS.src + '/pages/index/index.pug'
+				}),
+				new HtmlWebpackPlugin({
+					filename: 'solutions.html',
+					chunks: ['index', 'common'],
+					template: PATHS.src + '/pages/solutions/index.pug'
 				})
 			],
 			optimization: {
