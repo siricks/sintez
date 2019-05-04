@@ -2,7 +2,15 @@
 
 .tiles
   flex-wrap: wrap
+
+.tiles__tile
+  display: flex
+  align-items: center
+  justify-content: center
   position: relative
+  overflow: hidden
+  width: 33.33%
+  height: 324px
   &:after
     content: ''
     pointer-events: none
@@ -13,29 +21,37 @@
     height: 100%
     background:
       color: rgba(0, 0, 0, .6)
-
-.tiles__tile
-  display: flex
-  align-items: center
-  justify-content: center
-  position: relative
-  overflow: hidden
-  width: 33.33%
-  height: 324px
   &:hover
     .tiles__tile-img
       +hoverScale
+
+.tiles__tile_bottom-left
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  justify-content: flex-end
+  padding: 2rem
+  .tiles__tile-title
+    font:
+      size: 20px
+      weight: 700
+    margin:
+      bottom: .7rem
 
 .tiles__tile-img
   transition: $common-transition-duration
   position: absolute
   min-width: 102%
   min-height: 100%
+  left: 0
+  bottom: 0
 
-.tiles__tile-title
+.tiles__tile-title, .tiles__tile-subtitle
   position: relative
   z-index: 1
   color: $white-color
+
+.tiles__tile-title
   font:
     size: 26px
   line-height: 26px
