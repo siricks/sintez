@@ -5,8 +5,9 @@ import '../base'
 /**
  * components
  */
-import '../../components/teaser/index'
-import '../../components/tiles/index'
+import '../../components/teaser'
+import '../../components/our-guarantees'
+import '../../components/tiles'
 import '../../components/what-we-created'
 import '../../components/reviews'
 import '../../components/form-wrapper'

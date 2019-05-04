@@ -1,0 +1,47 @@
+mixin list(items)
+	-for(var item of items)
+		li.our-guarantees__list-item
+			+svgIco({
+				id: item.id,
+				className: 'our-guarantees__icon'
+			})
+			.our-guarantees__list-item-content
+				.our-guarantees__list-item-content-title !{item.title}
+				.our-guarantees__list-item-content-text !{item.text}
+
+section.our-guarantees.wrapper
+	.wrapper__inner
+		h2.title.title_light Наши гаранитии
+		ul.our-guarantees__list
+			+list([
+				{
+					id: 'rocket',
+					title: 'Работаем<br>оперативно',
+					text: 'Отвечаем за 5 минут,<br>согласовываем за 1 день'
+				},
+				{
+					id: 'paper',
+					title: 'У нас всё<br>по-белому',
+					text: 'Работаем по договору,<br>прозрачная ценовая политика'
+				},
+				{
+					id: 'knife',
+					title: 'Надежны, как<br>швейцарский нож',
+					text: 'Более 100 часов опыта<br>работы с VR у сотрудников'
+				},
+				{
+					id: 'sitting',
+					title: 'Без нервов<br>и стресса',
+					text: 'Мы не опаздываем, и у нас<br>всё работает'
+				},
+				{
+					id: 'soap',
+					title: 'Следим за<br>гигиеной',
+					text: 'А вы знали, что за шлемами<br>нужен особый уход?'
+				},
+				{
+					id: 'helm',
+					title: 'Бесплатный<br>тест-драйв',
+					text: 'Покажем оборудование и<br>контент лично вам'
+				}
+			])

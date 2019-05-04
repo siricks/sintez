@@ -1,7 +1,4 @@
-mixin svgIcon(id, className)
-	if(className)
-		svg(class=`${id}-ico ${className}`)
-			use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=`#${id}-ico`)
-	else
-		svg(class=`${id}-ico`)
-			use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=`#${id}-ico`)
+mixin svgIco(params)
+	-var {id, className} = params
+	svg(class=className class=`${id}-ico`)
+		use(xlink:href=`#${id}`, xmlns:xlink='http://www.w3.org/1999/xlink')

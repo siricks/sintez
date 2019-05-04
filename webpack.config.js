@@ -44,7 +44,7 @@ const path = require('path'),
 				}),
 				new HtmlWebpackPlugin({
 					filename: 'solutions.html',
-					chunks: ['index', 'common'],
+					chunks: ['solutions', 'common'],
 					template: PATHS.src + '/pages/solutions/index.pug'
 				})
 			],
