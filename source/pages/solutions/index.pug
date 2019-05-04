@@ -1,5 +1,6 @@
 extends ../base/index
 include ../../components/teaser/index
+include ../../components/form/index
 
 block title
 	| Наши решения
@@ -11,9 +12,13 @@ block content
 		teaserImgClass: 'teaser-img-2'
 	})
 	include ../../components/our-guarantees/index
+	+form({
+		img: 1,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
 	include ../../components/tiles/index
 	include ../../components/what-we-created/index
 	include ../../components/reviews/index
-	include ../../components/form/index
 	include ../../components/find-out-more/index
 	include ../../components/our-customers/index

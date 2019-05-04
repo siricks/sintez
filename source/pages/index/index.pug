@@ -1,5 +1,6 @@
 extends ../base/index
 include ../../components/teaser/index
+include ../../components/form/index
 
 block title
 	| Sintez event
@@ -13,6 +14,9 @@ block content
 	include ../../components/tiles/index
 	include ../../components/what-we-created/index
 	include ../../components/reviews/index
-	include ../../components/form/index
+	+form({
+		img: 1,
+		title: 'Связаться с командой'
+	})
 	include ../../components/find-out-more/index
 	include ../../components/our-customers/index

@@ -1,4 +1,6 @@
 mixin form-wrapper(params)
 	section.form-wrapper.wrapper(style=`background: linear-gradient(180deg, rgba(32, 16, 66, 0.6) 0%, rgba(20, 39, 48, 0) 100%), url(${require(`../../components/form-wrapper/form-wrapper-background-${params.img}.jpg`)}); background-size: cover; background-position: center;`)
-		.form-wrapper__title.title=params.title
+		.form-wrapper__title.title(class={'form-wrapper__title_with-subtitle': params.subtitle})=params.title
+		-if(params.subtitle)
+			.form-wrapper__subtitle=params.subtitle
 		block
