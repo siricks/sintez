@@ -1,0 +1,43 @@
+@import "../../styles/varialbes"
+
+.additional-services__inner
+  display: flex
+  flex-flow: column
+  align-items: center
+
+.additional-services-tiles
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.additional-services-tile
+  padding: 1rem 2.5rem
+  display: flex
+  flex-flow: column
+  background: $white-color
+  border: 1px solid $gray-light-color
+  +border-radius
+  width: 49%
+  height: 390px
+  margin:
+    bottom: 1.5rem
+
+.additional-services-tile__images
+  margin:
+    bottom: 2.5rem
+
+.additional-services-tile__image
+  height: 6rem
+  &:not(:last-of-type)
+    margin:
+      right: 2.5rem
+
+.additional-services-tile__title
+  font:
+    size: 20px
+    weight: 700
+  margin:
+    bottom: 1rem
+
+.additional-services-tile__description
+  line-height: 1.3

@@ -1,0 +1,34 @@
+mixin tile(props)
+	-var {images, title, description} = props
+	.additional-services-tile
+		.additional-services-tile__images
+			-for(var image of images)
+				img.additional-services-tile__image(src=require(`../../components/additional-services/additional-services-${image}.png`))
+		.additional-services-tile__title=title
+		.additional-services-tile__description=description
+
+section.additional-services.wrapper.padding-top
+	.additional-services__inner.wrapper__inner
+		h2.title Дополнительные услуги
+		.additional-services-tiles
+			+tile({
+				images: [1, 2],
+				title: 'Фото и видео съёмка',
+				description: 'Запечатлеть событие всегда необходимо. Вы можете заказать как фотосъёмку, так и видеооператора. В итоге вы получите обработанные снимки и полноценный клип.'
+			})
+			+tile({
+				images: [3, 4],
+				title: 'Хромакей и дополнительные экраны',
+				description: 'Изображение человека, снятого на хромакее, помещается в виртуальную реальность, показывая его действия прямо в ней. Это решение как для VR-интерактива, так и для фотозоны. Также, вы всегда можете заказать дополнительный экран, чтобы увидеть всё это в реальном времени!'
+			})
+			+tile({
+				images: [5, 6],
+				title: 'VR-трекер и беспроводной адаптер',
+				description: 'Специальные девайсы, благодаря которым вы сможете взаимодействовать с любым реальным объектом в виртуальной реальности и полностью освободиться от проводов. Неотъемлимая часть сложных и подвижных активностей.'
+			})
+			+tile({
+				images: [7, 8],
+				title: 'Стойка для оборудования и стулья',
+				description: 'Специальный стойки:на них размещается всё необходимое оборудование, а внутрь прячутся провода и дополнительная аппаратура. Аккуратное и изящное решение. А если у вас не хватает удобных стульев, так нужных для визуальных приключений в виртуальной реальности - мы доставим их тоже!'
+			})
+		a.btn.btn_accent(href="/additional") Оставить заявку
