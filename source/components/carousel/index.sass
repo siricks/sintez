@@ -44,6 +44,17 @@
   display: flex
   flex-flow: column
 
+.swiper-slide__scale
+  height: 625px
+  background:
+    color: $gray-light-color
+  &:hover
+    .swiper-slide__img
+      +hoverScale
+
+.swiper-slide__scale-img-wrapper
+  height: 367px
+
 .swiper-slide__img-wrapper
   display: flex
   align-items: center

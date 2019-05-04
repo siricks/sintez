@@ -1,7 +1,7 @@
 mixin slides(slides)
 	-for(var slide of slides)
-		.what-we-created-slide.swiper-slide
-			.what-we-created-slide__img-wrapper.swiper-slide__img-wrapper
+		.swiper-slide__scale.swiper-slide
+			.swiper-slide__scale-img-wrapper.swiper-slide__img-wrapper
 				img.swiper-slide__img(src=require(`../../components/what-we-created/what-we-created-${slide.img}.png`) alt="")
 			.swiper-slide__text-wrapper
 				.swiper-slide__title=slide.title
