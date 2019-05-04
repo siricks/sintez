@@ -1,0 +1,50 @@
+mixin slideList(props)
+	-var {title, items} = props
+	.examples__slide-list-wrapper
+		.examples__slide-list-title=title
+		ul.examples__slide-list
+		-for(var item of items)
+			li.examples__slide-list-item=item
+
+mixin slides(cnt)
+	-for(var i = 0; i < cnt; i++)
+		.examples__slide.swiper-slide
+			img.examples__slide-img(src=require(`../../components/examples/slide.jpg`))
+			.examples__slide-content
+				.examples__slide-title Зомби битва
+				.examples__slide-description Популярнейший жанр зомби-хоррора переживает второе рождение вместе с виртуальной реальностью. Вы - член группы выживших, а ещё вы - окружены и очень опасны. Впрочем, как и ваши противники. Но поскольку они зомби, то им всё равно. Без слаженной работы вашей команде не выжить: это не просто мясная стреляка, тактика здесь необходима. Есть только 3 попытки!
+				.examples__slide-lists
+					+slideList({
+						title: 'В комплекте',
+						items: [
+							'2 HTC Vive/Oculus Rift',
+							'4 джойстика',
+							'Датчики движения',
+							'2 игровые платформы',
+							'2 экрана 42”',
+							'2 стойки для оборудования',
+							'2 аниматора'
+						]
+					})
+					+slideList({
+						title: 'Дополнительно',
+						items: [
+							'Расширение до 4-х игроков',
+							'Фотосъёмка',
+							'Брендирование',
+							'Съёмка на хромакее',
+							'Беспроводной модуль'
+						]
+					})
+				.examples__slide-links
+					a.btn.btn_accent(href="/slide") Заказать на мероприятие
+					a.btn.btn_white(href="/slide") Смотреть видео
+
+section.examples.wrapper.padding-top
+	.examples__inner.wrapper__inner
+		h2.title ПРИМЕРЫ ГОТОВЫХ РЕШЕНИЙ
+		.swiper-container(data-slidesPerView="1" data-loop="true" data-effect="fade" data-pagination="true")
+			.swiper-wrapper
+				+slides(5)
+			.custom-pagination.swiper-pagination
+		a.examples__more-link.link(href="/slide-more") Смотреть все решения

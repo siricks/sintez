@@ -1,0 +1,90 @@
+@import "../../styles/varialbes"
+
+.examples__inner
+  display: flex
+  flex-flow: column
+  align-items: center
+
+.examples__slide
+  display: flex
+  position: relative
+  height: 534px
+  align-items: flex-end
+  overflow: hidden
+  color: white
+  &:after
+    content: ''
+    position: absolute
+    pointer-events: none
+    background: linear-gradient(284.96deg, rgba(31, 18, 48, 0.72) 34.15%, rgba(57, 79, 86, 0.03) 71.17%)
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
+.examples__slide-img
+  z-index: -1
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+
+.examples__slide-lists
+  display: flex
+  justify-content: space-between
+  margin: 1.4rem 0
+
+.examples__slide-content
+  display: flex
+  flex-flow: column
+  width: 47%
+  flex: 1
+  position: relative
+  z-index: 1
+  padding: 1rem 2rem 2.5rem
+
+.examples__slide-title
+  font:
+    size: 26px
+  text-transform: uppercase
+  margin:
+    bottom: 1rem
+
+.examples__slide-description
+  line-height: 1.3
+
+.examples__slide-list-title
+  font:
+    size: 20px
+    weight: 700
+  color: rgba(255, 255, 255, 0.47)
+  margin:
+    bottom: 1rem
+
+.examples__slide-list-item
+  position: relative
+  padding:
+    left: .9rem
+  &:before
+    content: '-'
+    position: absolute
+    left: 0
+  &:not(:last-of-type)
+    margin:
+      bottom: .3rem
+
+.examples__slide-links
+  flex: 1
+  display: flex
+  align-items: flex-end
+  .btn
+    &:not(:last-of-type)
+      margin:
+        right: 2rem
+
+.examples__more-link
+  font:
+    size: 20px
+  margin:
+    top: 2rem

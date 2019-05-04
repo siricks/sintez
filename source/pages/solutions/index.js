@@ -7,7 +7,7 @@ import '../base'
  */
 import '../../components/teaser'
 import '../../components/our-guarantees'
-import '../../components/tiles'
+import '../../components/examples'
 import '../../components/what-we-created'
 import '../../components/reviews'
 import '../../components/form-wrapper'

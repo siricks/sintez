@@ -18,7 +18,7 @@ mixin carouselWithCards(params)
 			-if(subtitle)
 				.carousel__sub-title=subtitle
 			.swiper-outer(class={'swiper-outer_with-subtitle': subtitle})
-				.swiper-container(data-slidesPerView="2" data-spaceBetween="20" data-loop="true")
+				.swiper-container(data-slidesPerView="2" data-spaceBetween="20" data-loop="true" data-arrows="true")
 					.swiper-wrapper
 						+slides([
 							{
