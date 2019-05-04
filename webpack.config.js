@@ -39,17 +39,30 @@ const path = require('path'),
 			plugins: [
 				new HtmlWebpackPlugin({
 					filename: 'index.html',
-					chunks: ['index', 'common'],
+					chunks: ['vendors', 'commons', 'index'],
 					template: PATHS.src + '/pages/index/index.pug'
 				}),
 				new HtmlWebpackPlugin({
 					filename: 'solutions.html',
-					chunks: ['solutions', 'common'],
+					chunks: ['vendors', 'commons', 'solutions'],
 					template: PATHS.src + '/pages/solutions/index.pug'
 				})
 			],
 			optimization: {
-				runtimeChunk: {name: 'common'},
+				splitChunks: {
+					cacheGroups: {
+						vendors: {
+							test: /[\\/]node_modules[\\/]/,
+							name: 'vendors',
+							chunks: 'all'
+						},
+						commons: {
+							name: 'commons',
+							chunks: 'initial',
+							minChunks: 2
+						}
+					}
+				}
 			},
 		},
 		pug(),
