@@ -1,0 +1,57 @@
+@import "../../styles/varialbes"
+
+.about
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: flex-start
+  margin:
+    top: -8.4rem
+  padding:
+    top: 10rem
+  background:
+    image: url('../../components/about/about.jpg')
+    size: cover
+    position: top
+    repeat: no-repeat
+  position: relative
+  height: 100vh
+  color: $white-color
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: 300px
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.83) 0%, rgba(0, 0, 0, 0) 100%)
+
+.about__stats-wrapper
+  position: relative
+  z-index: 1
+  display: flex
+  flex: 1
+  align-items: flex-end
+  padding:
+    bottom: 4rem
+
+.about__stats
+  display: flex
+  align-items: flex-start
+
+.about__stat
+  text-align: center
+  &:not(:last-of-type)
+    margin:
+      right: 2.7rem
+
+.about__stat-title
+  font:
+    family: 'Bebas Neue Regular', sans-serif
+    size: 88px
+
+.about__stat-description
+  font:
+    size: 20px
+    weight: 400
+  line-height: 1.3

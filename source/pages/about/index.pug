@@ -1,9 +1,17 @@
 extends ../base/index
 include ../../components/form/index
+include ../../components/header/index
 
 block title
 	| О нас
+
+block header
+	+header({
+		white: true
+	})
+
 block content
+	include ../../components/about/index
 	+form({
 		img: 1,
 		title: 'Связаться с командой',

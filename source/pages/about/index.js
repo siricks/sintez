@@ -17,6 +17,8 @@ import '../../js/onLoad'
  */
 import '../../components/header'
 import '../../components/footer'
+import '../../components/about'
+import '../../components/fancy-title'
 import '../../components/our-customers'
 import '../../components/reviews'
 import '../../components/how-it-works'

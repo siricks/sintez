@@ -1,0 +1,7 @@
+mixin fancyTitle(props)
+	-var {title, subtitle, white} = props
+	.fancy-title(class={'fancy-title_white': white})
+		.fancy-title__content
+			h2.fancy-title__title.title=title
+			-if(subtitle)
+				.fancy-title__subtitle=subtitle

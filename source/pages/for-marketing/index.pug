@@ -1,9 +1,16 @@
 extends ../base/index
 include ../../components/teaser/index
 include ../../components/form/index
+include ../../components/header/index
 
 block title
 	| VR/AR для маркетинга
+
+block header
+	+header({
+		white: false
+	})
+
 block content
 	+teaser({
 		title: 'виртуальная реальность <br> для маркетинга',

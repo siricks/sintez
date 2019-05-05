@@ -10,42 +10,47 @@ mixin telNumbers(numbers)
 		-for(var number of numbers)
 			a.header__tel-item(href=`tel:${number.href}`)=number.title
 
-header.header.wrapper
-	.header__inner.wrapper__inner
-		.header__side.header__side-left
-			a.header__logo-wrapper(href="/")
-				img.header__logo(src=require(`../../components/header/logo.png`))
-			+nav([
-				{
-					title: 'Наши услуги',
-					href: '/test'
-				},
-				{
-					title: 'Портфолио',
-					href: '/test'
-				},
-				{
-					title: 'О нас',
-					href: '/test'
-				},
-				{
-					title: 'Блог',
-					href: '/test'
-				},
-				{
-					title: 'Связаться',
-					href: '/test'
-				}
-			])
-		.header__side
-			+telNumbers([
-				{
-					href: '+74951184399',
-					title: '+7 (495) 118-43-99'
-				},
-				{
-					href: '+78124251388',
-					title: '+7 (812) 425-13-88'
-				}
-			])
-			a(href="/btn").btn.btn_accent Оставить заявку
+mixin header(props)
+	-var {white} = props
+	header.header.wrapper(class={'header_white': white})
+		.header__inner.wrapper__inner
+			.header__side.header__side-left
+				a.header__logo-wrapper(href="/")
+					if(white)
+						img.header__logo(src=require(`../../components/header/logo_white.png`))
+					else
+						img.header__logo(src=require(`../../components/header/logo.png`))
+				+nav([
+					{
+						title: 'Наши услуги',
+						href: '/test'
+					},
+					{
+						title: 'Портфолио',
+						href: '/test'
+					},
+					{
+						title: 'О нас',
+						href: '/test'
+					},
+					{
+						title: 'Блог',
+						href: '/test'
+					},
+					{
+						title: 'Связаться',
+						href: '/test'
+					}
+				])
+			.header__side
+				+telNumbers([
+					{
+						href: '+74951184399',
+						title: '+7 (495) 118-43-99'
+					},
+					{
+						href: '+78124251388',
+						title: '+7 (812) 425-13-88'
+					}
+				])
+				a(href="/btn").btn.btn_accent Оставить заявку
