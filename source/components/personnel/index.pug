@@ -1,0 +1,26 @@
+mixin tiles(tiles)
+	.personnel-tiles
+		-for(var tile of tiles)
+			.personnel-tile
+				img.personnel-tile__image(src=require(`../../components/personnel/personnel-${tile.image}.jpg`))
+				.personnel-tile__content
+					.personnel-tile__title(class={'personnel-tile__title_accent': tile.accentTitle})=tile.title
+					.personnel-tile__description !{tile.description}
+
+
+section.personnel.wrapper.padding-top
+	.personnel-wrapper__inner.wrapper__inner
+		h2.title форма персонала
+	+tiles([
+		{
+			image: 1,
+			title: 'SINTEZ CLASSIC',
+			accentTitle: true,
+			description: 'Классический образ команды Sintez Event, который удачно<br>впишется практически в любое мероприятие'
+		},
+		{
+			image: 2,
+			title: 'SINTEZ VIP',
+			description: 'Команда Sintez Event особо подготовится<br>к мероприятию и подчеркнёт то, что вы следите за статусностью каждой детали'
+		}
+	])

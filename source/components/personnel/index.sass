@@ -1,0 +1,59 @@
+@import "../../styles/varialbes"
+
+.personnel
+  display: flex
+  flex-flow: column
+
+.personnel-wrapper__inner
+  width: 100%
+  text-align: center
+
+.personnel-tiles
+  display: flex
+  position: relative
+  &:after
+    content: ''
+    pointer-events: none
+    position: absolute
+    background: linear-gradient(360deg, rgba(4, 1, 6, 0.63) 0%, rgba(20, 59, 67, 0) 89.25%)
+    height: 307px
+    left: 0
+    right: 0
+    bottom: 0
+
+.personnel-tile
+  text-align: center
+  position: relative
+  overflow: hidden
+  width: 50%
+  height: 729px
+  display: flex
+  justify-content: center
+
+.personnel-tile__image
+  height: 100%
+  pointer-events: none
+
+.personnel-tile__content
+  color: $white-color
+  position: absolute
+  z-index: 1
+  left: 50%
+  bottom: 0
+  transform: translate(-50%)
+  padding:
+    bottom: 3rem
+  width: 100%
+
+.personnel-tile__title
+  font:
+    weight: 700
+  text-transform: uppercase
+  margin:
+    bottom: .1rem
+
+.personnel-tile__title_accent
+  color: $accent-color
+
+.personnel-tile__description
+  line-height: 1.3
