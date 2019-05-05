@@ -1,0 +1,20 @@
+extends ../base/index
+include ../../components/teaser/index
+include ../../components/form/index
+
+block title
+	| VR/AR для маркетинга
+block content
+	+teaser({
+		title: 'виртуальная реальность <br> для маркетинга',
+		sectionClass: 'teaser_for-marketing',
+		text: 'Используем максимум возможностей современных технологий, чтобы сделать WOW!',
+		teaserImgClass: 'teaser-img-3'
+	})
+	include ../../components/our-guarantees/index
+	+form({
+		img: 1,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
+	include ../../components/it-might-be-interesting/index
