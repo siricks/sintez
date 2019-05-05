@@ -1,0 +1,66 @@
+@import "../../styles/varialbes"
+
+.our-examples-wrapper
+  display: flex
+  flex-flow: column
+
+.our-examples__item
+  display: flex
+  align-items: flex-start
+  &:not(:last-of-type)
+    margin:
+      bottom: 7rem
+
+.our-examples__item_image-right
+  .our-examples__image
+    order: 1
+  .our-examples__content
+    margin:
+      left: 0
+      right: 3rem
+
+.our-examples__content
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  margin:
+    left: 3rem
+
+.our-examples__title
+  font:
+    size: 26px
+
+.our-examples__image
+  max-width: 450px
+
+.our-examples__description-item
+  line-height: 1.3
+  letter-spacing: -.02rem
+  &:first-of-type, & + .our-examples__description-item
+    margin:
+      top: 1.5rem
+
+.our-examples__summary
+  display: flex
+  justify-content: space-between
+  margin: 3rem 0 .5rem
+  flex-wrap: wrap
+
+.our-examples__summary-item
+  display: flex
+  align-items: center
+  width: 48%
+  margin:
+    bottom: 2rem
+
+.our-examples__summary-item-icon
+  fill: $accent-color
+  width: 86px
+  height: 83px
+  margin:
+    right: 1rem
+
+.our-examples__summary-item-content
+  flex: 1
+  letter-spacing: -.02rem
+  line-height: 1.3
