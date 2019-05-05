@@ -1,0 +1,15 @@
+extends ../base/index
+include ../../components/form/index
+
+block title
+	| О нас
+block content
+	+form({
+		img: 1,
+		title: 'Связаться с командой',
+		opacity: true
+	})
+	include ../../components/our-customers/index
+	include ../../components/reviews/index
+	include ../../components/how-it-works/index
+	include ../../components/it-might-be-interesting/index

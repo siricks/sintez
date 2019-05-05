@@ -5,10 +5,26 @@
   flex-flow: column
   padding:
     top: 5.5rem
-    bottom: 12.4rem
+  position: relative
+
+.form-wrapper_opacity
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background:
+      color: rgba(255, 255, 255, .9)
+    pointer-events: none
+  .form-wrapper__title, .form-wrapper__subtitle
+    color: $black-color
 
 .form-wrapper__title, .form-wrapper__subtitle
   color: $white-color
+  position: relative
+  z-index: 1
 
 .form-wrapper__title_with-subtitle
   margin:

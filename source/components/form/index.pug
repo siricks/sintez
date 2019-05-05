@@ -1,9 +1,9 @@
 include ../form-wrapper/index
 
 mixin form(props)
-	-var {img, title} = props
+	-var {img, title, opacity} = props
 	+form-wrapper(props)
-		form.form
+		form.form(class={'form_opacity': opacity})
 			fieldset.form__fieldset
 				legend.form__title Оставьте заявку, и мы свяжемся с вами
 					br
