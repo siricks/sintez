@@ -1,6 +1,6 @@
 @import "../../styles/varialbes"
 
-.for-marketing-tiles
+.for-marketing-tiles-wrapper
   display: flex
   flex-wrap: wrap
 
@@ -13,18 +13,26 @@
   position: relative
   color: $white-color
   overflow: hidden
+
   &:hover
     .for-marketing-tile__image
       +hoverScale
 
+  &:nth-of-type(odd)
+    align-items: center
+
 .for-marketing-tile__image
   transition: $common-transition-duration
   position: absolute
+  left: 0
   pointer-events: none
-  height: 100%
+  min-width: 100%
 
 .for-marketing-tile__content
   padding: 2rem 2.5rem
+  display: flex
+  flex-flow: column
+  width: 60%
 
 .for-marketing-tile__title
   position: relative
