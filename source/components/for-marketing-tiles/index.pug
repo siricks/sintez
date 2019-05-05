@@ -1,0 +1,35 @@
+mixin tiles(tiles)
+	-for(var tile of tiles)
+		.for-marketing-tile
+			img.for-marketing-tile__image(src=require(`../../components/for-marketing-tiles/for-marketing-tile-${tile.image}.png`))
+			.for-marketing-tile__content
+				.for-marketing-tile__title=tile.title
+				a(href="/for-marketing-tile").link.for-marketing-tile__link Подробнее
+
+section.for-marketing-tiles.wrapper
+	+tiles([
+		{
+			image: 1,
+			title: 'VR для презентаций'
+		},
+		{
+			image: 2,
+			title: 'VR для развлечений'
+		},
+		{
+			image: 3,
+			title: 'VR для продаж'
+		},
+		{
+			image: 4,
+			title: 'Демонстрация продукта'
+		},
+		{
+			image: 5,
+			title: 'Создание инфоповода'
+		},
+		{
+			image: 6,
+			title: 'Дополненная реальность'
+		}
+	])

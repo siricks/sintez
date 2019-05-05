@@ -1,0 +1,39 @@
+@import "../../styles/varialbes"
+
+.for-marketing-tiles
+  display: flex
+  flex-wrap: wrap
+
+.for-marketing-tile
+  height: 318px
+  display: flex
+  flex-flow: column
+  justify-content: flex-end
+  width: 50%
+  position: relative
+  color: $white-color
+  overflow: hidden
+  &:hover
+    .for-marketing-tile__image
+      +hoverScale
+
+.for-marketing-tile__image
+  transition: $common-transition-duration
+  position: absolute
+  pointer-events: none
+  height: 100%
+
+.for-marketing-tile__content
+  padding: 2rem 2.5rem
+
+.for-marketing-tile__title
+  position: relative
+  z-index: 1
+  margin:
+    bottom: 6rem
+  font:
+    size: 26px
+
+.for-marketing-tile__link
+  position: relative
+  z-index: 1
