@@ -1,0 +1,88 @@
+@import "../../styles/varialbes"
+
+/*Наши примеры*/
+.implementation-options
+  display: flex
+  flex-flow: column
+
+.implementation-options__wrapper-inner
+  text-align: center
+  width: 100%
+
+.implementation-options-wrapper
+  display: flex
+  flex-flow: column
+
+.implementation-option
+  display: flex
+  justify-content: center
+  position: relative
+
+.implementation-option__image
+  position: absolute
+  height: 100%
+  top: 0
+
+.implementation-option__content
+  display: flex
+  flex-flow: column
+  justify-content: flex-start
+  align-items: center
+  position: relative
+  z-index: 1
+  padding: 5rem 0
+
+.implementation-option__title
+  font:
+    size: 26px
+  margin:
+    bottom: 3rem
+  color: $white-color
+
+.implementation-option__tiles
+  display: flex
+  justify-content: space-between
+
+.implementation-option__tile
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  width: 48%
+  background:
+    color: $white-color
+  +border-radius
+  letter-spacing: -.02rem
+  padding: 2rem
+
+.implementation-option__tile-title
+  font:
+    size: 20px
+    weight: 700
+  margin:
+    bottom: 1rem
+
+.implementation-option__tile-description
+  line-height: 1.3
+  letter-spacing: -.02rem
+
+.implementation-option__tile-summary
+  display: flex
+  justify-content: space-between
+  margin: 1rem 0
+
+.implementation-option__tile-summary-item
+  display: flex
+  align-items: center
+  width: 48%
+
+.implementation-option__tile-summary-item-icon
+  fill: $accent-color
+  width: 4rem
+  height: 83px
+  margin:
+    right: .5rem
+
+.implementation-option__tile-summary-item-content
+  line-height: 1.3
+
+/*eo Наши примеры*/
