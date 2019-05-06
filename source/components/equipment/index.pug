@@ -1,0 +1,29 @@
+mixin equipments(cnt)
+	.equipment__list
+		-for(var i = 0; i < cnt; i++)
+			.equipment-list-item(class={'equipment-list-item_image-right': i%2===1})
+				.equipment-list-item__wrapper-inner.wrapper__inner
+					.equipment-list-item-image-wrapper
+						img.equipment-list-item-image(src=require(`../../components/equipment/equipment.png`))
+					.equipment-list-item-content
+						.equipment-list-item-title HTC VIVE
+						.equipment-list-item-description
+							p.equipment-list-item-description-item Это совместное детище компаний HTC и Valve - самый популярный шлем виртуальной реальности из представленных на рынке, для него создано более 1 000 приложений и игр.
+							p.equipment-list-item-description-item Отличное изображение с обзором в 110° полностью погружает в виртуальный мир, а удобные и надёжные контроллеры шлема служат надёжными посредниками между игрой в VR и вашим материальным телом.
+							p.equipment-list-item-description-item Разработка под Vive является наиболее популярной у разработчиков VR-контента - поэтому стоит выбрать именно этот шлем, если вы хотите запускать свою собственную или специально разработанную VR-игру.
+						.equipment-list-item-set
+							.equipment-list-item-set-title В комплекте:
+							ul.equipment-list-item-set-list
+								li.equipment-list-item-set-list-item 2 джойстика
+								li.equipment-list-item-set-list-item Датчики движения
+								li.equipment-list-item-set-list-item Игровая станция
+								li.equipment-list-item-set-list-item Экран 42”
+								li.equipment-list-item-set-list-item Аниматор
+						.equipment-list-item-links
+							a(href="#").btn.btn_accent.equipment-list-item-link Заказать
+							a(href="#").btn.btn_white.equipment-list-item-link Получить презентацию
+
+section.equipment.wrapper.padding-top
+	.equipment__inner.wrapper__inner
+		h2.title Оборудование
+	+equipments(5)
