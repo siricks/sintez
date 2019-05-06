@@ -1,0 +1,60 @@
+@import "../../styles/varialbes"
+
+.our-team
+  background: radial-gradient(1068.00px at 50% 12.32%, #153756 0%, #0C0B18 100%)
+  color: $white-color
+
+.our-team__members
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+.our-team__member
+  display: flex
+  flex-flow: column
+  margin:
+    bottom: 3rem
+
+  &:not(:last-of-type)
+    margin:
+      right: 1.3rem
+
+.our-team__members-image-wrapper
+  height: 265px
+  width: 265px
+  overflow: hidden
+  margin:
+    bottom: 1rem
+
+.our-team__members-image
+  width: 100%
+
+.our-team__members-name
+  margin:
+    bottom: .2rem
+  font:
+    size: 26px
+
+.our-team__members-position
+  margin:
+    bottom: 1rem
+  font:
+    size: 13px
+    weight: 700
+  letter-spacing: -.02rem
+
+.our-team__members-email
+  color: $accent-color
+  margin:
+    bottom: .4rem
+
+.our-team__members-tel, .our-team__members-social
+  font:
+    size: 14px
+  color: $accent-color
+  letter-spacing: -.02rem
+  margin:
+    bottom: .4rem
+
+.our-team__members-email, .our-team__members-tel, .our-team__members-social
+  +hoverOpacity
