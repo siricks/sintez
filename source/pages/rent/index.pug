@@ -1,0 +1,29 @@
+extends ../base/index
+include ../../components/teaser/index
+include ../../components/form/index
+include ../../components/header/index
+
+block title
+	| Аренда
+
+block header
+	+header({
+		white: false
+	})
+
+block content
+	+teaser({
+		title: 'АРЕНДА ЛЮБЫХ <br> ОЧКОВ VR И AR',
+		sectionClass: 'teaser_rent',
+		text: 'Более 100 единиц готового оборудования с бесплатной доставкой и настройкой. При необходимости предоставим профессионального администратора.',
+		teaserImgClass: 'teaser-img-4'
+	})
+	include ../../components/our-guarantees/index
+	include ../../components/additional-services/index
+	include ../../components/how-it-works/index
+	include ../../components/personnel/index
+	+form({
+		img: 1,
+		title: 'Получить предложение по аренде'
+	})
+	include ../../components/it-might-be-interesting/index

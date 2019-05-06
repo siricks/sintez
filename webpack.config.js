@@ -19,7 +19,8 @@ const path = require('path'),
 				'index': PATHS.src + '/pages/index/index.js',
 				'solutions': PATHS.src + '/pages/solutions/index.js',
 				'for-marketing': PATHS.src + '/pages/for-marketing/index.js',
-				'about': PATHS.src + '/pages/about/index.js'
+				'about': PATHS.src + '/pages/about/index.js',
+				'rent': PATHS.src + '/pages/rent/index.js'
 			},
 			output: {
 				publicPath: '',
@@ -58,6 +59,11 @@ const path = require('path'),
 					filename: 'about.html',
 					chunks: ['vendors', 'commons', 'about'],
 					template: PATHS.src + '/pages/about/index.pug'
+				}),
+				new HtmlWebpackPlugin({
+					filename: 'rent.html',
+					chunks: ['vendors', 'commons', 'rent'],
+					template: PATHS.src + '/pages/rent/index.pug'
 				})
 			],
 			optimization: {
@@ -71,7 +77,7 @@ const path = require('path'),
 						commons: {
 							name: 'commons',
 							chunks: 'initial',
-							minChunks: 4
+							minChunks: 5
 						}
 					}
 				}
