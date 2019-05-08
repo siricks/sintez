@@ -1,0 +1,17 @@
+mixin tiles(cnt)
+	.blog-tiles-wrapper
+		-for(var i = 0; i < cnt; i++)
+			.blog-tile
+				.blog-tile__img-wrapper
+					img.blog-tile__img(src=require(`../../components/blog-tiles/blog-tile.png`))
+				.blog-tile__content
+					.blog-tile__title Разработка домашнего VR-кинотеатра
+					.blog-tile__description Очки дополненной реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Очки дополненной реальности имеют не очень хорошую репутацию, когда реальности имеют не очень хорошую репутацию, когда речь заходит о конфиденциальности. Тем не менее, исследователи из....
+					.blog-tile__link
+						a(href="#").link Подробнее
+
+section.blog-tiles.wrapper.padding-top.padding-bottom
+	.wrapper__inner
+		+tiles(8)
+		.blog-tiles__link
+			a(href="#").btn.btn_accent Больше статей
