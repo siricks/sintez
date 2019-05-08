@@ -1,0 +1,22 @@
+extends ../base/index
+include ../../components/form/index
+include ../../components/header/index
+include ../../components/fancy-title/index
+
+block title
+	| Наши услуги
+
+block header
+	+header({
+		white: false,
+		active: 'services'
+	})
+	+fancyTitle({
+		title: 'Наши услуги',
+		white: false,
+		grayBorders: true,
+		additionalClass: 'our-services__fancy-title'
+	})
+	include ../../components/our-services/index
+
+block content

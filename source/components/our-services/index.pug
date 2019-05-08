@@ -1,0 +1,63 @@
+mixin services(services)
+	.our-services-wrapper
+		-for(var service of services)
+			.our-services__service
+				.our-services__service-icon-wrapper
+					+svgIco({
+						id: service.id,
+						className: 'our-services__service-icon'
+					})
+				.our-services__service-content
+					.our-services__service-title=service.title
+					.our-services__service-list
+						-for(var serviceItem of service.items)
+							.our-services__service-list-item=serviceItem
+
+section.our-services.wrapper.padding-top.padding-bottom
+	.our-services__wrapper-inner.wrapper__inner
+		+services([
+			{
+				title: 'для мероприятий',
+				id: 'fireworks',
+				items: [
+					'Аренда оборудования',
+					'Готовые решения для мероприятий'
+				]
+			},
+			{
+				title: 'отраслевые решения',
+				id: 'robot',
+				items: [
+					'Недвижимость',
+					'Производство',
+					'Обучение',
+					'Маркетинг'
+				]
+			},
+			{
+				title: 'разработкай',
+				id: 'man',
+				items: [
+					'VR-приложения',
+					'VR-игры',
+					'Видео 360°',
+					'Маркетинговые материалы',
+					'AR (дополненная реальность)',
+					'Нестандартные проекты'
+				]
+			},
+			{
+				title: 'разработкай',
+				id: 'megaphone',
+				items: [
+					'Для презентаций',
+					'Для развлечений',
+					'Для продаж',
+					'Демонстрация продукта',
+					'Создание инфоповода',
+					'AR (дополненная реальность)'
+				]
+			}
+		])
+	.our-services__ar-vr
+		include ../teaser/ar-vr.svg

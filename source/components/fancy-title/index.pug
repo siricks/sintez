@@ -1,6 +1,6 @@
 mixin fancyTitle(props)
-	-var {title, subtitle, white} = props
-	.fancy-title(class={'fancy-title_white': white})
+	-var {title, subtitle, white, grayBorders, additionalClass} = props
+	.fancy-title(class={'fancy-title_white': white, 'fancy-title_gray': grayBorders, 'fancy-title_without-subtitle' :!subtitle} class=additionalClass)
 		.fancy-title__content
 			h2.fancy-title__title.title=title
 			-if(subtitle)

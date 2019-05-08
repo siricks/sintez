@@ -25,6 +25,19 @@
   .fancy-title__title
     color: inherit
 
+.fancy-title_gray
+  &:after, &:before
+    background:
+      image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='758' height='110' fill='none'%3E%3Crect width='822' height='109' x='-64.5' y='.5' stroke='url(%23paint0_linear)' rx='54.5'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='726.808' x2='346.5' y1='110' y2='110' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23010101' stop-opacity='.36'/%3E%3Cstop offset='.848' stop-color='%23fff' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E")
+
+.fancy-title_without-subtitle
+  align-items: center
+  .fancy-title__content
+    width: 17rem
+  .fancy-title__title
+    margin:
+      bottom: 0
+
 .fancy-title__content
   width: 14rem
 
@@ -34,3 +47,7 @@
 
 .fancy-title__subtitle
   color: $gray-color
+
+.our-services__fancy-title
+  margin:
+    top: 6rem
