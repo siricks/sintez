@@ -1,0 +1,81 @@
+@import "../../styles/varialbes"
+
+.contact
+  background:
+    image: url('../../components/contact/contact.png')
+    size: cover
+    position: center
+    repeat: no-repeat
+  margin:
+    top: -9rem
+  padding:
+    top: 19rem
+    bottom: 10rem
+  position: relative
+  &:after
+    content: ''
+    background:
+      color: rgba(4, 5, 20, .66)
+    position: absolute
+    pointer-events: none
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+
+.contact__inner
+  display: flex
+  align-items: center
+
+.contact__contacts
+  position: relative
+  z-index: 1
+  display: flex
+  flex-flow: column
+  margin:
+    left: 5rem
+  color: #F2F2F2
+
+.contact__contact
+  display: flex
+  align-items: flex-start
+  flex-flow: column
+  &:not(:last-of-type)
+    margin:
+      bottom: 4rem
+
+.contact__contact-title
+  font:
+    size: 26px
+  text-transform: uppercase
+  margin:
+    bottom: 1rem
+
+.contact__contact-tel
+  color: #F2F2F2
+
+.contact__contact-address, .contact__contact-tel, .contact__contact-email
+  margin:
+    bottom: .6rem
+
+.contact__contact-text
+  line-height: 1.7
+
+.contact__contact-link
+  margin:
+    left: .3rem
+
+.contact__contact-socials
+  display: flex
+  align-items: center
+  margin:
+    top: 1rem
+
+.contact__contact-social-wrapper
+  +hoverOpacity
+  &:not(:last-of-type)
+    margin:
+      right: 2rem
+
+.contact__contact-social
+  fill: $accent-color

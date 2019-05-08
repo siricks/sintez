@@ -1,11 +1,14 @@
 include ../form-wrapper/index
 
 mixin form(props)
-	-var {img, title, opacity} = props
-	+form-wrapper(props)
+	-var {img, title, opacity, withoutWrapper, withoutWrapperTitle} = props
+	if(withoutWrapper)
 		form.form(class={'form_opacity': opacity})
 			fieldset.form__fieldset
-				legend.form__title Оставьте заявку, и мы свяжемся с вами
+				legend.form__title
+					if(withoutWrapperTitle)
+					.form__title_without-wrapper !{withoutWrapperTitle}
+					| Оставьте заявку, и мы свяжемся с вами
 					br
 					| в течение 5-ти минут!
 				input.form__input.input.input_name(placeholder="Имя")
@@ -13,3 +16,15 @@ mixin form(props)
 				input.form__input.input(type="email" placeholder="Email")
 				textarea.form__input.input.textarea(placeholder="Расскажите о проекте")
 				button.form__btn.btn.btn_accent Отправить
+	else
+		+form-wrapper(props)
+			form.form(class={'form_opacity': opacity})
+				fieldset.form__fieldset
+					legend.form__title Оставьте заявку, и мы свяжемся с вами
+						br
+						| в течение 5-ти минут!
+					input.form__input.input.input_name(placeholder="Имя")
+					input.form__input.input.input_tel(placeholder="Телефон")
+					input.form__input.input(type="email" placeholder="Email")
+					textarea.form__input.input.textarea(placeholder="Расскажите о проекте")
+					button.form__btn.btn.btn_accent Отправить

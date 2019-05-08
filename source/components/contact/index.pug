@@ -1,0 +1,60 @@
+mixin addresses(addresses)
+	-for(var _address of addresses)
+		-var {title, address, telHref, tel, email} = _address
+		.contact__contact
+			.contact__contact-title=title
+			.contact__contact-address=address
+			a(href=`tel:${telHref}`).contact__contact-tel.link.link_thin=tel
+			a(href=`mailto:${email}`).contact__contact-email.link.link_thin=email
+
+mixin social(socials)
+	.contact__contact-socials
+		-for(var social of socials)
+			-var {id} = social
+				a(href="#").contact__contact-social-wrapper
+					+svgIco({
+						id: id,
+						className: 'contact__contact-social'
+					})
+
+section.contact.wrapper
+	.contact__inner
+		+form({
+			withoutWrapperTitle: 'Свяжитесь с нами',
+			withoutWrapper: true
+		})
+		.contact__contacts
+			+addresses([
+				{
+					title: 'Москва',
+					address: 'Нижний Сусальный пер., дом 5, с. 4.',
+					tel: '+7 (495) 118-43-99',
+					telHref: '+74951184399',
+					email: 'start@sintezevent.ru',
+				},
+				{
+					title: 'САНКТ-ПЕТЕРБУРГ',
+					address: 'Обуховской обороны пр., 76, к. 4А',
+					tel: '+7 (812) 425-13-88 ',
+					telHref: '+78124251388',
+					email: 'start@sintezevent.ru',
+				}
+			])
+			.contact__contact
+				.contact__contact-text Есть особое предложение о сотрудничестве?
+					br
+					| Мы ждём вас!
+					a(href="mailto:kom@sintezevent.ru").link.link_thin.contact__contact-link kom@sintezevent.ru
+			.contact__contact
+				.contact__contact-text Подписывайтесь в соцсетях:
+				+social([
+					{
+						id: 'vk'
+					},
+					{
+						id: 'insta'
+					},
+					{
+						id: 'fb'
+					}
+				])

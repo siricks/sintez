@@ -1,0 +1,15 @@
+extends ../base/index
+include ../../components/form/index
+include ../../components/header/index
+
+block title
+	| Связаться
+
+block header
+	+header({
+		white: true,
+		active: 'contact'
+	})
+	include ../../components/contact/index
+
+block content
