@@ -1,0 +1,31 @@
+extends ../base/index
+include ../../components/teaser/index
+include ../../components/form/index
+include ../../components/header/index
+include ../../components/simple-form/index
+
+block title
+	| Блог
+
+block header
+	+header({
+		white: false
+	})
+
+block content
+	+teaser({
+		title: 'vr-блог',
+		withoutLinks: true,
+		sectionClass: 'teaser_form',
+		form: true,
+		teaserInnerClassName: 'teaser__inner_simple-form'
+	})
+		+simpleForm
+	include ../../components/solutions/index
+	include ../../components/for-marketing-solutions/index
+	include ../../components/for-marketing-development/index
+	+form({
+		img: 1,
+		title: 'Связаться с командой',
+		opacity: true
+	})

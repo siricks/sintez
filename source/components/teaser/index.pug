@@ -1,13 +1,21 @@
 mixin teaser(props)
-	-var {title, sectionClass, text, teaserImgClass} = props
+	-var {title, sectionClass, text, teaserImgClass, withoutLinks, form, teaserInnerClassName} = props
 	section.teaser.wrapper(class=sectionClass)
-		.teaser__inner.wrapper__inner
+		.teaser__inner.wrapper__inner(class=teaserInnerClassName)
 			.teaser__content
 				h1.title_big !{title}
-				p.teaser__content-text=text
-				.teaser__links
-					a.teaser__link.btn.btn_accent(href="/teaser") Рассчатать стоимость
-					a.teaser__link.btn.btn_white(href="/teaser") Получить презентацию
-			.teaser__img.teaser-right-img(class=teaserImgClass)
-		.teaser__img.teaser__ar-vr
-			include ar-vr.svg
+				if(text)
+					p.teaser__content-text=text
+				if(!withoutLinks)
+					.teaser__links
+						a.teaser__link.btn.btn_accent(href="/teaser") Рассчатать стоимость
+						a.teaser__link.btn.btn_white(href="/teaser") Получить презентацию
+			if(!form)
+				.teaser__img.teaser-right-img(class=teaserImgClass)
+			block
+		if(form)
+			.teaser__img.teaser__ar-vr.teaser__ar-vr_form
+				include ar-vr.svg
+		else
+			.teaser__img.teaser__ar-vr
+				include ar-vr.svg
