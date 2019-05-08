@@ -1,0 +1,36 @@
+extends ../base/index
+include ../../components/teaser/index
+include ../../components/form/index
+include ../../components/header/index
+
+block title
+	| Наши работы в VR/AR
+
+block header
+	+header({
+		white: false
+	})
+
+block content
+	+teaser({
+		title: 'наши работы <br> в vr/ar',
+		sectionClass: 'teaser_portfolio',
+		text: 'Рассказываем о наших самых интересных проектах с использованием виртуальной и дополненной реальности',
+		teaserImgClass: 'teaser-img-5'
+	})
+	include ../../components/our-guarantees/index
+	+form({
+		img: 1,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
+	include ../../components/examples/index
+	include ../../components/additional-services/index
+	include ../../components/how-it-works/index
+	include ../../components/personnel/index
+	+form({
+		img: 2,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
+	include ../../components/it-might-be-interesting/index
