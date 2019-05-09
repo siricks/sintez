@@ -10,32 +10,9 @@ mixin services(services)
 						})
 					.development-services__service-title=title
 
-section.development-services.wrapper.padding-top.padding-bottom
+mixin developmentServices(props)
+	-var {title, services} = props
+	section.development-services.wrapper.padding-top.padding-bottom
 		.wrapper__inner
-			h2.title Услуги по разаботке
-			+services([
-				{
-					title: 'VR-приложения',
-					id: 'man-vr'
-				},
-				{
-					title: 'VR-игры',
-					id: 'joystick'
-				},
-				{
-					title: 'Видео 360°',
-					id: 'man-video'
-				},
-				{
-					title: 'VR-презентации',
-					id: 'man-present'
-				},
-				{
-					title: 'AR (дополненная реальность)',
-					id: 'ar'
-				},
-				{
-					title: 'Нестандартные проекты',
-					id: 'unusual'
-				}
-			])
+			h2.title=title
+			+services(services)

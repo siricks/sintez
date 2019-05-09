@@ -3,6 +3,7 @@ include ../../components/form/index
 include ../../components/header/index
 include ../../components/teaser/index
 include ../../components/our-examples/index
+include ../../components/development-services/index
 
 block title
 	| Разработка
@@ -19,7 +20,35 @@ block content
 		text: 'Сделаем приложение и игру с использование виртуальной и дополненной реальности для любых задач вовремя и без головной боли',
 		teaserImgClass: 'teaser-img-5'
 	})
-	include ../../components/development-services/index
+	+developmentServices({
+		title: 'Услуги по разаботке',
+		services: [
+			{
+				title: 'VR-приложения',
+				id: 'man-vr'
+			},
+			{
+				title: 'VR-игры',
+				id: 'joystick'
+			},
+			{
+				title: 'Видео 360°',
+				id: 'man-video'
+			},
+			{
+				title: 'VR-презентации',
+				id: 'man-present'
+			},
+			{
+				title: 'AR (дополненная реальность)',
+				id: 'ar'
+			},
+			{
+				title: 'Нестандартные проекты',
+				id: 'unusual'
+			}
+		]
+	})
 	include ../../components/development-options/index
 	+sectionWithExamples({
 		title: 'ПРИМЕРЫ наших работ по разработке'

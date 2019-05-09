@@ -2,6 +2,7 @@ extends ../base/index
 include ../../components/header/index
 include ../../components/teaser/index
 include ../../components/industrial-tiles/index
+include ../../components/development-services/index
 
 block title
 	| Индустриальные решения
@@ -35,6 +36,35 @@ block content
 			{
 				title: 'Обучение',
 				id: 'idea'
+			}
+		]
+	})
+	+developmentServices({
+		title: 'ПРЕИМУЩЕСТВА VR',
+		services: [
+			{
+				title: 'Эффект присутствия',
+				id: 'location'
+			},
+			{
+				title: 'Полное погружение',
+				id: 'diving'
+			},
+			{
+				title: '100% симуляция ситуаций',
+				id: 'gears'
+			},
+			{
+				title: 'Взаимодействие с предметами',
+				id: 'interact'
+			},
+			{
+				title: 'Легкость в использовании',
+				id: 'feather'
+			},
+			{
+				title: 'Подключение доп. оборудования',
+				id: 'device'
 			}
 		]
 	})
