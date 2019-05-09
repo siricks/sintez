@@ -1,0 +1,41 @@
+mixin services(services)
+	.development-services-wrapper
+		-for(var service of services)
+			-var {title, id} = service
+				.development-services__service
+					.development-services__service-icon
+						+svgIco({
+							id: id,
+							className: 'development-services__icon'
+						})
+					.development-services__service-title=title
+
+section.development-services.wrapper.padding-top.padding-bottom
+		.wrapper__inner
+			h2.title Услуги по разаботке
+			+services([
+				{
+					title: 'VR-приложения',
+					id: 'man-vr'
+				},
+				{
+					title: 'VR-игры',
+					id: 'joystick'
+				},
+				{
+					title: 'Видео 360°',
+					id: 'man-video'
+				},
+				{
+					title: 'VR-презентации',
+					id: 'man-present'
+				},
+				{
+					title: 'AR (дополненная реальность)',
+					id: 'ar'
+				},
+				{
+					title: 'Нестандартные проекты',
+					id: 'unusual'
+				}
+			])
