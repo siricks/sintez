@@ -1,0 +1,57 @@
+extends ../base/index
+include ../../components/header/index
+include ../../components/teaser/index
+include ../../components/industrial-tiles/index
+include ../../components/form/index
+
+block title
+	| Ar
+
+block header
+	+header({
+		white: false
+	})
+
+block content
+	+teaser({
+		title: 'ДОПОЛНЕННАЯ <br> РЕАЛЬНОСТЬ (AR)',
+		sectionClass: 'teaser_for-marketing',
+		text: 'Технология совмещения и наложения виртуального мира на реальное окружение - в целях работы и развлечения',
+		teaserImgClass: 'teaser-img-3'
+	})
+	+industrialTiles({
+		title: 'ВОЗМОЖНОСТИ AR',
+		tiles: [
+			{
+				title: 'Развлечения:<br> квесты и игры, совмещающие две реальности',
+				id: 'balloons'
+			},
+			{
+				title: 'Обучение персонала:<br>  экономия на площадках, оборудовании, времени',
+				id: 'idea'
+			},
+			{
+				title: 'Продажи:<br>  презентации, взаимодействие с потребителем',
+				id: 'pig'
+			},
+			{
+				title: 'Маркетинг:<br>  от AR-флаеров до инфоповода',
+				id: 'thumbs-up'
+			},
+			{
+				title: 'Индустриальные решения:<br>  возможно применения практически в каждой отрасли',
+				id: 'production'
+			},
+			{
+				title: 'Для детей:<br>  книги, аттракционы, конструкторы, игрушки',
+				id: 'bear'
+			}
+		]
+	})
+	include ../../components/our-guarantees/index
+	+form({
+		img: 3,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
+	include ../../components/it-might-be-interesting/index

@@ -9,12 +9,12 @@ mixin tiles(tiles)
 							id: id,
 							className: 'industrial-tiles__tile-icon'
 						})
-					.industrial-tiles__tile-title=title
+					.industrial-tiles__tile-title !{title}
 				img.industrial-tiles__tile__image(src=require(`../../components/industrial-tiles/industrial-tiles.png`))
 
 mixin industrialTiles(props)
-	-var {title, tiles, paddingTop} = props
-	section.industrial-tiles.wrapper(class={'padding-top': paddingTop})
+	-var {title, tiles} = props
+	section.industrial-tiles.wrapper(class={'padding-top': title, 'industrial-tiles_with-title': title})
 		if(title)
 			.wrapper__inner
 				h2.title=title
