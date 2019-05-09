@@ -1,0 +1,42 @@
+mixin tiles(tiles)
+	.industrial-tiles__wrapper
+		-for(var tile of tiles)
+			-var {title, id} = tile
+			.industrial-tiles__tile
+				.industrial-tiles__tile-content
+					.industrial-tiles__tile-icon-wrapper
+						+svgIco({
+							id: id,
+							className: 'industrial-tiles__tile-icon'
+						})
+					.industrial-tiles__tile-title=title
+				img.industrial-tiles__tile__image(src=require(`../../components/industrial-tiles/industrial-tiles.png`))
+
+mixin industrialTiles(props)
+	-var {title, tiles} = props
+	section.industrial-tiles.wrapper
+		if(title)
+			.wrapper__inner
+				h2.title=title
+		+tiles(tiles)
+
++industrialTiles({
+	tiles: [
+		{
+			title: 'Недвижимость',
+			id: 'house'
+		},
+		{
+			title: 'Производство',
+			id: 'production'
+		},
+		{
+			title: 'Маркетинг',
+			id: 'thumbs-up'
+		},
+		{
+			title: 'Обучение',
+			id: 'idea'
+		}
+	]
+})
