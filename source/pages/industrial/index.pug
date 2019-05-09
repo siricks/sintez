@@ -3,6 +3,7 @@ include ../../components/header/index
 include ../../components/teaser/index
 include ../../components/industrial-tiles/index
 include ../../components/development-services/index
+include ../../components/form/index
 
 block title
 	| Индустриальные решения
@@ -69,3 +70,9 @@ block content
 		]
 	})
 	include ../../components/industrial-tiles-big/index
+	+form({
+		img: 3,
+		title: 'Получите презентацию',
+		subtitle: 'с решением для вашего мероприятия'
+	})
+	include ../../components/it-might-be-interesting/index
