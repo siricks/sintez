@@ -1,11 +1,13 @@
 @import "../../styles/varialbes"
 
-/*Наши примеры*/
+/*Варианты воплощений*/
 .implementation-options
   display: flex
   flex-flow: column
 
 .implementation-options__wrapper-inner
+  position: relative
+  z-index: 1
   text-align: center
   width: 100%
 
@@ -30,7 +32,7 @@
   align-items: center
   position: relative
   z-index: 1
-  padding: 5rem 0
+  padding: 4rem 0
 
 .implementation-option__title
   font:
@@ -60,6 +62,7 @@
     weight: 700
   margin:
     bottom: 1rem
+  position: relative
 
 .implementation-option__tile-description
   line-height: 1.3
@@ -67,13 +70,14 @@
 
 .implementation-option__tile-summary
   display: flex
+  width: 100%
   justify-content: space-between
-  margin: 1rem 0
+  align-items: flex-start
+  margin: 1rem 0 2rem
 
 .implementation-option__tile-summary-item
   display: flex
   align-items: center
-  width: 48%
 
 .implementation-option__tile-summary-item-icon
   fill: $accent-color
@@ -84,5 +88,48 @@
 
 .implementation-option__tile-summary-item-content
   line-height: 1.3
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    top: -.1rem
+    content: ''
+    width: 21px
+    height: 21px
+    pointer-events: none
+    background:
+      size: contain
+      position: center
+      repeat: no-repeat
 
-/*eo Наши примеры*/
+.implementation-option__tile-summary-item-content-list
+  display: flex
+  flex-flow: column
+
+.implementation-option__tile-summary-item-content-list-item
+  padding:
+    left: 1rem
+  position: relative
+  &:not(:last-of-type)
+    margin:
+      bottom: .5rem
+  &:before
+    content: '-'
+    position: absolute
+    left: 0
+
+.implementation-option__tile-summary-item-content_plus, .implementation-option__tile-summary-item-content_minus
+  padding:
+    left: 1.7rem
+
+.implementation-option__tile-summary-item-content_plus
+  &:after
+    background:
+      image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAAwFBMVEUAAADvSEjvUFDrTk7ySEjyTk7uSEjuTk7vTEzvTk7vSUnvTU3uS0vxTU3vTEzvS0vsSkrvSkrvTEztS0vtTk7vS0vxTU3vTEzvTEzvTk7vS0vvTU3xS0vxTU3vTEzwTEzuS0vvTEzvTEzuS0vvTEzuS0vvS0vvTEzwTEzvS0vvTEzuTEzvTEzvTEzvTU3wTU3vTEzvTEzvTEzvTEzuTEzvTEzuTEzvTEzuS0vvTEzvTEzwS0vwTEzvTEzvTEzvTEy/x1ueAAAAP3RSTlMAICAnJycuLi8+Pz9cXV5fYGBhYmJibW5vb4+Pj4+Ql5i1vb6/wsLCysvS09Pv7+/w8fL09fX29vf3+Pr6+/7eyDTkAAAAv0lEQVR42m2QxxKCQBAFnzmgoGCOoKOIYsIccP//rxwBWa2iD1P9+rS1CCkP3b24L8wCJBkSX6z0N6oHIXk0w1gR/6hg0n7gJ11rbQI75LhaIoBY7ViLQlaKvAQzoQ7g8F3bRD2ufSI68V7izrcDicF7B8FokNQ+AR4fHZI27ytcvmci6nMZEs23vB2MEt5gQkmo+Vhnsk5Yc+GPrbv1xiWwZwpMVfxjRF/p/7RjFRGpaRwpC0lh7Nxe3mqghPMN0oFAE6DRvmQAAAAASUVORK5CYII=)
+
+.implementation-option__tile-summary-item-content_minus
+  &:after
+    background:
+      image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAAjVBMVEUAAADvSEjvUFDsS0vuS0vuSkruT0/vTU3vTEzxTEzuS0vvS0vvTk7yTk7sSkrvSkrvTU3vTEzvTEzvTk7vS0vvTU3wTEzuTEzuS0vwTEzuS0vvTEzvTEzvS0vvS0vvTEzvTEzvTEzvTU3uS0vvTEzvTEzuTEzvTEzuTEzvTEzvS0vvTEzwTEzvTEzvTEwoNqxwAAAALnRSTlMAICApLC0tP0BbXF9fX2BgYGFvb4+PlpeYtre+v8vS0tPv7/Dw8fL29/f6+vz9g9f5TQAAAJdJREFUeAFlyNsOgjAQhOGBouIZFRSlFQ9SRXHf//HciM3G9ruYZH700uJ4o9aUAwilyTnELmaWRLfq45j+zcHit1cbBWBPPg0MKZSipFAOw3vW4sW/Rsu7hljyv4LYFGJBDNarG/53nHifWlz4GxQU2iGlUALoIFYAlPViF4FlXs3wNelI2Bl+ooocrSCSrXlQU+ej/n4AtSE01UJupnIAAAAASUVORK5CYII=)
+/*eo Варианты воплощений*/

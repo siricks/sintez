@@ -1,4 +1,5 @@
 import Swiper from 'swiper'
+import './index.sass'
 
 let swiperContainers = document.querySelectorAll('.swiper-container')
 

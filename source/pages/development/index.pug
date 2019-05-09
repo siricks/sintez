@@ -2,6 +2,7 @@ extends ../base/index
 include ../../components/form/index
 include ../../components/header/index
 include ../../components/teaser/index
+include ../../components/our-examples/index
 
 block title
 	| Разработка
@@ -19,3 +20,13 @@ block content
 		teaserImgClass: 'teaser-img-5'
 	})
 	include ../../components/development-services/index
+	include ../../components/development-options/index
+	+sectionWithExamples({
+		title: 'ПРИМЕРЫ наших работ по разработке'
+	})
+	include ../../components/reviews/index
+	+form({
+		img: 1,
+		title: 'Связаться с командой'
+	})
+	include ../../components/it-might-be-interesting/index
