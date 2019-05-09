@@ -10,14 +10,13 @@
   &:not(:last-of-type)
     margin:
       bottom: 7rem
-
-.our-examples__item_image-right
-  .our-examples__image
-    order: 1
-  .our-examples__content
-    margin:
-      left: 0
-      right: 3rem
+  &:nth-of-type(even)
+    .our-examples__image
+      order: 1
+    .our-examples__content
+      margin:
+        left: 0
+        right: 3rem
 
 .our-examples__content
   display: flex

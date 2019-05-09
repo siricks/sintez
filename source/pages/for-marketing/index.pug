@@ -2,6 +2,7 @@ extends ../base/index
 include ../../components/teaser/index
 include ../../components/form/index
 include ../../components/header/index
+include ../../components/our-examples/index
 
 block title
 	| VR/AR для маркетинга
@@ -20,7 +21,9 @@ block content
 	})
 	include ../../components/for-marketing-tiles/index
 	include ../../components/our-guarantees/index
-	include ../../components/for-marketing-examples/index
+	+sectionWithExamples({
+		title: 'ПРИМЕРЫ наших работ в маркетинге'
+	})
 	include ../../components/implementation-options/index
 	+form({
 		img: 3,

@@ -1,6 +1,6 @@
 mixin example(right)
-	.our-examples__item(class={'our-examples__item_image-right': right})
-		img.our-examples__image(src=require(`../../components/for-marketing-examples/for-marketing-example.png`))
+	.our-examples__item
+		img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
 		.our-examples__content
 			.our-examples__title VRкинотеатр для презентации автоконцерна GEELY
 			.our-examples__description
@@ -22,10 +22,12 @@ mixin example(right)
 					.our-examples__summary-item-content Что ещё мы могли бы сделать??<br>- Таймер на готовку пиццы?<br>- Яндекс.Карты
 			a.btn.btn_white(href="/example") Узнать больше
 
-section.for-marketing-examples.our-examples.wrapper.padding-top.padding-bottom
-	.wrapper__inner
-		h2.title ПРИМЕРЫ наших работ в маркетинге
-		.our-examples-wrapper
-			+example(true)
-			+example()
-			+example(true)
+mixin sectionWithExamples(props)
+	-var {title} = props
+	section.our-examples.wrapper.padding-top.padding-bottom
+		.wrapper__inner
+			h2.title=title
+			.our-examples-wrapper
+				+example
+				+example
+				+example
