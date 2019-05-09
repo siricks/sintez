@@ -1,0 +1,24 @@
+mixin tile(props)
+	-var {title} = props
+	.implementation-option__tile.industrial-tile
+		.implementation-option__tile-title=title
+		.implementation-option__tile-description Geely Auto Group - один из крупнейших мировых производителей автомобилей со штаб-квартирой в Китае. Компания продала 1,24 миллиона автомобилей за 2017 год и стремительно завоевывает российский авторынок.: синхронный показ 360 видео в виртуальной реальности, VR-кинотеатр, но в итоге пришли к идее создания VR-приложения Осенью 2018 года к нам обратились официальные представители Geely с интересным запросом.
+		a(href="/implementation").implementation-option__tile-link.btn.btn_white Начать обсуждение
+
+mixin option(cnt)
+	-for(var i = 0; i < cnt; i++)
+		.implementation-option.industrial-tile-option
+			h2.industrial-tile-option__title.title.title_white vr для производства
+			.implementation-option__content.wrapper__inner
+				.implementation-option__tiles
+					+tile({
+						title: 'Вариант 1 / На скорость'
+					})
+					+tile({
+						title: 'Вариант 2 / Большой проект'
+				})
+			img.industrial-tile-option__image(src=require(`../../components/industrial-tiles-big/industrial-tiles-big.png`))
+
+section.implementation-options.wrapper
+	.implementation-options-wrapper
+		+option(3)
