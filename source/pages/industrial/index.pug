@@ -1,0 +1,19 @@
+extends ../base/index
+include ../../components/header/index
+include ../../components/teaser/index
+
+block title
+	| Индустриальные решения
+
+block header
+	+header({
+		white: false
+	})
+
+block content
+	+teaser({
+		title: 'ВНЕДРЕНИЕ ПРОДУКТОВ С VR/AR <br> ДЛЯ КОНКРЕТНЫХ ОТРАСЛЕЙ',
+		sectionClass: 'teaser_rent',
+		text: 'Специализированные решения с использованием технологий виртуальной и дополненной реальности',
+		teaserImgClass: 'teaser-img-4'
+	})
