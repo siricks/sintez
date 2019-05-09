@@ -13,30 +13,9 @@ mixin tiles(tiles)
 				img.industrial-tiles__tile__image(src=require(`../../components/industrial-tiles/industrial-tiles.png`))
 
 mixin industrialTiles(props)
-	-var {title, tiles} = props
-	section.industrial-tiles.wrapper
+	-var {title, tiles, paddingTop} = props
+	section.industrial-tiles.wrapper(class={'padding-top': paddingTop})
 		if(title)
 			.wrapper__inner
 				h2.title=title
 		+tiles(tiles)
-
-+industrialTiles({
-	tiles: [
-		{
-			title: 'Недвижимость',
-			id: 'house'
-		},
-		{
-			title: 'Производство',
-			id: 'production'
-		},
-		{
-			title: 'Маркетинг',
-			id: 'thumbs-up'
-		},
-		{
-			title: 'Обучение',
-			id: 'idea'
-		}
-	]
-})
