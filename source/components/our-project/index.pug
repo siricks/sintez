@@ -1,0 +1,33 @@
+mixin items(items)
+	.our-project__items
+		-for (var item of items)
+			-var {id, title} = item
+			.our-project__item
+				.our-project__item-icon
+					+svgIco({
+						id: id,
+						className: 'our-project-icon'
+					})
+				.our-project__item-title !{title}
+
+section.our-project.wrapper.padding-top.padding-bottom
+	.our-project__inner.wrapper__inner
+		h2.title.title_white Наш проект: Sintez Club
+		.our-project__texts
+			p.our-project__text С целью продвижения технологий виртуальной и дополненной реальности в России, мы запустили в 2016 году VR-клуб в центре Санкт-Петербурга.
+			p.our-project__text Сейчас это самое популярное место в городе, где люди могут стать ближе к VR/AR. В этом году проект планирует выходить на федеральный уровень, так как интерес к сфере виртуальной реальности начинает стремительно увеличиваться.
+		+items([
+			{
+				id: 'first',
+				title: 'Самый первый <br>VR-клуб в России'
+			},
+			{
+				id: 'famous',
+				title: 'Самый популярный клуб <br> в Санкт-Петербурге'
+			},
+			{
+				id: 'book',
+				title: 'Отличная школа для <br> сотрудников Sintez Event'
+			}
+		])
+		a(href="").btn.btn_emerald На сайт клуба

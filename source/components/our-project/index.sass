@@ -1,0 +1,76 @@
+@import "../../styles/varialbes"
+
+.our-project
+  color: $white-color
+  background:
+    image: url('../../components/our-project/our-project.jpg')
+    size: cover
+    position: center
+  position: relative
+  padding:
+    top: 9rem
+  &:after
+    content: ''
+    background: linear-gradient(180deg, rgba(22, 7, 32, 0.87) 0%, rgba(13, 41, 67, 0.46) 100%)
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    pointer-events: none
+
+.our-project__inner
+  display: flex
+  flex-flow: column
+  align-items: center
+  position: relative
+  z-index: 1
+
+.our-project__items
+  display: flex
+  width: 100%
+  justify-content: space-between
+  margin:
+    top: 4.3rem
+    bottom: 2.5rem
+
+.our-project__item
+  display: flex
+  align-items: center
+  width: 33.33%
+
+.our-project__texts
+  display: flex
+  flex-flow: column
+  width: 662px
+
+.our-project__text
+  text-align: center
+  line-height: 1.5
+  & + .our-project__text
+    margin:
+      top: 1.3rem
+
+.our-project-icon
+  fill: $emerald-color
+  margin:
+    right: 1rem
+
+.first-ico
+  width: 64px
+  height: 65px
+
+.famous-ico
+  width: 64px
+  height: 65px
+
+.book-ico
+  width: 64px
+  height: 66px
+
+.our-project__item-title
+  font:
+    weight: 700
+    size: 20px
+  letter-spacing: -.02rem
+  line-height: 1.3
