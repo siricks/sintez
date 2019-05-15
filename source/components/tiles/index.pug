@@ -1,6 +1,6 @@
 mixin tiles(tiles)
 	-for(var tile of tiles)
-		.tiles__tile
+		a(href="#").tiles__tile
 			.tiles__tile-title !{tile.title}
 			img.tiles__tile-img(src=require(`../../components/tiles/${tile.image}.png`))
 

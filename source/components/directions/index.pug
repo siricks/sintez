@@ -1,0 +1,29 @@
+mixin items(items)
+	.directions__items
+		-for(var item of items)
+			-var {id, title} = item
+			.directions__item
+				.directions__item-icon
+					+svgIco({
+						id: id,
+						className: 'directions__icon'
+					})
+				.directions__item-title !{title}
+
+section.directions.wrapper.padding-top.padding-bottom
+	.wrapper__inner
+		h2.title.title_light Направления деятельности
+		+items([
+			{
+				id: 'headset',
+				title: 'АРЕНДА VR-ОБОРУДОВАНИЯ <br> (ВИРТУАЛЬНАЯ РЕАЛЬНОСТЬ)'
+			},
+			{
+				id: 'fireworks',
+				title: 'ГОТОВЫЕ РЕШЕНИЯ <br> ДЛЯ МЕРОПРИЯТИЙ'
+			},
+			{
+				id: 'augmented-reality',
+				title: 'РАЗРАБОТКА VR/AR <br> ПРИЛОЖЕНИЙ И ИГР'
+			}
+		])

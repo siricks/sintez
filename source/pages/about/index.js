@@ -4,6 +4,7 @@ import '../base'
  */
 import '../../components/about'
 import '../../components/fancy-title'
+import '../../components/directions'
 import '../../components/our-team'
 import '../../components/our-customers'
 import '../../components/how-it-works'

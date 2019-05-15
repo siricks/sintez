@@ -81,7 +81,6 @@
 
 .implementation-option__tile-summary-item
   display: flex
-  align-items: center
 
 .implementation-option__tile-summary-item-icon
   fill: $accent-color
@@ -93,6 +92,8 @@
 .implementation-option__tile-summary-item-content
   line-height: 1.3
   position: relative
+  padding:
+    top: .7rem
   &:after
     display: block
     position: absolute
@@ -117,7 +118,7 @@
   position: relative
   &:not(:last-of-type)
     margin:
-      bottom: .5rem
+      bottom: .3rem
   &:before
     content: '-'
     position: absolute

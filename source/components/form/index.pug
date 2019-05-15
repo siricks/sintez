@@ -11,9 +11,9 @@ mixin form(props)
 					| Оставьте заявку, и мы свяжемся с вами
 					br
 					| в течение 5-ти минут!
-				input.form__input.input.input_name(placeholder="Имя")
-				input.form__input.input.input_tel(placeholder="Телефон")
-				input.form__input.input(type="email" placeholder="Email")
+				input.form__input.input.input_name(placeholder="Имя" required)
+				input.form__input.input.input_tel(placeholder="Телефон" required)
+				input.form__input.input(type="email" placeholder="Email" required)
 				textarea.form__input.input.textarea(placeholder="Расскажите о проекте")
 				button.form__btn.btn.btn_accent Отправить
 	else
@@ -23,8 +23,8 @@ mixin form(props)
 					legend.form__title Оставьте заявку, и мы свяжемся с вами
 						br
 						| в течение 5-ти минут!
-					input.form__input.input.input_name(placeholder="Имя")
-					input.form__input.input.input_tel(placeholder="Телефон")
-					input.form__input.input(type="email" placeholder="Email")
+					input.form__input.input.input_name(placeholder="Имя" required)
+					input.form__input.input.input_tel(placeholder="Телефон" required)
+					input.form__input.input(type="email" placeholder="Email" required)
 					textarea.form__input.input.textarea(placeholder="Расскажите о проекте")
 					button.form__btn.btn.btn_accent Отправить
