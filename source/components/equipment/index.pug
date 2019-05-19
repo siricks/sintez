@@ -1,24 +1,32 @@
-mixin equipments(cnt)
+mixin equipments(props)
+	-var {equipments} = props
 	.equipment__list
-		-for(var i = 0; i < cnt; i++)
-			.equipment-list-item(class={'equipment-list-item_image-right': i%2===1})
-				.equipment-list-item__wrapper-inner.wrapper__inner
+		-for(var equipment of equipments)
+			-var {title, descriptionItems, set, background} = equipment
+			.equipment-list-item
+				.equipment-list-item__wrapper-inner
 					.equipment-list-item-image-wrapper
-						img.equipment-list-item-image(src=require(`../../components/equipment/equipment.png`))
+						case background
+							when 'vive'
+								img.equipment-list-item-image(src=require(`../../components/equipment/vive.png`))
+							when 'rift'
+								img.equipment-list-item-image(src=require(`../../components/equipment/rift.png`))
+							when 'go'
+								img.equipment-list-item-image(src=require(`../../components/equipment/go.png`))
+							when 'pro'
+								img.equipment-list-item-image(src=require(`../../components/equipment/pro.png`))
+							when 'set'
+								img.equipment-list-item-image(src=require(`../../components/equipment/set.png`))
 					.equipment-list-item-content
-						.equipment-list-item-title HTC VIVE
+						.equipment-list-item-title=title
 						.equipment-list-item-description
-							p.equipment-list-item-description-item Это совместное детище компаний HTC и Valve - самый популярный шлем виртуальной реальности из представленных на рынке, для него создано более 1 000 приложений и игр.
-							p.equipment-list-item-description-item Отличное изображение с обзором в 110° полностью погружает в виртуальный мир, а удобные и надёжные контроллеры шлема служат надёжными посредниками между игрой в VR и вашим материальным телом.
-							p.equipment-list-item-description-item Разработка под Vive является наиболее популярной у разработчиков VR-контента - поэтому стоит выбрать именно этот шлем, если вы хотите запускать свою собственную или специально разработанную VR-игру.
+							-for(var descriptionItem of descriptionItems)
+								p.equipment-list-item-description-item=descriptionItem
 						.equipment-list-item-set
 							.equipment-list-item-set-title В комплекте:
 							ul.equipment-list-item-set-list
-								li.equipment-list-item-set-list-item 2 джойстика
-								li.equipment-list-item-set-list-item Датчики движения
-								li.equipment-list-item-set-list-item Игровая станция
-								li.equipment-list-item-set-list-item Экран 42”
-								li.equipment-list-item-set-list-item Аниматор
+								-for(var setItem of set)
+									li.equipment-list-item-set-list-item=setItem
 						.equipment-list-item-links
 							a(href="#").btn.btn_accent.equipment-list-item-link Заказать
 							a(href="#").btn.btn_white.equipment-list-item-link Получить презентацию
@@ -26,4 +34,83 @@ mixin equipments(cnt)
 section.equipment.wrapper
 	.equipment__inner.wrapper__inner
 		h2.title Оборудование
-	+equipments(5)
+	+equipments({
+		equipments: [
+			{
+				title: 'HTC VIVE',
+				background: 'vive',
+				descriptionItems: [
+					'Это совместное детище компаний HTC и Valve - самый популярный шлем виртуальной реальности из представленных на рынке, для него создано более 1000 приложений и игр.',
+					'Отличное изображение с обзором в 110° полностью погружает в виртуальный мир, а удобные и надёжные контроллеры шлема служат надёжными посредниками между игрой в VR и вашим материальным телом.',
+					'Разработка под Vive является наиболее популярной у разработчиков VR-контента - поэтому стоит выбрать именно этот шлем, если вы хотите запускать свою собственную или специально разработанную VR-игру.'
+				],
+				set: [
+					'2 джойстика',
+					'Датчики движения',
+					'Игровая станция',
+					'Экран 42”',
+					'Аниматор'
+				]
+			},
+			{
+				title: 'Oculus Rift CV1',
+				background: 'rift',
+				descriptionItems: [
+					'Пионер рынка VR. Не просто просмотр видео, как в картонных «виртуальных очках», а полноценная игровая приставка. Высокое качество изображения.',
+					'Малый вес и анатомичные джойстики - этот шлем особенно комфортен для детей. Среди других особенностей Rift CV1 - эксклюзивные приложения и самая компактная, среди похожих шлемов, игровая зона: вы можете разместиться на площадке всего 2х2 м.'
+				],
+				set: [
+					'2 джойстика',
+					'Датчики движения',
+					'Игровая станция',
+					'Экран 42”',
+					'Аниматор'
+				]
+			},
+			{
+				title: 'Oculus Go',
+				background: 'go',
+				descriptionItems: [
+					'Новый шлем виртуальной реальности от дочерней компании Facebook. Oculus Go идеально подходит для простых игр, презентаций, визуальных приключений и маркетинговых задач.',
+					'Шлем полностью автономен: для него не требуется отдельный компьютер, провода тоже отсутствуют. Лучшее решение для больших мероприятий, когда необходимо охватить большой поток людей на очень ограниченном пространстве.'
+				],
+				set: [
+					'Джойстик',
+					'Аниматор'
+				]
+			},
+			{
+				title: 'HTC Vive PRO',
+				background: 'pro',
+				descriptionItems: [
+					'Vive Pro стал главной сенсацией 2018 года на рынке виртуальной реальности, сочетая в себе возможность беспроводного подключения и качество изображения: оно на 78% лучше, чем у HTC Vive.',
+					'Шлем изначально создавался для решения бизнес-задач, таких как интерактивные презентации, выставки, симуляции, работа в маркетинг-сегменте.',
+					'Но это не исключает и его расширенный игровой потенциал: более 1000 приложений и игр.'
+				],
+				set: [
+					'2 джойстика',
+					'Датчики движения',
+					'Игровая станция',
+					'Экран 42”',
+					'Аниматор'
+				]
+			},
+			{
+				title: 'Гоночный комплект',
+				background: 'set',
+				descriptionItems: [
+					'Интересная комбинация для особого опыта в виртуальной реальности. Мы используем компактное и максимально приближенное к сиденьям спортивное кресло и один из лучших рулей для гонок.',
+					'Добавьте к этому VR-шлем и погружение в гонку будет максимальным. Комплект подойдёт для праздников, впишется в авто-презентации и демонстрации, станет интересным приключением на фестивалях. А если поставить сразу несколько комплектов - получится настоящий турнир между гостями!'
+				],
+				set: [
+					'HTC Vive PRO',
+					'Гоночный руль Logitech G29',
+					'Гоночное кресло',
+					'Датчики движения',
+					'Игровая станция',
+					'Экран 42”',
+					'Аниматор'
+				]
+			}
+		]
+	})

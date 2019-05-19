@@ -21,22 +21,10 @@
   justify-content: center
   overflow: hidden
   position: relative
+  min-height: 410px
   margin:
     bottom: 6rem
-
-.equipment-list-item_image-right
-  .equipment-list-item-image-wrapper
-    order: 1
-    &:before
-      left: auto
-      right: -12rem
-
-.equipment-list-item__wrapper-inner
-  display: flex
-  justify-content: space-between
-
-
-.equipment-list-item-image-wrapper
+  padding: 0 13%
   &:before
     content: ''
     position: absolute
@@ -48,6 +36,31 @@
     background:
       color: #F0F3F7
     width: 50%
+  &:nth-of-type(even)
+    &:before
+      left: auto
+      right: -12rem
+    .equipment-list-item__wrapper-inner
+      margin:
+        right: -8rem
+        left: 0
+    .equipment-list-item-image-wrapper
+      order: 1
+    .equipment-list-item-content
+      margin:
+        left: 0
+        right: 5rem
+
+.equipment-list-item__wrapper-inner
+  display: flex
+  width: 100%
+  max-width: 1280px
+  margin:
+    left: -8rem
+
+.equipment-list-item-image-wrapper
+  display: flex
+  align-items: center
 
 .equipment-list-item-image
   position: relative
@@ -58,7 +71,7 @@
   position: relative
   z-index: 1
   display: flex
-  flex: 1
+  width: 545px
   flex-flow: column
   margin:
     left: 5rem
