@@ -1,39 +1,60 @@
 mixin tile(props)
-	-var {title} = props
+	-var {title, description, pluses, minuses} = props
 	.implementation-option__tile
 		.implementation-option__tile-title=title
-		.implementation-option__tile-description Geely Auto Group - один из крупнейших мировых производителей автомобилей со штаб-квартирой в Китае. Компания продала 1,24 миллиона автомобилей за 2017 год и стремительно завоевывает российский авторынок.: синхронный показ 360 видео в виртуальной реальности, VR-кинотеатр, но в итоге пришли к идее создания VR-приложения Осенью 2018 года к нам обратились официальные представители Geely с интересным запросом.
+		.implementation-option__tile-description=description
 		.implementation-option__tile-summary
 			.implementation-option__tile-summary-item
 				.implementation-option__tile-summary-item-content.implementation-option__tile-summary-item-content_plus
 					.implementation-option__tile-title Плюсы
 					ul.implementation-option__tile-summary-item-content-list
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
+						-for(var plus of pluses)
+							li.implementation-option__tile-summary-item-content-list-item=plus
 			.implementation-option__tile-summary-item
 				.implementation-option__tile-summary-item-content.implementation-option__tile-summary-item-content_minus
 					.implementation-option__tile-title Минусы
 					ul.implementation-option__tile-summary-item-content-list
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
-						li.implementation-option__tile-summary-item-content-list-item Таймер на готовку пиццы
+						-for(var minus of minuses)
+							li.implementation-option__tile-summary-item-content-list-item=minus
 		a(href="/implementation").implementation-option__tile-link.btn.btn_white Начать обсуждение
 
-mixin option(cnt)
-	-for(var i = 0; i < cnt; i++)
-		.implementation-option
-			.implementation-option__content.wrapper__inner
-				.implementation-option__tiles
-					+tile({
-						title: 'Вариант 1 / На скорость'
-					})
-					+tile({
-						title: 'Вариант 2 / Большой проект'
-					})
+mixin option(props)
+	-var {tiles} = props
+	.implementation-option
+		.implementation-option__content.wrapper__inner
+			.implementation-option__tiles
+				-for(var tile of tiles)
+					+tile(tile)
 
 section.development-options.implementation-options.wrapper
 	.implementation-options__wrapper-inner.wrapper__inner
 		h2.title.title_white Варианты воплощения
 	.implementation-options-wrapper
-		+option(1)
+		+option({
+			tiles: [
+				{
+					title: 'Вариант 1 / На скорость',
+					description: 'Используем готовые наработки для сохранения бюджета и экономии времени. Данный вариант возможен в случаях, когда приложение не требует сложного и уникального функционала, а техническое задание полностью готово для проекта. Чтобы успешно реализовать проект в кратчайшие сроки, необходимо оперативное взаимодействие с заказчиком по всем вопросам.',
+					pluses: [
+						'Экономим бюджет',
+						'Делаем быстро'
+					],
+					minuses: [
+						'Узкий функционал',
+						'Сложно развивать'
+					]
+				},
+				{
+					title: 'Вариант 2 / Большой проект',
+					description: 'Проекты с виртуальной и дополненной реальности любого уровня сложности. Возможность реализовать самые смелые идеи с использованием современных технологий. Сложные и нестандартные проекты требуют времени, а для создания уникальных WOW- эффектов требуется бюджет. Но именно такой подход позволяет создавать настоящие шедевры.',
+					pluses: [
+						'Крутой продукт',
+						'Уникальный функционал'
+					],
+					minuses: [
+						'Не быстро',
+						'Нужен бюджет'
+					]
+				}
+			]
+		})
