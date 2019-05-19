@@ -1,21 +1,31 @@
 @import "../../styles/varialbes"
 
 .our-examples
+  flex-flow: column
   title
+    width: 100%
+    text-align: center
     margin:
       bottom: 4rem
 
 .our-examples-wrapper
   display: flex
   flex-flow: column
+  align-items: center
+  margin:
+    top: 2.2rem
 
 .our-examples__item
   display: flex
   align-items: flex-start
+  padding: 0 130px
+  width: 100%
+  max-width: 1920px
   &:not(:last-of-type)
     margin:
       bottom: 7rem
   &:nth-of-type(even)
+    justify-content: flex-end
     .our-examples__image
       order: 1
     .our-examples__content
@@ -24,19 +34,19 @@
         right: 3rem
 
 .our-examples__content
-  flex: 1
+  width: 694px
   display: flex
   flex-flow: column
   align-items: flex-start
   margin:
-    left: 3rem
+    left: 3.7rem
 
 .our-examples__title
   font:
     size: 26px
 
 .our-examples__image
-  max-width: 550px
+  max-width: 655px
 
 .our-examples__description
   width: 100%

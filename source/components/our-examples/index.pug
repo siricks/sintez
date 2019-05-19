@@ -1,33 +1,28 @@
-mixin example(right)
-	.our-examples__item
-		img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
-		.our-examples__content
-			.our-examples__title VRкинотеатр для презентации автоконцерна GEELY
-			.our-examples__description
-				p.our-examples__description-item Geely Auto Group - один из крупнейших мировых производителей автомобилей со штаб-квартирой в Китае. Компания продала 1,24 миллиона автомобилей за 2017 год и стремительно завоевывает российский авторынок.: синхронный показ 360 видео в виртуальной реальности, VR-кинотеатр, но в итоге пришли к идее создания VR-приложения Осенью 2018 года к нам обратились официальные представители Geely с интересным запросом.
-				p.our-examples__description-item Задача: создать VR-кинотеатр с использованием 50-ти шлемов виртуальной реальности в московском дилерском центре автобренда. 26 сентября 2018 года состоялось важное для автоконцерна Geely событие под названием «В десятку»: одновременное открытие 10-ти дилерских центров по всей России: в Москве, Санкт-Петербурге, Московской области, Брянске, Воронеже, Рязани, Йошкар-Оле, Ижевске и Сургуте.
-				p.our-examples__description-item Для реализации проекта мы использовали шлемы Oculus Go. Мы остановились именно на этой марке, так как это беспроводной шлем, которому не требуется внешнее оборудование для воспроизведения видеоконтента. Oculus Go с легкостью воспроизводит видео формата 360° в разрешении 4K, и обращаться с ним проще, чем с любым современным смартфоном. Важным достоинством Oculus Go является его небольшой вес, что очень удобно для транспортировки. Поэтому целый VR-кинотеатр поместился в легковом автомобиле :)v
-			.our-examples__summary
-				.our-examples__summary-item
-					+svgIco({
-						id: 'timer',
-						className: 'our-examples__summary-item-icon'
-					})
-					.our-examples__summary-item-content Как долго мы это создавали? На согласование, разработку и обкатку - 2 месяца
-				.our-examples__summary-item
-					+svgIco({
-						id: 'lamp',
-						className: 'our-examples__summary-item-icon'
-					})
-					.our-examples__summary-item-content Что ещё мы могли бы сделать??<br>- Таймер на готовку пиццы?<br>- Яндекс.Карты
-			a.btn.btn_white(href="/example") Узнать больше
-
 mixin sectionWithExamples(props)
-	-var {title} = props
+	-var {examples, title} = props
 	section.our-examples.wrapper.padding-bottom
-		.wrapper__inner
-			h2.title=title
-			.our-examples-wrapper
-				+example
-				+example
-				+example
+		h2.title=title
+		.our-examples-wrapper
+			-for(var example of examples)
+				-var {exampleTitle, descriptionItems, summaryItemLeft, summaryItemRight} = example
+				.our-examples__item
+					img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
+					.our-examples__content
+						.our-examples__title=exampleTitle
+						.our-examples__description
+							-for(var descriptionItem of descriptionItems)
+								p.our-examples__description-item !{descriptionItem}
+						.our-examples__summary
+							.our-examples__summary-item
+								+svgIco({
+									id: 'timer',
+									className: 'our-examples__summary-item-icon'
+								})
+								.our-examples__summary-item-content !{summaryItemLeft}
+							.our-examples__summary-item
+								+svgIco({
+									id: 'lamp',
+									className: 'our-examples__summary-item-icon'
+								})
+								.our-examples__summary-item-content !{summaryItemRight}
+						a.btn.btn_white(href="/example") Узнать больше
