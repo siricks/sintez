@@ -1,14 +1,66 @@
 include ../tile/index
 
-mixin tiles(cnt)
+mixin tiles(props)
+	-var {tiles} = props
 	.tiles
-		-for(var i = 0; i < cnt; i++)
+		-for(var tile of tiles)
+			-var {title, image} = tile
 			+tile({
-				title: 'Grid Dynamics'
+				title: title
 			})
-				img.tile__img(src=require(`../../components/solutions/solutions.png`))
+				img.tile__img(src=require(`../../components/solutions/solutions-${image}.jpg`))
 
 section.solutions.wrapper.padding-top
 	.solutions__wrapper-inner.wrapper__inner
 		h2.title Решения для мероприятий
-	+tiles(12)
+	+tiles({
+		tiles: [
+			{
+				title: 'Grid Dynamics',
+				image: '1'
+			},
+			{
+				title: 'AVA Expo',
+				image: '2'
+			},
+			{
+				title: 'Форум компании “Анкор”',
+				image: '3'
+			},
+			{
+				title: 'Borenius',
+				image: '4'
+			},
+			{
+				title: 'Конференция “Sold Out”',
+				image: '5'
+			},
+			{
+				title: 'Digitale',
+				image: '6'
+			},
+			{
+				title: 'Porsche',
+				image: '7'
+			},
+			{
+				title: '“Илим”',
+				image: '8'
+			},
+			{
+				title: 'Linxdatecenter',
+				image: '9'
+			},
+			{
+				title: 'SEMrush',
+				image: '10'
+			}, {
+				title: 'МТС',
+				image: '11'
+			}
+			, {
+				title: 'День героев',
+				image: '12'
+			}
+		]
+	})

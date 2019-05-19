@@ -1,7 +1,8 @@
-mixin tiles(tiles)
+mixin tiles(props)
+	-var {tiles} = props
 	.industrial-tiles__wrapper
 		-for(var tile of tiles)
-			-var {title, id} = tile
+			-var {title, id, image} = tile
 			.industrial-tiles__tile
 				.industrial-tiles__tile-content
 					.industrial-tiles__tile-icon-wrapper
@@ -10,12 +11,12 @@ mixin tiles(tiles)
 							className: 'industrial-tiles__tile-icon'
 						})
 					.industrial-tiles__tile-title !{title}
-				img.industrial-tiles__tile__image(src=require(`../../components/industrial-tiles/industrial-tiles.png`))
+				img.industrial-tiles__tile__image(src=require(`../../components/${image}`))
 
 mixin industrialTiles(props)
-	-var {title, tiles} = props
-	section.industrial-tiles.wrapper(class={'padding-top': title, 'industrial-tiles_with-title': title})
+	-var {title, className} = props
+	section.industrial-tiles.wrapper(class={'padding-top': title, 'industrial-tiles_with-title': title} class=className||'')
 		if(title)
 			.wrapper__inner
 				h2.title=title
-		+tiles(tiles)
+		+tiles(props)

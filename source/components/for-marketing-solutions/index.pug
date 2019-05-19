@@ -1,14 +1,44 @@
 include ../tile/index
 
-mixin tiles(cnt)
+mixin tiles(props)
+	-var {tiles} = props
 	.tiles
-		-for(var i = 0; i < cnt; i++)
+		-for(var tile of tiles)
+			-var {title, image} = tile
 			+tile({
-				title: 'Grid Dynamics'
+				title: title
 			})
-				img.tile__img(src=require(`../../components/solutions/solutions.png`))
+				img.tile__img(src=require(`../../components/for-marketing-solutions/for-marketing-solution-${image}.jpg`))
+
 
 section.for-marketing-solutions.wrapper.padding-top
 	.for-marketing-solutions__wrapper-inner.wrapper__inner
 		h2.title vr/ar для маркетинга
-	+tiles(6)
+	+tiles({
+		tiles: [
+			{
+				title: 'Презентация Porsche',
+				image: '1'
+			},
+			{
+				title: 'VR-кинотеатр для Geely',
+				image: '2'
+			},
+			{
+				title: 'VR-мэппинг на Фестивале Огня',
+				image: '3'
+			},
+			{
+				title: 'VR/AR для маркетинга',
+				image: '4'
+			},
+			{
+				title: 'Разработка приложений и игр',
+				image: '5'
+			},
+			{
+				title: 'AR (дополненная реальность)',
+				image: '6'
+			},
+		]
+	})
