@@ -1,17 +1,86 @@
-mixin members(cnt)
+mixin members(props)
+	-var {members} = props
 	.our-team__members
-		-for(var i = 0; i < cnt; i++)
+		-for(var member of members)
+			-var {name, background, position, email, telHref, tel, socialHref, social} = member
 			.our-team__member
 				.our-team__members-image-wrapper
-					img.our-team__members-image(src=require(`../../components/our-team/member.jpg`) alt="")
-				.our-team__members-name Николай
-				.our-team__members-position директор, соучредитель
-				a(href="mailto:start@sintezevent.ru").our-team__members-email start@sintezevent.ru
-				if(i%2 === 1)
-					a(href="tel:+7***********").our-team__members-tel +7***********
-				a(href="https://www.facebook.com/anisimovstory").our-team__members-social fb.com/anisimovstory
+					case background
+						when 'nikolay'
+							img.our-team__members-image(src=require(`../../components/our-team/nikolay.png`) alt=name)
+						when 'dimitry'
+							img.our-team__members-image(src=require(`../../components/our-team/dimitry.png`) alt=name)
+						when 'nikita'
+							img.our-team__members-image(src=require(`../../components/our-team/nikita.png`) alt=name)
+						when 'vlad'
+							img.our-team__members-image(src=require(`../../components/our-team/vlad.png`) alt=name)
+						when 'ivan'
+							img.our-team__members-image(src=require(`../../components/our-team/ivan.png`) alt=name)
+						when 'alexander'
+							img.our-team__members-image(src=require(`../../components/our-team/alexander.png`) alt=name)
+
+				.our-team__members-name=name
+				.our-team__members-position=position
+				a(href=`mailto:${email}`).our-team__members-email=email
+				if(tel)
+					a(href=`tel:${telHref}`).our-team__members-tel=tel
+				if(social)
+					a(href=socialHref target='_blank').our-team__members-social=social
 
 section.our-team.wrapper
 	.wrapper__inner
 		h2.title.title_white Наша команда
-		+members(7)
+		+members({
+			members: [
+				{
+					name: 'Николай Анисимов',
+					background: 'nikolay',
+					position: 'Генеральный директор',
+					email: 'anisimov@sintezevent.ru',
+					socialHref: 'https://www.facebook.com/anisimovstory',
+					social: 'fb.com/anisimovstory'
+				},
+				{
+					name: 'Дмитрий Человьян',
+					background: 'dimitry',
+					position: 'Исполнительный директор',
+					email: 'chelov@sintezevent.ru',
+					telHref: '+79219468712',
+					tel: '+7-921-946-87-12',
+					socialHref: 'https://www.facebook.com/dmitriy.chelovyan.7',
+					social: 'fb.com/dmitriy.chelovyan.7'
+				},
+				{
+					name: 'Никита Олейник',
+					background: 'nikita',
+					position: 'Аккаунт-менеджер',
+					email: 'oleynik@sintezevent.ru',
+					telHref: '+79213666458',
+					tel: '+7-921-366-64-58',
+					socialHref: 'https://www.facebook.com/oleynik.nik.se',
+					social: 'fb.com/oleynik.nik.se'
+				},
+				{
+					name: 'Влад Каныгин',
+					background: 'vlad',
+					position: 'Маркетолог',
+					email: 'kan@sintezevent.ru',
+					telHref: '+79137541722',
+					tel: '+7-913-754-17-22',
+					socialHref: 'https://www.facebook.com/vladkan.ru',
+					social: 'fb.com/vladkan.ru'
+				},
+				{
+					name: 'Иван Кузнецов',
+					background: 'ivan',
+					position: 'Администратор',
+					email: 'ivan@sintez.club'
+				},
+				{
+					name: 'Александр Ланшаков',
+					background: 'alexander',
+					position: 'Администратор',
+					email: 'lanshakov@sintezevent.ru'
+				}
+			]
+		})
