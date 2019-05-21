@@ -4,8 +4,10 @@ body
   font:
     size: 16px
     family: 'Rubik', sans-serif
-  min-width: $min-width
+  min-width: $width-mobile
   transition: opacity $common-transition-duration
+  +media-query($width-desktop)
+    min-width: $width-desktop
 
 .d-none
   display: none
@@ -64,8 +66,10 @@ input, textarea
   overflow: hidden
 
 .wrapper__inner
-  width: $min-width
+  width: $width-mobile
   padding: 0 20px
+  +media-query($width-desktop)
+    width: $width-desktop
 
 .title
   text-transform: uppercase
