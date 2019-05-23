@@ -5,15 +5,20 @@
   z-index: 1
   margin:
     top: 4.6rem
+  display: none
+  +media-query($desktop)
+    display: flex
 
 .header_white
   .header__nav-list, .header__tel
     color: $white-color
 
 .header__logo-wrapper
-  margin:
-    right: 2.95rem
-  width: 180px
+  width: 155px
+  +media-query($desktop)
+    width: 180px
+    margin:
+      right: 2.95rem
 
 .header__logo
   width: 100%
@@ -21,7 +26,9 @@
 .header__inner
   display: flex
   align-items: center
-  justify-content: space-between
+  justify-content: center
+  +media-query($desktop)
+    justify-content: space-between
 
 .header__side-left
   margin:
@@ -30,11 +37,16 @@
 .header__side
   display: flex
   align-items: center
+  justify-content: center
+  +media-query($desktop)
+    justify-content: flex-start
 
 .header__nav
-  display: flex
+  display: none
   padding:
     bottom: .8rem
+  +media-query($desktop)
+    display: flex
 
 .header__nav-list
   display: flex
@@ -55,11 +67,13 @@
     color: $accent-color
 
 .header__tel
-  display: flex
+  display: none
   flex-flow: column
   margin:
     right: 2rem
   letter-spacing: .05rem
+  +media-query($desktop)
+    display: flex
 
 .header__tel-item
   margin:
@@ -68,4 +82,9 @@
   &:last-of-type
     margin:
       bottom: 0
+
+.header__proposal
+  display: none
+  +media-query($desktop)
+    display: flex
 /*eo header*/

@@ -4,10 +4,10 @@ body
   font:
     size: 16px
     family: 'Rubik', sans-serif
-  min-width: $width-mobile
+  min-width: $mobile
   transition: opacity $common-transition-duration
-  +media-query($width-desktop)
-    min-width: $width-desktop
+  +media-query($desktop)
+    min-width: $desktop
 
 .d-none
   display: none
@@ -20,13 +20,20 @@ body
   align-items: center
   justify-content: center
   font:
+    size: 12px
     weight: 400
   color: $white-color
   +border-radius
   cursor: pointer
   +hoverOpacity
-  height: 48px
-  padding: 0 1.145rem
+  height: 32px
+  width: 156px
+  +media-query($desktop)
+    width: auto
+    padding: 0 1.145rem
+    height: 48px
+    font:
+      size: inherit
 
 .btn_accent
   background:
@@ -66,10 +73,10 @@ input, textarea
   overflow: hidden
 
 .wrapper__inner
-  width: $width-mobile
+  width: $mobile
   padding: 0 20px
-  +media-query($width-desktop)
-    width: $width-desktop
+  +media-query($desktop)
+    width: $desktop
 
 .title
   text-transform: uppercase
@@ -90,11 +97,21 @@ input, textarea
 .title_big
   font:
     family: 'Bebas Neue', sans-serif
-    size: 60px
+    size: 27px
   color: $black-color
   text-transform: uppercase
-  line-height: 66px
+  line-height: 30px
   letter-spacing: 0.02rem
+  text-align: center
+  br
+    content: ' '
+  +media-query($desktop)
+    text-align: left
+    font:
+      size: 60px
+    line-height: 66px
+    br
+      content: none
 
 .padding-top
   padding:

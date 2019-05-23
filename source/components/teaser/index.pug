@@ -3,12 +3,15 @@ mixin teaser(props)
 	section.teaser.wrapper(class=sectionClass)
 		.teaser__inner.wrapper__inner(class=teaserInnerClassName)
 			.teaser__content
+				.teaser__logo.header__logo-wrapper
+					img.header__logo(src=require(`../../components/header/logo.png`))
 				h1.title_big !{title}
 				if(text)
 					p.teaser__content-text=text
 				if(!withoutLinks)
 					.teaser__links
-						a.teaser__link.btn.btn_accent(href="/teaser") Рассчатать стоимость
+						a.teaser__link.teaser__link_mobile.btn.btn_accent(href="/teaser") Оставить заявку
+						a.teaser__link.teaser__link_desktop.btn.btn_accent(href="/teaser") Рассчатать стоимость
 						a.teaser__link.btn.btn_white(href="/teaser") Получить презентацию
 			if(!form)
 				.teaser__img.teaser-right-img(class=teaserImgClass)

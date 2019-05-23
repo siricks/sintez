@@ -1,24 +1,42 @@
 @import "../../styles/varialbes"
 .teaser
   position: relative
+  height: auto
+  margin:
+    bottom: 60px
+
   &:not(.teaser_form)
-    border:
-      bottom: 1px solid #D6D8DA
+    +media-query($desktop)
+      border:
+        bottom: 1px solid #D6D8DA
+
+  &:not(.teaser_index)
+    .teaser__logo
+      display: none
+
+  +media-query($desktop)
+    margin:
+      bottom: 0
 
 .teaser_index
-  height: 765px
+  +media-query($desktop)
+    height: 765px
 
 .teaser_solutions
-  height: 724px
+  +media-query($desktop)
+    height: 724px
 
 .teaser_for-marketing
-  height: 744px
+  +media-query($desktop)
+    height: 744px
 
 .teaser_rent
-  height: 765px
+  +media-query($desktop)
+    height: 765px
 
 .teaser_portfolio
-  height: 752px
+  +media-query($desktop)
+    height: 752px
 
 .teaser_form
   height: 381px
@@ -32,32 +50,78 @@
   position: relative
   z-index: 1
   margin:
-    top: 4rem
+    top: 18px
+  padding:
+    top: 1.5rem
+  +media-query($desktop)
+    margin:
+      top: 4rem
+    padding:
+      top: 0
 
 .teaser__inner_simple-form
   margin:
     top: 2rem
 
 .teaser__content
-  width: 620px
+  display: flex
+  flex-flow: column
+  align-items: center
+  +media-query($desktop)
+    display: block
+    width: 620px
 
 .teaser__content-text
   color: $gray-color
-  line-height: 22px
-  width: 540px
+  line-height: 14px
   margin:
-    top: 1.6rem
-    bottom: 2.8rem
+    top: 14px
+    bottom: 12px
+  font:
+    size: 11px
+    weight: 300
+  text-align: center
+  padding: 0 2.5rem
+  +media-query($desktop)
+    padding: 0
+    width: 540px
+    line-height: 22px
+    text-align: left
+    font:
+      size: inherit
+      weight: 400
+    margin:
+      top: 1.6rem
+      bottom: 2.8rem
 
 .teaser__links
   display: flex
+  flex-flow: column
+  align-items: center
+  +media-query($desktop)
+    align-items: flex-start
+    flex-flow: row
 
 .teaser__link
-  margin:
-    right: 1.4rem
-  &:last-of-type
+  &:not(:last-of-type)
     margin:
-      right: 0
+      bottom: 10px
+
+  +media-query($desktop)
+    &:not(:last-of-type)
+      margin:
+        right: 1.4rem
+        bottom: 0
+
+.teaser__link_mobile
+  display: flex
+  +media-query($desktop)
+    display: none
+
+.teaser__link_desktop
+  display: none
+  +media-query($desktop)
+    display: flex
 
 .teaser__img
   position: absolute
@@ -69,6 +133,9 @@
   background:
     position: center
     repeat: no-repeat
+  display: none
+  +media-query($desktop)
+    display: block
 
 .teaser-img-1
   right: -10rem
@@ -98,8 +165,26 @@
 
 
 .teaser__ar-vr
-  left: 0
-  top: 10.7rem
+  left: 50%
+  top: -.5rem
+  width: 370px
+  height: 150px
+  transform: translate(-50%)
+
+  svg
+    width: 100%
+    height: 100%
+
+  +media-query($desktop)
+    top: 10.7rem
+    width: 1080px
+    height: 381px
 
 .teaser__ar-vr_form
   top: 0
+
+.teaser__logo
+  display: block
+  margin: 1rem 0 .7rem
+  +media-query($desktop)
+    display: none

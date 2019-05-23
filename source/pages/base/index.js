@@ -16,4 +16,5 @@ import '../../js/onLoad'
  * components
  */
 import '../../components/header'
+import '../../components/fixed-header'
 import '../../components/footer'
