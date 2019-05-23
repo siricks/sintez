@@ -8,6 +8,8 @@ body
   transition: opacity $common-transition-duration
   +media-query($desktop)
     min-width: $desktop
+  &.locked
+    overflow: hidden
 
 .d-none
   display: none

@@ -11,6 +11,8 @@
   background: linear-gradient(180deg, #4E1289 0%, #351E4D 100%)
   padding: 20px 27px 32px $mobileSidePadding
   transition: $common-transition-duration
+  +media-query($desktop)
+    display: none
   &.active
     left: 0
     & +.fixed-header

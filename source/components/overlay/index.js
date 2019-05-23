@@ -4,6 +4,8 @@ const overlayActiveData = 'data-active-element',
 	overlayActiveElementActiveClassData = 'data-active-element-active-class',
 	overlay = document.querySelector('.overlay'),
 	overlayActiveClass = 'active',
+	body = document.body,
+	bodyOverflowClass = 'locked',
 	switchOverlay = props => {
 		let {activeState, activeElement, activeElementActiveClassName} = props
 
@@ -11,6 +13,7 @@ const overlayActiveData = 'data-active-element',
 			overlay.classList.add(overlayActiveClass)
 			overlay.setAttribute(overlayActiveData, activeElement)
 			overlay.setAttribute(overlayActiveElementActiveClassData, activeElementActiveClassName)
+			body.classList.add(bodyOverflowClass)
 		} else {
 
 			if (overlay) {
@@ -21,6 +24,7 @@ const overlayActiveData = 'data-active-element',
 				overlay.classList.remove(overlayActiveClass)
 				overlay.removeAttribute(overlayActiveData)
 				overlay.removeAttribute(overlayActiveElementActiveClassData)
+				body.classList.remove(bodyOverflowClass)
 			}
 		}
 	}

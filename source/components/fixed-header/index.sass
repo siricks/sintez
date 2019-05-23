@@ -17,6 +17,12 @@
     margin:
       top: $fixedHeaderHeight
 
+  +media-query($desktop)
+    display: none
+    ~ .main
+      margin:
+        top: 0
+
 .fixed-header__content
   width: 100%
   display: flex
@@ -59,6 +65,8 @@
   top: 0
   right: 0
   height: $fixedHeaderHeight
+  +media-query($desktop)
+    display: none
 
 .fixed-header__burger
   position: relative
