@@ -1,10 +1,17 @@
 .fixed-header
-	+svgIco({
-		id: 'burger',
-		className: 'fixed-header__icon'
-	})
-	a(href="tel:+78124251388")
-		+svgIco({
-			id: 'phone',
-			className: 'fixed-header__icon'
-		})
+	.fixed-header__content
+		.fixed-header__burger
+			+svgIco({
+				id: 'burger',
+				className: 'fixed-header__icon'
+			})
+			+svgIco({
+				id: 'burger-big',
+				className: 'fixed-header__icon'
+			})
+		a(href="tel:+78124251388")
+			+svgIco({
+				id: 'phone',
+				className: 'fixed-header__icon'
+			})
+.fixed-header__background

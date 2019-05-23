@@ -1,0 +1,79 @@
+mixin links(links)
+	.side-menu__links
+		each link in links
+			-var {href, title} = link
+
+			a(href=`/${href}.html`).side-menu__link=title
+
+mixin phones(phones)
+	.side-menu__phones
+		each phone in phones
+			-var {href, title} = phone
+
+			a(href=`tel:${href}`).side-menu__phone
+				+svgIco({
+					id: 'phone',
+					className: 'side-menu__phone-icon'
+				})
+				.side-menu__phone-title=title
+
+mixin socials(socials)
+	.side-menu__socials
+		each social in socials
+			-var {href, id} = social
+			a(href=href).side-menu__social
+				+svgIco({
+					id: id,
+					className: 'side-menu__socials-icon'
+				})
+
+.side-menu
+	.side-menu__inner
+		.side-menu__logo-wrapper
+			img.side-menu__logo(src=require(`../../components/header/logo_white.png`))
+		+links([
+			{
+				href: 'services',
+				title: 'Наши услуги'
+			},
+			{
+				href: 'portfolio',
+				title: 'Портфолио'
+			},
+			{
+				href: 'about',
+				title: 'О нас'
+			},
+			{
+				href: 'blog',
+				title: 'Блог'
+			},
+			{
+				href: 'contact',
+				title: 'Связаться'
+			}
+		])
+		+phones([
+			{
+				href: '+74951184399',
+				title: '+7 (495) 118-43-99'
+			},
+			{
+				href: '+78124251388',
+				title: '+7 (812) 425-13-88'
+			}
+		])
+		+socials([
+			{
+				href: '/social',
+				id: 'vk'
+			},
+			{
+				href: '/social',
+				id: 'insta'
+			},
+			{
+				href: '/social',
+				id: 'fb'
+			}
+		])
