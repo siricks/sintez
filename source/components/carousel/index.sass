@@ -7,13 +7,42 @@
 .carousel__inner
   display: flex
   flex-flow: column
-  align-items: center
+  width: 100%
+  padding:
+    left: $mobileSidePadding
+  .title
+    width: 100%
+  +media-query($desktop)
+    align-items: center
+    width: auto
+    padding:
+      left: 0
+    .title
+      width: auto
 
 .swiper-outer
   position: relative
+  width: 100%
+  &:after
+    content: ''
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    width: 67px
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
+    pointer-events: none
+    z-index: 1
+  +media-query($desktop)
+    width: auto
+    &:after
+      content: none
+    &.no-pagination-on-desktop
+      .custom-pagination
+        display: none
 
 .swiper-container
-  width: calc(#{$mobile} - 20px*2)
+  width: 100%
   +media-query($desktop)
     width: calc(#{$desktop} - 20px*2)
 
@@ -46,14 +75,21 @@
 .swiper-slide
   display: flex
   flex-flow: column
+  width: 236px
+  +media-query($desktop)
+    width: auto
 
 .swiper-slide__scale
-  height: 625px
   background:
     color: $gray-light-color
+  height: 286px
+  +media-query($desktop)
+    height: 625px
 
 .swiper-slide__scale-img-wrapper
-  height: 367px
+  height: 134px
+  +media-query($desktop)
+    height: 367px
 
 .swiper-slide__img-wrapper
   display: flex
@@ -72,22 +108,41 @@
 
 .swiper-slide__text-wrapper
   flex: 1
-  padding: 0 2.5rem 1.5rem
+  padding: 0 15px 21px
   display: flex
   flex-flow: column
+  +media-query($desktop)
+    padding: 0 2.5rem 1.5rem
 
 .swiper-slide__title
   font:
-    size: 20px
+    size: 11px
     weight: 700
   margin:
-    top: 1.5rem
-    bottom: 1.5rem
+    top: 13px
+    bottom: 9px
+  letter-spacing: .05rem
+  +media-query($desktop)
+    letter-spacing: 0
+    margin:
+      top: 1.5rem
+      bottom: 1.5rem
+    font:
+      size: 20px
 
 .swiper-slide__text
-  line-height: 20px
-  max-height: 101px
+  line-height: 14px
+  max-height: 53px
   overflow: hidden
+  font:
+    size: 11px
+    weight: 300
+  +media-query($desktop)
+    max-height: 101px
+    line-height: 20px
+    font:
+      size: inherit
+      weight: 400
 
 .swiper-slide__bottom
   display: flex
@@ -96,7 +151,10 @@
 
 .carousel__inner-link
   margin:
-    top: 2.5rem
+    top: 20px
+  +media-query($desktop)
+    margin:
+      top: 2.5rem
 
 .carousel_with-box-shadow-wrapper
   margin:
@@ -124,12 +182,31 @@
 .custom-pagination
   display: flex
   justify-content: flex-start
-  left: 3rem !important
-  bottom: 3rem !important
   width: auto !important
+  left: auto !important
+  right: $mobileSidePadding !important
+  bottom: -2.5rem !important
+  +media-query($desktop)
+    left: 3rem !important
+    right: auto !important
+    bottom: 3rem !important
   .swiper-pagination-bullet
     background:
-      color: #fff
+      color: #E6E6E6
+    opacity: 1
+    &:not(:last-child)
+      margin:
+        right: 7px
+    +media-query($desktop)
+      &:not(:last-child)
+        margin:
+          right: 0
+      opacity: initial
+      background:
+        color: $white-color
+  .swiper-pagination-bullet-active
+    background:
+      color: $accent-color
 
 .carousel-with-background
   position: relative

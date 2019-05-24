@@ -6,9 +6,9 @@ let swiperContainers = document.querySelectorAll('.swiper-container')
 setTimeout(() => {
 	for (let swiperContainer of swiperContainers) {
 		new Swiper(swiperContainer, {
-			slidesPerView: parseInt(swiperContainer.getAttribute('data-slidesPerView')) || 'auto',
+			slidesPerView: window.innerWidth >= 1200 ? parseInt(swiperContainer.getAttribute('data-slidesPerView')) || 'auto' : 'auto',
 			loop: swiperContainer.getAttribute('data-loop'),
-			spaceBetween: parseInt(swiperContainer.getAttribute('data-spaceBetween') ? swiperContainer.getAttribute('data-spaceBetween') : 0),
+			spaceBetween: window.innerWidth >= 1200 ? parseInt(swiperContainer.getAttribute('data-spaceBetween') ? swiperContainer.getAttribute('data-spaceBetween') : 0) : 4,
 			navigation: {
 				nextEl: swiperContainer.getAttribute('data-arrows') ? swiperContainer.parentNode.querySelector('.swiper__arrow.swiper__arrow_prev') : false,
 				prevEl: swiperContainer.getAttribute('data-arrows') ? swiperContainer.parentNode.querySelector('.swiper__arrow.swiper__arrow_next') : false,
@@ -18,7 +18,7 @@ setTimeout(() => {
 				crossFade: true
 			},
 			pagination: {
-				el: swiperContainer.querySelector('.swiper-pagination') ? swiperContainer.querySelector('.swiper-pagination') : false,
+				el: swiperContainer.parentNode.querySelector('.swiper-pagination') || swiperContainer.querySelector('.swiper-pagination') ? swiperContainer.parentNode.querySelector('.swiper-pagination') || swiperContainer.querySelector('.swiper-pagination') : false,
 				clickable: true
 			}
 		})
