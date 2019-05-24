@@ -2,65 +2,108 @@
 
 .footer
   padding:
-    top: 2.7rem
-    bottom: 2.1rem
+    top: 37px
+    bottom: 45px
   background:
-    color: #0D1922
+    color: #1E2B4D
+  text-align: center
+  +media-query($desktop)
+    padding:
+      top: 2.7rem
+      bottom: 2.1rem
+    text-align: left
+    background:
+      color: #0D1922
 
 .footer__inner
   position: relative
   display: flex
   flex-flow: column
 
-  &:after
-    pointer-events: none
-    content: ''
-    position: absolute
-    left: -9rem
-    top: -3rem
-    width: 528px
-    height: 317px
-    background:
-      image: url('../../components/footer/footer-img.png')
-      repeat: no-repeat
-      position: left
+  +media-query($desktop)
+    &:after
+      pointer-events: none
+      content: ''
+      position: absolute
+      left: -9rem
+      top: -3rem
+      width: 528px
+      height: 317px
+      background:
+        image: url('../../components/footer/footer-img.png')
+        repeat: no-repeat
+        position: left
 
 .footer__logo
+  display: none
   margin:
     bottom: 2rem
+  +media-query($desktop)
+    display: block
 
 .footer__socials
   display: flex
   align-items: center
+  justify-content: center
+  +media-query($desktop)
+    justify-content: flex-start
 
 .footer-soc-ico-wrapper
+  +hoverOpacity
   &:not(:last-of-type)
     margin:
-      right: 1rem
-  +hoverOpacity
+      right: 1.5rem
+  +media-query($desktop)
+    &:not(:last-of-type)
+      margin:
+        right: 1rem
 
 .footer-soc-ico
   fill: #ee4d50
 
 .vk-ico
-  width: 34px
-  height: 34px
+  width: 37px
+  height: 37px
+  +media-query($desktop)
+    width: 34px
+    height: 34px
 
 .insta-ico
   width: 32px
-  height: 30px
+  height: 32px
+  +media-query($desktop)
+    height: 30px
 
 .fb-ico
-  width: 25px
-  height: 29px
+  width: 31px
+  height: 31px
+  +media-query($desktop)
+    width: 25px
+    height: 29px
 
 .footer__side
   display: flex
+  flex-flow: column
+
+  &:first-of-type
+    order: 1
+    margin:
+      top: 2.5rem
+
+  +media-query($desktop)
+    flex-flow: row
+    &:first-of-type
+      order: unset
+      margin:
+        top: 0
 
 .footer__row
   display: flex
   flex: 1
   justify-content: space-between
+  flex-flow: column
+  +media-query($desktop)
+    flex-flow: row
 
 .footer__col
   display: flex
@@ -69,24 +112,70 @@
   z-index: 1
   color: #F2F2F2
 
+  &:not(:only-child)
+    &:last-of-type
+      order: -1
+      margin:
+        bottom: 2.5rem
+
+  +media-query($desktop)
+    &:not(:only-child)
+      &:last-of-type
+        order: unset
+        margin:
+          bottom: 0
+
 .footer__col-title
   margin:
-    bottom: 1.5rem
+    bottom: .7rem
   text-transform: uppercase
   font:
-    size: 26px
+    size: 11px
+    weight: 700
+  line-height: 14px
+  letter-spacing: .05rem
+  +media-query($desktop)
+    margin:
+      bottom: 1.5rem
+    line-height: inherit
+    letter-spacing: 0
+    font:
+      size: 26px
+      weight: 400
 
 .footer__col-address, .footer__col-tel, .footer__col-email
+  font:
+    size: 11px
+    weight: 300
+  line-height: 14px
   margin:
-    bottom: .7rem
+    bottom: .1rem
+  +media-query($desktop)
+    margin:
+      bottom: .7rem
+    font:
+      size: inherit
+      weight: 400
+    line-height: inherit
 
 .footer__address
-  &:not(:first-of-type)
-    margin:
-      left: 3.5rem
+  +media-query($desktop)
+    &:not(:first-of-type)
+      margin:
+        left: 5.5rem
 
 .footer__copyrights-wrapper
   justify-content: flex-end
-  color: #6e7479
+  color: #4c566e
   margin:
-    top: 6rem
+    top: 25px
+  font:
+    size: 11px
+    weight: 300
+  +media-query($desktop)
+    color: #6e7479
+    margin:
+      top: 6rem
+    font:
+      size: inherit
+      weight: 400

@@ -3,9 +3,11 @@
 .our-customers
   margin:
     top: 56px
+    bottom: 8px
   +media-query($desktop)
     margin:
       top: 0
+      bottom: 0
 
 .our-customers__logos
   display: flex
@@ -49,6 +51,8 @@
     background: transparent
 
   +media-query($desktop)
+    &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track
+      background: transparent
     flex-wrap: wrap
     margin:
       top: 6rem
@@ -69,6 +73,9 @@
       left: -1.6rem
 
   +media-query($desktop)
+    &:not(:last-of-type)
+      margin:
+        right: 0
     transform: none
     margin:
       right: 0
