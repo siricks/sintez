@@ -7,12 +7,11 @@ for (let telInput of telInputs) {
 	let patternMask = new IMask(telInput, {
 		mask: '+{7}(000)000-00-00',
 		lazy: true
-	}),
-		form = telInput.closest('.form')
+	})
 
 	telInput.addEventListener('focus', function () {
-		form.reportValidity()
 		patternMask.updateOptions({lazy: false})
+		telInput.selectionEnd = 3
 	}, true);
 
 	telInput.addEventListener('blur', function () {

@@ -1,15 +1,18 @@
 @import "../../styles/varialbes"
 
 .form
-  width: 422px
   display: flex
   flex-flow: column
-  background:
-    color: $white-color
   +border-radius
-  padding: 2.6rem 2.9rem
+  padding: 0 38px
   position: relative
   z-index: 1
+  width: 100%
+  +media-query($desktop)
+    width: 422px
+    padding: 2.6rem 2.9rem
+    background:
+      color: $white-color
 
 .form_opacity
   box-shadow: 0px 7px 63px rgba(25, 16, 50, 0.21)
@@ -17,14 +20,25 @@
 .form__fieldset
   display: flex
   flex-flow: column
+  color: $white-color
+  +media-query($desktop)
+    color: inherit
 
 .form__title
   font:
-    weight: 700
+    size: 11px
+    weight: 300
   text-align: center
-  line-height: 1.2
+  line-height: 14px
   margin:
-    bottom: 1.4rem
+    bottom: 1.5rem
+  +media-query($desktop)
+    margin:
+      bottom: 1.4rem
+    line-height: 1.2
+    font:
+      size: inherit
+      weight: 700
 
 .form__title_without-wrapper
   text-transform: uppercase
@@ -40,6 +54,38 @@
   width: 100%
   margin:
     bottom: 1.2rem
+  font:
+    size: 11px
+    weight: 300
+  text-align: center
+  transition: $common-transition-duration
+  +media-query($desktop)
+    text-align: left
+    font:
+      size: inherit
+      weight: 400
+
+  &.filled
+    border-color: $accent-color
+  &.error
+    border-color: #1E2B4D
 
 .form__btn
-  margin: auto
+  margin: 21px auto 0
+  +media-query($desktop)
+    margin: auto
+
+.form__inputs
+  display: flex
+  flex-flow: column
+  width: 100%
+  background:
+    color: $white-color
+  +border-radius(8px)
+  padding: 40px 24px
+  color: #1E2B4D
+  +media-query($desktop)
+    padding: 0
+    background:
+      color: transparent
+    color: $black-color

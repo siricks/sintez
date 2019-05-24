@@ -53,20 +53,33 @@ body
 
 input, textarea
   &::placeholder
-    color: #BDBDBD
     transition: $common-transition-duration
+    color: #1E2B4D
+    +media-query($desktop)
+      color: #BDBDBD
   &:focus
     &::placeholder
       opacity: 0
 
 .input
-  height: 48px
+  height: 23px
   +input
+  +media-query($desktop)
+    height: 48px
 
 .textarea
-  height: 129px
   +input
+  padding: 0
   resize: none
+  max-height: 100px
+  margin:
+    top: .4rem
+  +media-query($desktop)
+    max-height: none
+    padding: .844rem 1rem
+    height: 129px
+    margin:
+      top: 0
 
 .wrapper
   display: flex

@@ -4,8 +4,11 @@
   align-items: center
   flex-flow: column
   padding:
-    top: 5.5rem
+    top: 43px
   position: relative
+  +media-query($desktop)
+    padding:
+      top: 5.5rem
 
 .form-wrapper_opacity
   padding:
@@ -28,7 +31,10 @@
 
 .form-wrapper__title
   margin:
-    bottom: 5rem
+    bottom: .8rem
+  +media-query($desktop)
+    margin:
+      bottom: 5rem
 
 .form-wrapper__title, .form-wrapper__subtitle
   color: $white-color
@@ -44,4 +50,7 @@
     weight: 700
     size: 20px
   margin:
-    bottom: 5rem
+    bottom: 19px
+  +media-query($desktop)
+    margin:
+      bottom: 5rem
