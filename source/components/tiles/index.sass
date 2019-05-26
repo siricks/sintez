@@ -40,13 +40,20 @@
   flex-flow: column
   align-items: flex-start
   justify-content: flex-end
-  padding: 2rem
+  padding: $mobileSidePadding
   .tiles__tile-title
     font:
-      size: 20px
+      size: 11px
       weight: 700
     margin:
-      bottom: .7rem
+      bottom: .2rem
+  +media-query($desktop)
+    padding: 2rem
+    .tiles__tile-title
+      font:
+        size: 20px
+      margin:
+        bottom: .7rem
 
 .tiles__tile-img
   transition: $common-transition-duration
@@ -68,6 +75,13 @@
   position: relative
   z-index: 1
   color: $white-color
+  font:
+    size: 11px
+    weight: 300
+  +media-query($desktop)
+    font:
+      size: inherit
+      weight: 400
 
 .tiles__tile-title, .tile__title
   font:
