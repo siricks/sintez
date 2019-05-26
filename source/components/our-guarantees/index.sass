@@ -3,6 +3,7 @@
 .our-guarantees
   padding:
     top: 19px
+    bottom: 0
   margin:
     top: -1px
   position: relative
@@ -15,6 +16,7 @@
   +media-query($desktop)
     padding:
       top: 3.7rem
+      bottom: 2rem
     .title
       margin:
         bottom: 3rem
@@ -51,10 +53,16 @@
   align-items: center
   margin:
     bottom: 2.5rem
+  &:last-of-type
+    margin:
+      bottom: 26px
   +media-query($desktop)
     width: 31%
     margin:
       bottom: 5.4rem
+    &:last-of-type
+      margin:
+        bottom: 5.4rem
 
 .our-guarantees__list-item-content
   display: flex

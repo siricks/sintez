@@ -8,11 +8,26 @@
   position: relative
   margin:
     top: 44px
+  &.mobile-background
+    &:after
+      pointer-events: none
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      background:
+        image: url('../../components/form-wrapper/form-wrapper-background-5.jpg')
+        position: 0 -.7rem
   +media-query($desktop)
     padding:
       top: 5.5rem
     margin:
       top: 0
+    &.mobile-background
+      &:after
+        content: none
 
 .form-wrapper_opacity
   padding:
