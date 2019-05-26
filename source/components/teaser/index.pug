@@ -1,6 +1,6 @@
 mixin teaser(props)
-	-var {title, sectionClass, text, teaserImgClass, withoutLinks, form, teaserInnerClassName} = props
-	section.teaser.wrapper(class=sectionClass)
+	-var {title, sectionClass, text, teaserImgClass, withoutLinks, form, teaserInnerClassName, mobileNoBr} = props
+	section.teaser.wrapper(class=sectionClass class={'no-br': mobileNoBr})
 		.teaser__inner.wrapper__inner(class=teaserInnerClassName)
 			.teaser__content
 				.teaser__logo.header__logo-wrapper
