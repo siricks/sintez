@@ -4,40 +4,131 @@
   display: flex
   flex-flow: column
   align-items: center
+  padding:
+    left: 0
+    right: 0
+  margin:
+    bottom: .5rem
+  .btn
+    display: none
+  +media-query($desktop)
+    padding:
+      left: 20px
+      right: 20px
+    .btn
+      display: flex
 
 .additional-services-tiles
   width: 100%
   display: flex
-  flex-wrap: wrap
-  justify-content: space-between
+  +mobileScroll
+  overflow: auto
+  padding:
+    bottom: 10px
+  position: relative
+  &::-webkit-scrollbar-button
+    width: 11px
+  +media-query($desktop)
+    padding:
+      bottom: 0
+    flex-wrap: wrap
+    justify-content: space-between
 
 .additional-services-tile
-  padding: 2rem 2.5rem
+  padding: 22px 16px
   display: flex
   flex-flow: column
-  background: $white-color
+  background: #E7F2F4
   border: 1px solid $gray-light-color
   +border-radius
-  width: 49.2%
-  height: 390px
-  margin:
-    bottom: 1.5rem
+  min-width: 236px
+  position: relative
+  &:not(:last-of-type)
+    margin:
+      right: 4px
+  &:first-of-type
+    margin:
+      left: $mobileSidePadding
+  &:last-of-type
+    margin:
+      right: $mobileSidePadding
+    &:after
+      content: ''
+      position: absolute
+      right: -$mobileSidePadding
+      width: $mobileSidePadding
+      height: $mobileSidePadding
+  +media-query($desktop)
+    margin:
+      bottom: 1.5rem
+    min-width: 0
+    padding: 2rem 2.5rem
+    background: $white-color
+    height: 390px
+    width: 49.2%
+    &:first-of-type
+      margin:
+        left: 0
+    &:last-of-type
+      margin:
+        right: 0
+      &:after
+        content: none
+    &:not(:last-of-type)
+      margin:
+        right: 0
 
 .additional-services-tile__images
   margin:
-    bottom: 2.5rem
+    bottom: 1.5rem
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  +media-query($desktop)
+    margin:
+      bottom: 2.5rem
+    height: 7.9rem
+    justify-content: flex-start
 
 .additional-services-tile__image
-  &:not(:last-of-type)
-    margin:
-      right: 2.5rem
+  width: 48%
+  height: 5rem
+  max-width: 48%
+  +media-query($desktop)
+    width: auto
+    height: auto
+    max-width: none
+    &:not(:last-of-type)
+      margin:
+        right: 2.5rem
 
 .additional-services-tile__title
   font:
-    size: 20px
+    size: 11px
     weight: 700
   margin:
     bottom: 1rem
+  line-height: 14px
+  letter-spacing: .05rem
+  height: 21px
+  +media-query($desktop)
+    height: auto
+    letter-spacing: 0
+    line-height: inherit
+    font:
+      size: 20px
+      weight: 700
+    margin:
+      bottom: 1rem
 
 .additional-services-tile__description
-  line-height: 1.3
+  line-height: 14px
+  font:
+    size: 11px
+    weight: 300
+  color: #252525
+  +media-query($desktop)
+    line-height: 1.3
+    font:
+      size: inherit
+      weight: 400

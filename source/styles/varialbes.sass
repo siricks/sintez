@@ -41,3 +41,37 @@ $max-width_desktop-min: 1200px
   border-bottom: 3px solid #E6E6E6
   +media-query($desktop)
     border: 1px solid #CCCCCC
+
+=mobileScroll
+  &::-webkit-scrollbar
+    width: 2px
+    height: 2px
+
+  &::-webkit-scrollbar-button
+    width: 0px
+    height: 0px
+
+  &::-webkit-scrollbar-thumb
+    background: $accent-color
+    border: 0px none #ffffff
+    border-radius: 50px
+
+    &:hover
+      background: #ffffff
+
+    &:active
+      background: #000000
+
+  &::-webkit-scrollbar-track
+    background: #f3f3f3
+    border: 0px none #ffffff
+    border-radius: 50px
+
+    &:hover
+      background: #666666
+
+    &:active
+      background: #333333
+
+  &::-webkit-scrollbar-corner
+    background: transparent
