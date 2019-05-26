@@ -2,23 +2,45 @@
 
 .examples
   padding:
-    top: 4rem
+    top: 71px
+    bottom: 12px
   .title
+    width: 100%
+    text-align: center
     margin:
-      bottom: 3.4rem
+      bottom: 27px
+  +media-query($desktop)
+    padding:
+      top: 4rem
+      bottom: 0
+    .title
+      width: auto
+      margin:
+        bottom: 3.4rem
 
 .examples__inner
   display: flex
   flex-flow: column
-  align-items: center
-  width: 1623px
+  padding: 0
+  align-items: flex-start
   .swiper-container
-    width: calc(100% + 20px * 2)
+    overflow: visible
+  .custom-pagination
+    bottom: -1.6rem !important
+  +media-query($desktop)
+    align-items: center
+    padding: 0 20px
+    width: 1623px
+    .swiper-container
+      overflow: hidden
+      width: calc(100% + 20px * 2)
+    .custom-pagination
+      bottom: 2.5rem !important
 
 .examples__slide
   display: flex
   position: relative
-  height: 534px
+  height: 272px
   align-items: flex-end
   overflow: hidden
   color: white
@@ -31,6 +53,8 @@
     top: 0
     width: 100%
     height: 100%
+  +media-query($desktop)
+    height: 534px
 
 .examples__slide-img
   z-index: -1
@@ -38,31 +62,56 @@
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
-  width: 100%
+  height: 100%
+  +media-query($desktop)
+    height: auto
+    width: 100%
 
 .examples__slide-lists
-  display: flex
+  display: none
   justify-content: space-between
   margin: 1.4rem 0
+  +media-query($desktop)
+    display: flex
 
 .examples__slide-content
   display: flex
   flex-flow: column
-  width: 47%
   flex: 1
   position: relative
   z-index: 1
-  padding: 1rem 2rem 2.5rem
+  padding: 29px 21px
+  width: 100%
+  +media-query($desktop)
+    padding: 1rem 2rem 2.5rem
+    width: 47%
 
 .examples__slide-title
   font:
-    size: 26px
+    size: 25px
   text-transform: uppercase
   margin:
-    bottom: 1rem
+    bottom: .7rem
+  font:
+    family: 'Bebas Neue', sans-serif
+  +media-query($desktop)
+    margin:
+      bottom: 1rem
+    font:
+      family: inherit
+      size: 26px
 
 .examples__slide-description
-  line-height: 1.3
+  line-height: 14px
+  font:
+    size: 11px
+    weight: 300
+  +media-query($desktop)
+    line-height: 1.3
+    font:
+      size: inherit
+      weight: 400
+
 
 .examples__slide-list-title
   font:
@@ -87,14 +136,35 @@
 .examples__slide-links
   flex: 1
   display: flex
-  align-items: flex-end
+  flex-flow: column
+  margin:
+    top: 24px
   .btn
     &:not(:last-of-type)
       margin:
-        right: 2rem
+        bottom: 10px
+  +media-query($desktop)
+    flex-flow: row
+    align-items: flex-end
+    margin:
+      top: 0
+    .btn
+      &:not(:last-of-type)
+        margin:
+          right: 2rem
+          bottom: 0
 
 .examples__more-link
   font:
-    size: 20px
+    size: 11px
   margin:
-    top: 2rem
+    left: $mobileSidePadding
+    top: 16px
+  letter-spacing: .02rem
+  +media-query($desktop)
+    letter-spacing: 0
+    font:
+      size: 20px
+    margin:
+      left: 0
+      top: 2rem

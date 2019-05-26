@@ -191,22 +191,32 @@
     right: auto !important
     bottom: 3rem !important
   .swiper-pagination-bullet
+    width: 9px
+    height: 9px
     background:
       color: #E6E6E6
     opacity: 1
+    margin: 0 !important
     &:not(:last-child)
       margin:
-        right: 7px
+        right: 7px !important
     +media-query($desktop)
+      opacity: .2
+      width: 12px
+      height: 12px
+      margin: 0 13px !important
       &:not(:last-child)
         margin:
-          right: 0
-      opacity: initial
+          right: 0 !important
       background:
         color: $white-color
   .swiper-pagination-bullet-active
+    opacity: 1
     background:
       color: $accent-color
+    +media-query($desktop)
+      background:
+        color: $white-color
 
 .carousel-with-background
   position: relative
