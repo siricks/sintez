@@ -19,7 +19,7 @@ mixin tile(props)
 					ul.implementation-option__tile-summary-item-content-list
 						-for(var additionalItem of additional)
 							li.implementation-option__tile-summary-item-content-list-item=additionalItem
-		a(href="/implementation").implementation-option__tile-link.btn.btn_white Начать обсуждение
+		a(href="/implementation").implementation-option__tile-link.btn.btn_white.implementation-option__desktop-link Начать обсуждение
 
 mixin option(props)
 	-var {title, background, tiles} = props
@@ -30,6 +30,7 @@ mixin option(props)
 			.implementation-option__tiles
 				-for(var tile of tiles)
 					+tile(tile)
+				a(href="/implementation").implementation-option__tile-link.btn.btn_white.implementation-option__mobile-link Начать обсуждение
 
 section.implementation-options.wrapper
 	.implementation-options__wrapper-inner.wrapper__inner

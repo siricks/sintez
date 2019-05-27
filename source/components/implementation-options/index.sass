@@ -15,6 +15,11 @@
   z-index: 1
   text-align: center
   width: 100%
+  .title
+    color: $black-color
+  +media-query($desktop)
+    .title
+      color: #DDDDDD
 
 .implementation-options-wrapper
   display: flex
@@ -24,6 +29,17 @@
   display: flex
   justify-content: center
   position: relative
+  margin:
+    bottom: 6rem
+  &:last-of-type
+    margin:
+      bottom: 5.4rem
+  +media-query($desktop)
+    margin:
+      bottom: 0
+    &:last-of-type
+      margin:
+        bottom: 0
 
 .implementation-option__image
   position: absolute
@@ -39,52 +55,91 @@
   align-items: center
   position: relative
   z-index: 1
-  padding: 4rem 20px
+  padding: $mobileSidePadding
+  +media-query($desktop)
+    padding: 4rem 20px
 
 .implementation-option__title
   font:
-    size: 26px
+    size: 11px
+    weight: 300
   margin:
-    bottom: 3rem
+    bottom: $mobileSidePadding
   color: $white-color
+  +media-query($desktop)
+    margin:
+      bottom: 3rem
+    font:
+      size: 26px
+      weight: inherit
 
 .implementation-option__tiles
   display: flex
-  justify-content: space-between
   width: 100%
+  flex-flow: column
+  align-items: center
+  +media-query($desktop)
+    align-items: flex-start
+    justify-content: space-between
+    flex-flow: row
 
 .implementation-option__tile
   display: flex
   flex-flow: column
   align-items: flex-start
-  width: 49%
+  width: 100%
   background:
     color: $white-color
   +border-radius
   letter-spacing: -.02rem
-  padding: 2.5rem
+  padding: 25px 19px
+  &:not(:last-of-type)
+    margin:
+      bottom: 2rem
+  +media-query($desktop)
+    padding: 2.5rem
+    width: 49%
+    &:not(:last-of-type)
+      margin:
+        bottom: 0
 
 .implementation-option__tile-title
   font:
-    size: 20px
+    size: 25px
     weight: 700
+    family: 'Bebas Neue', sans-serif
   margin:
     bottom: 1rem
   position: relative
+  color: #b1b1b2
+  +media-query($desktop)
+    color: inherit
+    font:
+      family: inherit
+      size: 20px
 
 .implementation-option__tile-description
   width: 100%
   flex: 1
   line-height: 1.3
   letter-spacing: -.02rem
+  font:
+    size: 11px
+    weight: 300
+  +media-query($desktop)
+    font:
+      size: inherit
+      weight: inherit
 
 .implementation-option__tile-summary
-  display: flex
+  display: none
   width: 100%
   justify-content: space-between
   align-items: flex-start
   margin: 1rem 0 2rem
   height: 137px
+  +media-query($desktop)
+    display: flex
 
 .implementation-option__tile-summary-item
   display: flex
@@ -145,4 +200,15 @@
   &:after
     background:
       image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAAjVBMVEUAAADvSEjvUFDsS0vuS0vuSkruT0/vTU3vTEzxTEzuS0vvS0vvTk7yTk7sSkrvSkrvTU3vTEzvTEzvTk7vS0vvTU3wTEzuTEzuS0vwTEzuS0vvTEzvTEzvS0vvS0vvTEzvTEzvTEzvTU3uS0vvTEzvTEzuTEzvTEzuTEzvTEzvS0vvTEzwTEzvTEzvTEwoNqxwAAAALnRSTlMAICApLC0tP0BbXF9fX2BgYGFvb4+PlpeYtre+v8vS0tPv7/Dw8fL29/f6+vz9g9f5TQAAAJdJREFUeAFlyNsOgjAQhOGBouIZFRSlFQ9SRXHf//HciM3G9ruYZH700uJ4o9aUAwilyTnELmaWRLfq45j+zcHit1cbBWBPPg0MKZSipFAOw3vW4sW/Rsu7hljyv4LYFGJBDNarG/53nHifWlz4GxQU2iGlUALoIFYAlPViF4FlXs3wNelI2Bl+ooocrSCSrXlQU+ej/n4AtSE01UJupnIAAAAASUVORK5CYII=)
+
+.implementation-option__desktop-link
+  display: none
+  +media-query($desktop)
+    display: flex
+
+.implementation-option__mobile-link
+  position: absolute
+  bottom: -52px
+  +media-query($desktop)
+    display: none
 /*eo Варианты воплощений*/

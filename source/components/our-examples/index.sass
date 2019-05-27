@@ -3,6 +3,9 @@
 .our-examples
   flex-flow: column
   align-items: center
+  & + .implementation-options
+    margin:
+      top: 3rem
   .title
     width: 13rem
     text-align: center
@@ -10,6 +13,9 @@
       bottom: .4rem
   +media-query($desktop)
     align-items: flex-start
+    & + .implementation-options
+      margin:
+        top: 0
     .title
       width: 100%
 
