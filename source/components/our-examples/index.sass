@@ -2,68 +2,151 @@
 
 .our-examples
   flex-flow: column
-  title
-    width: 100%
+  align-items: center
+  .title
+    width: 13rem
     text-align: center
     margin:
-      bottom: 4rem
+      bottom: .4rem
+  +media-query($desktop)
+    align-items: flex-start
+    .title
+      width: 100%
 
 .our-examples-wrapper
   display: flex
   flex-flow: column
   align-items: center
   margin:
-    top: 2.2rem
+    top: 1rem
+  +media-query($desktop)
+    margin:
+      top: 2.2rem
 
 .our-examples__item
-  display: flex
-  align-items: flex-start
-  padding: 0 130px
-  width: 100%
-  max-width: 1920px
-  &:not(:last-of-type)
-    margin:
-      bottom: 7rem
-  &:nth-of-type(even)
-    justify-content: flex-end
-    .our-examples__image
-      order: 1
-    .our-examples__content
-      margin:
-        left: 0
-        right: 3rem
-
-.our-examples__content
-  width: 694px
+  $padding: 130px
   display: flex
   flex-flow: column
   align-items: flex-start
+  width: 100%
+  &:not(:last-of-type)
+    margin:
+      bottom: 3rem
+  +media-query($desktop)
+    padding: 0 $padding
+    max-width: 1920px
+    min-width: calc(1408px + #{$padding}*2)
+    flex-flow: row
+    &:not(:last-of-type)
+      margin:
+        bottom: 7rem
+    &:nth-of-type(even)
+      justify-content: flex-end
+      .our-examples__image-wrapper
+        order: 1
+      .our-examples__content
+        margin:
+          left: 0
+          right: 3rem
+
+.our-examples__content
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  padding: 0 $mobileSidePadding
   margin:
-    left: 3.7rem
+    top: 20px
+  +media-query($desktop)
+    padding: 0
+    width: 694px
+    margin:
+      top: 0
+      left: 3.7rem
 
 .our-examples__title
+  color: #7f7f7f
   font:
-    size: 26px
+    size: 11px
+    weight: 700
+  letter-spacing: .05rem
+  line-height: 14px
+  width: 253px
+  +media-query($desktop)
+    width: auto
+    line-height: inherit
+    letter-spacing: 0
+    color: inherit
+    font:
+      size: 26px
+      weight: 400
+
+.our-examples__image-wrapper
+  width: 100%
+  position: relative
+  height: 180px
+  overflow: hidden
+  +media-query($desktop)
+    height: auto
+    width: auto
+    max-width: 655px
 
 .our-examples__image
-  max-width: 655px
+  width: 100%
+  top: 67%
+  left: 50%
+  transform: translate(-50%, -50%)
+  position: absolute
+  +media-query($desktop)
+    position: relative
+    top: auto
+    left: auto
+    transform: none
 
 .our-examples__description
   width: 100%
+  height: 215px
+  overflow: hidden
+  position: relative
+  font:
+    size: 11px
+    weight: 300
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: 1rem
+    background:
+      color: $white-color
+    z-index: 1
+  +media-query($desktop)
+    height: auto
+    font:
+      weight: inherit
+      size: inherit
+    &:after
+      content: none
 
 .our-examples__description-item
   line-height: 1.3
   letter-spacing: -.02rem
   &:first-of-type, & + .our-examples__description-item
     margin:
-      top: 1.5rem
+      top: 1rem
+  +media-query($desktop)
+    &:first-of-type, & + .our-examples__description-item
+      margin:
+        top: 1.5rem
 
 .our-examples__summary
   width: 100%
-  display: flex
+  display: none
   justify-content: space-between
   margin: 3rem 0 .5rem
   flex-wrap: wrap
+  +media-query($desktop)
+    display: flex
 
 .our-examples__summary-item
   display: flex
@@ -84,3 +167,12 @@
   line-height: 1.3
   padding:
     top: .3rem
+
+.our-examples__desktop-link
+  display: none
+  +media-query($desktop)
+    display: flex
+
+.our-examples__mobile-link
+  +media-query($desktop)
+    display: none

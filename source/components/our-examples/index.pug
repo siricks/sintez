@@ -6,7 +6,8 @@ mixin sectionWithExamples(props)
 			-for(var example of examples)
 				-var {exampleTitle, descriptionItems, summaryItemLeft, summaryItemRight} = example
 				.our-examples__item
-					img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
+					.our-examples__image-wrapper
+						img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
 					.our-examples__content
 						.our-examples__title=exampleTitle
 						.our-examples__description
@@ -25,4 +26,5 @@ mixin sectionWithExamples(props)
 									className: 'our-examples__summary-item-icon'
 								})
 								.our-examples__summary-item-content !{summaryItemRight}
-						a.btn.btn_white(href="/example") Узнать больше
+						a.btn.btn_white.our-examples__desktop-link(href="/example") Узнать больше
+						a.link.our-examples__mobile-link(href="/example") Узнать больше
