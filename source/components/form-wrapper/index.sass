@@ -30,10 +30,8 @@
         content: none
 
 .form-wrapper_opacity
-  padding:
-    top: 10.5rem
   &:after
-    content: ''
+    content: none
     position: absolute
     left: 0
     top: 0
@@ -42,11 +40,16 @@
     background:
       color: rgba(255, 255, 255, .9)
     pointer-events: none
-  .form-wrapper__title
-    margin:
-      bottom: 1.8rem
-  .form-wrapper__title, .form-wrapper__subtitle
-    color: $black-color
+  +media-query($desktop)
+    padding:
+      top: 10.5rem
+    &:after
+      content: ''
+    .form-wrapper__title
+      margin:
+        bottom: 1.8rem
+    .form-wrapper__title, .form-wrapper__subtitle
+      color: $black-color
 
 .form-wrapper__title
   margin:

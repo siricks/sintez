@@ -3,12 +3,13 @@
 .our-project
   color: $white-color
   background:
-    image: url('../../components/form-wrapper/form-wrapper-background-1.jpg')
+    image: url('../../components/our-project/our-project.png')
     size: cover
     position: center
   position: relative
   padding:
-    top: 9rem
+    top: 36px
+    bottom: 2.6rem
   &:after
     content: ''
     background: linear-gradient(180deg, rgba(22, 7, 32, 0.87) 0%, rgba(13, 41, 67, 0.46) 100%)
@@ -18,6 +19,13 @@
     top: 0
     bottom: 0
     pointer-events: none
+  & +.form-wrapper
+    margin:
+      top: 0
+  +media-query($desktop)
+    padding:
+      top: 9rem
+      bottom: 7rem
 
 .our-project__inner
   display: flex
@@ -28,49 +36,93 @@
 
 .our-project__items
   display: flex
+  flex-flow: column
+  align-items: center
   width: 100%
-  justify-content: space-between
   margin:
-    top: 5.5rem
-    bottom: 2.5rem
+    top: 1.5rem
+    bottom: 2rem
+  +media-query($desktop)
+    flex-flow: row
+    align-items: flex-start
+    justify-content: space-between
+    margin:
+      top: 5.5rem
+      bottom: 2.5rem
 
 .our-project__item
   display: flex
   align-items: center
-  width: 33.33%
+  margin:
+    bottom: 1.1rem
+  width: 14.4rem
+  +media-query($desktop)
+    margin:
+      bottom: 0
+    width: 33.33%
 
 .our-project__texts
   display: flex
   flex-flow: column
-  width: 662px
+  font:
+    size: 11px
+    weight: 300
+  line-height: 14px
+  +media-query($desktop)
+    line-height: inherit
+    width: 662px
+    font:
+      size: inherit
+      weight: inherit
 
 .our-project__text
   text-align: center
   line-height: 1.5
   & + .our-project__text
     margin:
-      top: 1.3rem
+      top: 1rem
+  +media-query($desktop)
+    & + .our-project__text
+      margin:
+        top: 1.3rem
 
 .our-project-icon
   fill: $emerald-color
   margin:
-    right: 1rem
+    right: 20px
+  +media-query($desktop)
+    margin:
+      right: 1rem
 
 .first-ico
-  width: 64px
-  height: 65px
+  width: 48px
+  height: 48px
+  +media-query($desktop)
+    width: 64px
+    height: 65px
 
 .famous-ico
-  width: 64px
-  height: 65px
+  width: 44px
+  height: 44px
+  +media-query($desktop)
+    width: 64px
+    height: 65px
 
 .book-ico
-  width: 64px
-  height: 66px
+  width: 44px
+  height: 45px
+  +media-query($desktop)
+    width: 64px
+    height: 66px
 
 .our-project__item-title
   font:
     weight: 700
-    size: 20px
-  letter-spacing: -.02rem
-  line-height: 1.3
+    size: 11px
+  line-height: 14px
+  letter-spacing: .05rem
+  +media-query($desktop)
+    line-height: 1.3
+    letter-spacing: -.02rem
+    font:
+      size: 20px
