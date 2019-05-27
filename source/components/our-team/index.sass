@@ -1,63 +1,112 @@
 @import "../../styles/varialbes"
 
 .our-team
-  background: radial-gradient(1068.00px at 50% 12.32%, #153756 0%, #0C0B18 100%)
+  background: linear-gradient(90deg, #153756 5.42%, #0C0B18 144.17%)
   color: $white-color
   margin:
+    top: 7px
     bottom: 7.8rem
   padding:
-    top: 7.3rem
+    top: 25px
+    bottom: .6rem
+  +media-query($desktop)
+    background: radial-gradient(1068.00px at 50% 12.32%, #153756 0%, #0C0B18 100%)
+    margin:
+      top: 0
+    padding:
+      top: 7.3rem
+      bottom: 0
 
 .our-team__members
   display: flex
   flex-wrap: wrap
   justify-content: center
   margin:
-    top: 4.3rem
+    top: 32px
+  +media-query($desktop)
+    margin:
+      top: 4.3rem
 
 .our-team__member
   display: flex
-  flex-flow: column
-  align-items: flex-start
+  align-items: center
   margin:
-    bottom: 3rem
+    bottom: 1.1rem
+  width: 14.4rem
 
-  &:not(:last-of-type)
+  +media-query($desktop)
+    width: auto
+    flex-flow: column
+    align-items: flex-start
     margin:
-      right: 1.3rem
+      bottom: 3rem
+    &:not(:last-of-type)
+      margin:
+        right: 1.3rem
 
 .our-team__members-image-wrapper
-  height: 265px
-  width: 265px
+  height: 61px
+  width: 61px
   overflow: hidden
-  margin:
-    bottom: 1rem
+  +border-radius(50%)
+  +media-query($desktop)
+    margin:
+      bottom: 1rem
+    border-radius: 0
+    height: 265px
+    width: 265px
 
 .our-team__members-image
-  $marginLeft: 1.4rem
+  $marginLeft: 0.4rem
   width: calc(100% + #{$marginLeft}*2)
   margin:
     top: -$marginLeft
-    left: -1.4rem
+    left: -$marginLeft
+  +media-query($desktop)
+    $marginLeft: 1.4rem
+    width: calc(100% + #{$marginLeft}*2)
+    margin:
+      top: -$marginLeft
+      left: -$marginLeft
 
 .our-team__members-name
   margin:
-    bottom: .2rem
+    bottom: .1rem
   font:
-    size: 26px
+    size: 11px
+    weight: 700
+  line-height: 13px
+  letter-spacing: .05rem
+  +media-query($desktop)
+    margin:
+      bottom: .7rem
+    letter-spacing: 0
+    line-height: inherit
+    font:
+      weight: inherit
+      size: 26px
 
 .our-team__members-position
   margin:
-    bottom: 1rem
+    bottom: .6rem
   font:
-    size: 13px
-    weight: 700
-  letter-spacing: -.02rem
+    size: 9px
+    weight: 300
+  line-height: 13px
+  +media-query($desktop)
+    margin:
+      bottom: 1rem
+    line-height: inherit
+    letter-spacing: -.02rem
+    font:
+      size: 13px
+      weight: 700
 
 .our-team__members-email
   color: $accent-color
-  margin:
-    bottom: .4rem
+  +media-query($desktop)
+    margin:
+      bottom: .4rem
 
 .our-team__members-tel, .our-team__members-social
   font:
@@ -70,3 +119,28 @@
 .our-team__members-email, .our-team__members-tel, .our-team__members-social
   backface-visibility: hidden
   +hoverOpacity
+  font:
+    size: 10px
+    weight: 700
+  letter-spacing: .02rem
+  line-height: 12px
+  +media-query($desktop)
+    font:
+      size: inherit
+      weight: inherit
+    letter-spacing: 0
+    line-height: inherit
+
+.our-team__members-data
+  display: flex
+  flex-flow: column
+  margin:
+    left: 21px
+  +media-query($desktop)
+    margin:
+      left: 0
+
+.our-team__members-tel
+  display: none
+  +media-query($desktop)
+    display: block

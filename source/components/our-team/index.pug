@@ -19,13 +19,14 @@ mixin members(props)
 						when 'alexander'
 							img.our-team__members-image(src=require(`../../components/our-team/alexander.png`) alt=name)
 
-				.our-team__members-name=name
-				.our-team__members-position=position
-				a(href=`mailto:${email}`).our-team__members-email=email
-				if(tel)
-					a(href=`tel:${telHref}`).our-team__members-tel=tel
-				if(social)
-					a(href=socialHref target='_blank').our-team__members-social=social
+				.our-team__members-data
+					.our-team__members-name=name
+					.our-team__members-position=position
+					a(href=`mailto:${email}`).our-team__members-email=email
+					if(tel)
+						a(href=`tel:${telHref}`).our-team__members-tel=tel
+					if(social)
+						a(href=socialHref target='_blank').our-team__members-social=social
 
 section.our-team.wrapper
 	.wrapper__inner
