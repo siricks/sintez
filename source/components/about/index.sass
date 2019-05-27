@@ -5,18 +5,15 @@
   flex-flow: column
   align-items: center
   justify-content: flex-start
-  margin:
-    top: -8.4rem
-  padding:
-    top: 10rem
   background:
     image: url('../../components/about/about.jpg')
-    size: cover
+    size: 110%
     position: top
     repeat: no-repeat
   position: relative
-  height: 100vh
   color: $white-color
+  padding:
+    bottom: 9.5rem
   &:after
     content: ''
     position: absolute
@@ -24,16 +21,37 @@
     right: 0
     bottom: 0
     height: 300px
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.83) 0%, rgba(0, 0, 0, 0) 100%)
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0) 100%)
+  .fancy-title__content
+    margin:
+      bottom: -13rem
+  +media-query($desktop)
+    height: 100vh
+    background:
+      size: cover
+    padding:
+      bottom: 0
+      top: 10rem
+    margin:
+      top: -8.4rem
+    &:after
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.83) 0%, rgba(0, 0, 0, 0) 100%)
+    .fancy-title__content
+      margin:
+        bottom: 0
 
 .about__stats-wrapper
-  position: relative
+  position: absolute
   z-index: 1
   display: flex
   flex: 1
   align-items: flex-end
-  padding:
-    bottom: 4rem
+  bottom: 22px
+  +media-query($desktop)
+    position: relative
+    bottom: auto
+    padding:
+      bottom: 4rem
 
 .about__stats
   display: flex
@@ -43,15 +61,28 @@
   text-align: center
   &:not(:last-of-type)
     margin:
-      right: 7rem
+      right: 17px
+  +media-query($desktop)
+    &:not(:last-of-type)
+      margin:
+        right: 7rem
 
 .about__stat-title
   font:
-    family: 'Bebas Neue Regular', sans-serif
-    size: 88px
+    family: 'Bebas Neue', sans-serif
+    size: 20px
+  +media-query($desktop)
+    font:
+      family: 'Bebas Neue Regular', sans-serif
+      size: 88px
 
 .about__stat-description
   font:
-    size: 20px
-    weight: 400
-  line-height: 1.3
+    size: 7px
+    weight: 300
+  line-height: 11px
+  +media-query($desktop)
+    line-height: 1.3
+    font:
+      size: 20px
+      weight: 400
