@@ -2,47 +2,76 @@
 
 .for-marketing-tiles-wrapper
   display: flex
-  flex-wrap: wrap
+  flex-flow: column
+  width: 100%
+  +media-query($desktop)
+    flex-flow: row wrap
 
 .for-marketing-tile
-  height: 318px
   display: flex
   flex-flow: column
-  justify-content: flex-end
-  width: 50%
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 81px
   position: relative
   color: $white-color
   overflow: hidden
-
-  &:hover
-    .for-marketing-tile__image
-      +hoverScale
-
-  &:nth-of-type(odd)
-    align-items: center
+  +media-query($desktop)
+    justify-content: flex-end
+    height: 318px
+    width: 50%
+    align-items: flex-start
+    &:nth-of-type(odd)
+      align-items: center
+    &:hover
+      .for-marketing-tile__image
+        +hoverScale
 
 .for-marketing-tile__image
   transition: $common-transition-duration
   position: absolute
-  left: 0
-  top: 0
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
   pointer-events: none
-  min-width: 100%
+  width: 100%
+  +media-query($desktop)
+    width: auto
+    min-width: 100%
+    left: 0
+    top: 0
+    transform: none
 
 .for-marketing-tile__content
-  padding: 2rem 2.5rem
   display: flex
   flex-flow: column
+  align-items: center
   width: 60%
+  text-align: center
+  +media-query($desktop)
+    align-items: flex-start
+    text-align: left
+    padding: 2rem 2.5rem
 
 .for-marketing-tile__title
   position: relative
   z-index: 1
-  margin:
-    bottom: 6rem
   font:
-    size: 26px
+    size: 11px
+    weight: 700
+  text-align: center
+  +media-query($desktop)
+    text-align: left
+    margin:
+      bottom: 6rem
+    font:
+      weight: inherit
+      size: 26px
 
 .for-marketing-tile__link
   position: relative
   z-index: 1
+  display: none
+  +media-query($desktop)
+    display: block
