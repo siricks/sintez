@@ -1,40 +1,86 @@
 @import "../../styles/varialbes"
 
+.directions
+  padding:
+    top: 59px
+  .wrapper__inner
+    padding: 0 40px
+  +media-query($desktop)
+    padding:
+      top: 70px
+    .wrapper__inner
+      padding: 0 20px
+
 .directions__items
   display: flex
   justify-content: center
+  flex-flow: column
   margin:
-    top: 6rem
+    top: 1rem
+  +media-query($desktop)
+    flex-flow: row
+    margin:
+      top: 6rem
 
 .directions__item
   display: flex
-  flex-flow: column
-  align-items: center
-  text-align: center
   font:
-    size: 20px
+    size: 11px
     weight: 700
-  width: 30%
+  width: 100%
+  line-height: 13px
+  letter-spacing: .05rem
+  margin:
+    bottom: 20px
+  +media-query($desktop)
+    flex-flow: column
+    align-items: center
+    text-align: center
+    letter-spacing: 0
+    line-height: inherit
+    font:
+      size: 20px
+    width: 30%
+    margin:
+      bottom: 0
 
 .directions__item-icon
-  height: 10rem
+  +media-query($desktop)
+    height: 10rem
 
 .directions__icon
   fill: $accent-color
   margin:
-    bottom: 1rem
+    right: 30px
+  +media-query($desktop)
+    margin:
+      right: 0
+      bottom: 1rem
 
   &.headset-ico
-    width: 139px
-    height: 138px
+    width: 39px
+    height: 38px
+    +media-query($desktop)
+      width: 139px
+      height: 138px
 
   &.fireworks-ico
-    width: 120px
-    height: 120px
+    width: 39px
+    height: 39px
+    +media-query($desktop)
+      width: 120px
+      height: 120px
 
   &.augmented-reality-ico
-    width: 123px
-    height: 123px
+    width: 39px
+    height: 39px
+    +media-query($desktop)
+      width: 123px
+      height: 123px
 
 .directions__item-title
   line-height: 1.5
+  display: flex
+  align-items: center
+  +media-query($desktop)
+    display: block
