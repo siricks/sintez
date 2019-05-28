@@ -3,15 +3,13 @@
 .contact
   background:
     image: url('../../components/form-wrapper/form-wrapper-background-1.jpg')
-    size: cover
-    position: center
+    size: auto 110%
+    position: center -4.6rem
     repeat: no-repeat
-  margin:
-    top: -9rem
-  padding:
-    top: 19rem
-    bottom: 10rem
   position: relative
+  padding:
+    top: 30px
+    bottom: 42px
   &:after
     content: ''
     background:
@@ -22,46 +20,114 @@
     right: 0
     top: 0
     bottom: 0
+  .form__title_without-wrapper
+    display: none
+  +media-query($desktop)
+    margin:
+      top: -9rem
+    padding:
+      top: 19rem
+      bottom: 10rem
+    background:
+      size: cover
+      position: center
+    .form__title_without-wrapper
+      display: block
 
 .contact__inner
   display: flex
   align-items: center
-  margin:
-    left: -7rem
+  flex-flow: column
+  width: 100%
+  justify-content: center
+  +media-query($desktop)
+    flex-flow: row
+    margin:
+      left: -7rem
 
 .contact__contacts
   position: relative
   z-index: 1
   display: flex
   flex-flow: column
-  margin:
-    left: 4.3rem
   color: #F2F2F2
+  order: -1
+  width: 236px
+  align-items: center
+  +media-query($desktop)
+    align-items: flex-start
+    width: auto
+    order: unset
+    margin:
+      left: 4.3rem
 
 .contact__contact
   display: flex
-  align-items: flex-start
+  align-items: center
   flex-flow: column
+  text-align: center
+  &:nth-of-type(2n)
+    order: -1
+  &:last-of-type
+    order: 1
   &:not(:last-of-type)
     margin:
-      bottom: 2.4rem
+      bottom: 1.5rem
+  +media-query($desktop)
+    text-align: left
+    align-items: flex-start
+    &:not(:last-of-type)
+      margin:
+        bottom: 2.4rem
+    &:nth-of-type(2n), &:last-of-type
+      order: unset
 
 .contact__contact-title
   font:
-    size: 26px
+    size: 11px
+    weight: 700
   text-transform: uppercase
   margin:
-    bottom: 1rem
+    bottom: .5rem
+  letter-spacing: .05rem
+  line-height: 14px
+  +media-query($desktop)
+    letter-spacing: 0
+    line-height: inherit
+    font:
+      size: 26px
+      weight: inherit
+    margin:
+      bottom: 1rem
 
 .contact__contact-tel
   color: #F2F2F2
 
 .contact__contact-address, .contact__contact-tel, .contact__contact-email
-  margin:
-    bottom: .6rem
+  font:
+    size: 11px
+    weight: 300
+  line-height: 14px
+  +media-query($desktop)
+    font:
+      size: inherit
+      weight: inherit
+    line-height: inherit
+    margin:
+      bottom: .6rem
 
 .contact__contact-text
-  line-height: 1.7
+  font:
+    size: 11px
+    weight: 300
+  line-height: 14px
+  +media-query($desktop)
+    font:
+      size: inherit
+      weight: inherit
+    line-height: 1.7
+    margin:
+      bottom: .6rem
 
 .contact__contact-link
   margin:
@@ -71,7 +137,12 @@
   display: flex
   align-items: center
   margin:
-    top: 1rem
+    top: .5rem
+    bottom: 1.5rem
+  +media-query($desktop)
+    margin:
+      top: 1rem
+      bottom: 0
 
 .contact__contact-social-wrapper
   +hoverOpacity
