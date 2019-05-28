@@ -3,8 +3,13 @@
 .for-marketing-solutions
   display: flex
   flex-flow: column
+  margin:
+    top: 4rem
   .tile
     pointer-events: none
+  +media-query($desktop)
+    margin:
+      top: 0
 
 .for-marketing-solutions__wrapper-inner
   width: 100%

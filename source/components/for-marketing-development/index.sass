@@ -3,8 +3,35 @@
 .for-marketing-development
   display: flex
   flex-flow: column
+  margin:
+    top: 0
+
+  & + .form-wrapper
+    margin:
+      top: 0
+
   .tile
     pointer-events: none
+    height: 118px
+
+    &:last-of-type
+      display: none
+
+    .tile__img
+      min-height: 100%
+
+  +media-query($desktop)
+    margin:
+      top: 0
+    .tile
+      pointer-events: none
+      height: 324px
+
+      &:last-of-type
+        display: flex
+
+      .tile__img
+        min-height: 0
 
 .for-marketing-development__wrapper-inner
   width: 100%

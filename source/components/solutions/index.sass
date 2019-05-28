@@ -1,10 +1,23 @@
 @import "../../styles/varialbes"
 
-.solutions
+.solutions, .for-marketing-solutions, .for-marketing-development
   display: flex
   flex-flow: column
+  padding:
+    top: 0
+  .tiles
+    flex-flow: row wrap
   .tile
+    padding: 2rem
+    width: 50%
+    height: 79px
     pointer-events: none
+  +media-query($desktop)
+    padding:
+      top: 70px
+    .tile
+      width: 33.33%
+      height: 324px
 
 .solutions__wrapper-inner
   width: 100%
