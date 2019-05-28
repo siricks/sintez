@@ -4,7 +4,10 @@
   display: flex
   flex-flow: column
   padding:
-    top: 5rem
+    top: 2.5rem
+  +media-query($desktop)
+    padding:
+      top: 5rem
 
 .equipment__inner
   width: 100%
@@ -14,71 +17,115 @@
   display: flex
   flex-flow: column
   margin:
-    top: 4rem
+    top: .9rem
+  +media-query($desktop)
+    margin:
+      top: 4rem
 
 .equipment-list-item
   display: flex
   justify-content: center
   overflow: hidden
   position: relative
-  min-height: 410px
   margin:
-    bottom: 6rem
-  padding: 0 13%
+    bottom: 50px
+  padding-right: $mobileSidePadding
   &:before
     content: ''
     position: absolute
-    left: -12rem
-    top: 2rem
+    left: -9rem
+    top: 0
     pointer-events: none
-    height: 373px
+    height: 82px
     border-radius: 20rem
     background:
       color: #F0F3F7
-    width: 50%
-  &:nth-of-type(even)
+    width: 15rem
+  +media-query($desktop)
+    margin:
+      bottom: 6rem
+    padding: 0 13%
+    min-height: 410px
     &:before
-      left: auto
-      right: -12rem
-    .equipment-list-item__wrapper-inner
-      margin:
-        right: -8rem
-        left: 0
-    .equipment-list-item-image-wrapper
-      order: 1
-    .equipment-list-item-content
-      margin:
-        left: 0
-        right: 5rem
+      height: 373px
+      left: -12rem
+      top: 2rem
+      width: 50%
+    &:nth-of-type(even)
+      &:before
+        left: auto
+        right: -12rem
+      .equipment-list-item__wrapper-inner
+        margin:
+          right: -8rem
+          left: 0
+      .equipment-list-item-image-wrapper
+        order: 1
+      .equipment-list-item-content
+        margin:
+          left: 0
+          right: 5rem
 
 .equipment-list-item__wrapper-inner
   display: flex
   width: 100%
-  max-width: 1280px
-  margin:
-    left: -8rem
+  +media-query($desktop)
+    max-width: 1280px
+    margin:
+      left: -8rem
 
 .equipment-list-item-image-wrapper
   display: flex
-  align-items: center
+  align-items: flex-start
+  padding:
+    top: .4rem
+  +media-query($desktop)
+    align-items: center
+    padding:
+      top: 0
 
 .equipment-list-item-image
   position: relative
   z-index: 1
-  max-width: 550px
+  max-width: 88px
+  +media-query($desktop)
+    max-width: 550px
 
 .equipment-list-item-content
   position: relative
   z-index: 1
   display: flex
-  width: 545px
   flex-flow: column
   margin:
-    left: 5rem
+    left: 19px
+  +media-query($desktop)
+    width: 545px
+    margin:
+      left: 5rem
 
 .equipment-list-item-title
   font:
-    size: 26px
+    size: 11px
+    weight: 700
+  letter-spacing: .05rem
+  line-height: 14px
+  +media-query($desktop)
+    line-height: inherit
+    letter-spacing: 0
+    font:
+      size: 26px
+      weight: inherit
+
+.equipment-list-item-description
+  font:
+    size: 9px
+    weight: 300
+  line-height: 12px
+  +media-query($desktop)
+    line-height: inherit
+    font:
+      size: inherit
+      weight: inherit
 
 .equipment-list-item-description-item
   color: #252525
@@ -86,17 +133,26 @@
   letter-spacing: -.02rem
   &:first-of-type
     margin:
-      top: 1rem
-  &:last-of-type
-    margin:
-      bottom: 2rem
+      top: .4rem
   & + .equipment-list-item-description-item
     margin:
-      top: 1rem
+      top: .4rem
+  +media-query($desktop)
+    &:first-of-type
+      margin:
+        top: 1rem
+    & + .equipment-list-item-description-item
+      margin:
+        top: 1rem
+    &:last-of-type
+      margin:
+        bottom: 2rem
 
 .equipment-list-item-set
-  display: flex
+  display: none
   flex-flow: column
+  +media-query($desktop)
+    display: flex
 
 .equipment-list-item-set-title
   font:
@@ -119,10 +175,20 @@
 
 .equipment-list-item-links
   display: flex
+  flex-flow: column
   margin:
-    top: 2rem
+    top: 1.2rem
+  +media-query($desktop)
+    flex-flow: row
+    margin:
+      top: 2rem
 
 .equipment-list-item-link
   &:not(:last-of-type)
     margin:
-      right: 1rem
+      bottom: 10px
+  +media-query($desktop)
+    &:not(:last-of-type)
+      margin:
+        right: 1rem
+        bottom: 0
