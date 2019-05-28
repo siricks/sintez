@@ -3,36 +3,76 @@
 .our-services
   position: relative
   overflow: visible
+  padding:
+    top: 3.5rem
+    bottom: 40px
+  .fancy-title__content
+    width: 100%
+  +media-query($desktop)
+    padding:
+      top: 70px
+      bottom: 2rem
+    .fancy-title__content
+      width: 17px
 
 .our-services__wrapper-inner
   position: relative
   z-index: 1
+  padding: 0 $mobileSidePadding
+  +media-query($desktop)
+    padding: 0 20px
 
 .our-services-wrapper
   display: flex
   flex-wrap: wrap
   position: relative
+  padding: 0 11px
+  +media-query($desktop)
+    padding: 0
 
 .our-services__service
   display: flex
-  width: 50%
   margin:
-    bottom: 10rem
+    bottom: 36px
+  width: 100%
+  +media-query($desktop)
+    width: 50%
+    margin:
+      bottom: 10rem
 
 .our-services__service-icon-wrapper
   margin:
-    right: 3rem
+    right: 16px
+  width: 55px
+  display: flex
+  justify-content: center
+  +media-query($desktop)
+    display: block
+    width: auto
+    margin:
+      right: 3rem
 
 .our-services__service-icon
   fill: $accent-color
 
 .our-services__service-title
-  letter-spacing: -.02rem
-  font:
-    size: 50px
-    family: 'Bebas Neue', sans-serif
   margin:
-    bottom: 2rem
+    bottom: 12px
+  font:
+    size: 11px
+    family: 'Rubik', sans-serif
+    weight: 700
+  letter-spacing: .02rem
+  text-transform: uppercase
+  +media-query($desktop)
+    margin:
+      bottom: 2rem
+    text-transform: none
+    letter-spacing: -.02rem
+    font:
+      size: 50px
+      family: 'Bebas Neue', sans-serif
+      weight: inherit
 
 .our-services__service-list
   display: flex
@@ -43,29 +83,73 @@
 
 .our-services__service-list-item
   font:
-    size: 26px
+    size: 11px
+    weight: 300
   &:not(:last-of-type)
     margin:
-      bottom: 2rem
+      bottom: .3rem
+  +media-query($desktop)
+    font:
+      weight: inherit
+      size: 26px
+    &:not(:last-of-type)
+      margin:
+        bottom: 2rem
 
 .fireworks-ico
-  width: 138px
-  height: 153px
+  width: 45px
+  height: 50px
+  +media-query($desktop)
+    width: 138px
+    height: 153px
 
 .robot-ico
-  width: 153px
-  height: 153px
+  width: 55px
+  height: 55px
+  +media-query($desktop)
+    width: 153px
+    height: 153px
 
 .man-ico
-  width: 153px
-  height: 148px
+  width: 53px
+  height: 51px
+  +media-query($desktop)
+    width: 153px
+    height: 148px
 
 .megaphone-ico
-  width: 153px
-  height: 153px
+  width: 53px
+  height: 53px
+  +media-query($desktop)
+    width: 153px
+    height: 153px
+
+.our-services__ar-vr-wrapper
+  position: absolute
+  top: -3.5rem
+  left: 0
+  height: 150px
+  overflow: hidden
+  width: 100%
+  +media-query($desktop)
+    top: 2rem
+    overflow: visible
 
 .our-services__ar-vr
   position: absolute
   pointer-events: none
+  transform: none
   left: 0
-  top: -2.5rem
+  +media-query($desktop)
+    width: 1080px
+    left: 0
+    top: -4.5rem
+
+.our-services__links
+  margin:
+    top: 8px
+  display: flex
+  width: 100%
+  justify-content: space-between
+  +media-query($desktop)
+    display: none
