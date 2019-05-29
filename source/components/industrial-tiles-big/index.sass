@@ -1,7 +1,12 @@
 @import "../../styles/varialbes"
 
 .industrial-tile
-  height: 494px
+  .btn
+    display: none
+  +media-query($desktop)
+    height: 494px
+    .btn
+      display: flex
 
 .industrial-tile-option
   display: flex
@@ -9,7 +14,10 @@
   flex-flow: column
   position: relative
   padding:
-    top: 5rem
+    top: 0
+  +media-query($desktop)
+    padding:
+      top: 5rem
 
 .industrial-tile-option__image
   position: absolute
@@ -24,3 +32,6 @@
   z-index: 1
   margin:
     bottom: 0
+  display: none
+  +media-query($desktop)
+    display: block

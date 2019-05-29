@@ -11,8 +11,8 @@ mixin services(services)
 					.development-services__service-title=title
 
 mixin developmentServices(props)
-	-var {title, services} = props
-	section.development-services.wrapper
+	-var {title, services, additionalClass} = props
+	section.development-services.wrapper(class=additionalClass)
 		.wrapper__inner
 			h2.title=title
 			+services(services)

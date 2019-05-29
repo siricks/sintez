@@ -2,9 +2,25 @@
 
 /*Варианты воплощений*/
 .implementation-options_big
-  .implementation-option__tile-title
+  .implementation-option
     margin:
-      bottom: 5rem
+      bottom: 3rem
+    &:last-of-type
+      margin:
+        bottom: 0
+  + .form-wrapper
+    margin:
+      top: 0
+  +media-query($desktop)
+    .implementation-option__tile-title
+      margin:
+        bottom: 5rem
+    .implementation-option
+      margin:
+        bottom: 0
+      &:last-of-type
+        margin:
+          bottom: 0
 
 .implementation-options
   display: flex
@@ -97,6 +113,7 @@
     margin:
       bottom: 2rem
   +media-query($desktop)
+    height: 494px
     padding: 2.5rem
     width: 49%
     &:not(:last-of-type)

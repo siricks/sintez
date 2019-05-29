@@ -3,10 +3,39 @@
 .development-services
   padding:
     bottom: 48px
+  &.industrial-services
+    margin:
+      top: 20px
+    .wrapper__inner
+      margin: 0 20px
+      padding:
+        top: 44px
+        bottom: 8px
+      border: 1px solid #E6E6E6
+      +border-radius()
+    .development-services-wrapper
+      padding: 0
+    .development-services__service-title
+      text-transform: uppercase
+      letter-spacing: 0
   +media-query($desktop)
     padding:
       top: 9rem
       bottom: 7rem
+    &.industrial-services
+      margin:
+        top: 0
+      .wrapper__inner
+        border: none
+        margin: 0
+        padding:
+          top: 0
+          bottom: 0
+      .development-services-wrapper
+        padding: 0 10px
+      .development-services__service-title
+        text-transform: none
+        letter-spacing: -.02rem
 
 .development-services-wrapper
   display: flex
@@ -97,28 +126,46 @@
     height: 125px
 
 .location-ico
-  width: 64px
-  height: 91px
+  width: 26px
+  height: 37px
+  +media-query($desktop)
+    width: 64px
+    height: 91px
 
 .diving-ico
-  width: 101px
-  height: 100px
+  width: 52px
+  height: 52px
+  +media-query($desktop)
+    width: 101px
+    height: 100px
 
 .gears-ico
-  width: 106px
-  height: 106px
+  width: 46px
+  height: 46px
+  +media-query($desktop)
+    width: 106px
+    height: 106px
 
 .interact-ico
-  width: 102px
-  height: 105px
+  width: 54px
+  height: 56px
+  +media-query($desktop)
+    width: 102px
+    height: 105px
 
 .feather-ico
-  width: 103px
-  height: 102px
+  width: 43px
+  height: 43px
+  +media-query($desktop)
+    width: 103px
+    height: 102px
 
 .device-ico
-  width: 103px
-  height: 103px
+  width: 45px
+  height: 46px
+  +media-query($desktop)
+    width: 103px
+    height: 103px
 
 .development-services__service-icon
   display: flex

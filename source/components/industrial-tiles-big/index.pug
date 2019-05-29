@@ -7,6 +7,7 @@ mixin tile(props)
 
 mixin option(props)
 	-var {title, tiles, background} = props
+	.industrial-tile-option__mobile-title=title
 	.implementation-option.industrial-tile-option
 		h2.industrial-tile-option__title.title.title_white=title
 		.implementation-option__content.wrapper__inner
