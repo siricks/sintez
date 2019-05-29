@@ -9,13 +9,40 @@
     repeat: no-repeat
     size: cover
   padding:
-    top: 5rem
+    top: 0
   margin:
-    bottom: 9rem
+    top: 2.8rem
+    bottom: 0
+  overflow: visible
   .title
+    margin:
+      bottom: 0
+      top: -3rem
+  .implementation-option, .implementation-option:last-of-type
     margin:
       bottom: 0
   .implementation-option__tile-summary-item-content
     padding:
       top: 0
+  .btn
+    display: none
+  +media-query($desktop)
+    overflow: hidden
+    margin:
+      top: 0
+      bottom: 9rem
+    padding:
+      top: 5rem
+    .title
+      color: $white-color
+      margin:
+        top: 0
+    .btn
+      display: flex
+    .implementation-option
+      margin:
+        bottom: 6rem
+      &:last-of-type
+        margin:
+          bottom: 5.4rem
 /*eo Разработка - варианты воплощения*/
