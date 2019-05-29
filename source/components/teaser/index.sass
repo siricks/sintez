@@ -44,9 +44,14 @@
     height: 752px
 
 .teaser_form
-  height: 381px
+  height: 8.8rem
   margin:
-    top: 7rem
+    bottom: 0
+  +media-query($desktop)
+    height: 381px
+    margin:
+      top: 7rem
+      bottom: 60px
 
 .teaser__inner
   display: flex
@@ -72,6 +77,7 @@
   display: flex
   flex-flow: column
   align-items: center
+  width: 100%
   +media-query($desktop)
     display: block
     width: 620px

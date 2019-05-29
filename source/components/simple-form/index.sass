@@ -2,12 +2,14 @@
 
 .simple-form
   width: 423px
-  display: flex
+  display: none
   flex-flow: column
   background:
     color: $accent-color
   padding: 3rem
   +border-radius
+  +media-query($desktop)
+    display: flex
 
 .simple-form__title
   text-align: center
