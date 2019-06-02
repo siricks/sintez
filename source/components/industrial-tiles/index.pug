@@ -2,7 +2,7 @@ mixin tiles(props)
 	-var {tiles} = props
 	.industrial-tiles__wrapper
 		-for(var tile of tiles)
-			-var {title, id, image, tilesBig} = tile
+			-var {title, mobileTitle, id, image, tilesBig} = tile
 			.industrial-tiles__tile
 				.industrial-tiles__tile-content
 					.industrial-tiles__tile-icon-wrapper
@@ -10,7 +10,9 @@ mixin tiles(props)
 							id: id,
 							className: 'industrial-tiles__tile-icon'
 						})
-					.industrial-tiles__tile-title !{title}
+					.industrial-tiles__tile-title(class={'industrial-tiles__tile-title_desktop': mobileTitle}) !{title}
+					if(mobileTitle)
+						.industrial-tiles__tile-title.industrial-tiles__tile-title_mobile !{mobileTitle}
 				if(tilesBig)
 					img.industrial-tiles__tile__image(src=require(`../../components/industrial-tiles-big/${image}`))
 				else

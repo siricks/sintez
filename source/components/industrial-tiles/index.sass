@@ -10,12 +10,15 @@
   display: flex
   flex-flow: column
   padding:
-    top: 7.4rem
+    top: 0
   .wrapper__inner
     width: 100%
     text-align: center
     margin:
       bottom: 1rem
+  +media-query($desktop)
+    padding:
+      top: 7.4rem
 
 .industrial-tiles__wrapper
   width: 100%
@@ -62,12 +65,15 @@
 
 .industrial-tiles__tile-title
   margin:
-    left: 7px
+    left: 10px
   line-height: 14px
   font:
     size: 11px
     weight: 700
   letter-spacing: .05rem
+  + .our-guarantees
+    margin:
+      top: 45px
   +media-query($desktop)
     margin:
       left: 2rem
@@ -76,6 +82,18 @@
     font:
       size: inherit
       weight: inherit
+    + .our-guarantees
+      margin:
+        top: -1px
+
+.industrial-tiles__tile-title_desktop
+  display: none
+  +media-query($desktop)
+    display: block
+
+.industrial-tiles__tile-title_mobile
+  +media-query($desktop)
+    display: none
 
 .industrial-tiles__tile-content
   display: flex
@@ -114,16 +132,25 @@
     height: 126px
 
 .balloons-ico
-  width: 113px
-  height: 131px
+  width: 34px
+  height: 39px
+  +media-query($desktop)
+    width: 113px
+    height: 131px
 
 .pig-ico
-  width: 131px
-  height: 128px
+  width: 39px
+  height: 38px
+  +media-query($desktop)
+    width: 131px
+    height: 128px
 
 .bear-ico
-  width: 99px
-  height: 131px
+  width: 30px
+  height: 39px
+  +media-query($desktop)
+    width: 99px
+    height: 131px
 
 .industrial-tile-option__mobile-title
   text-align: center
