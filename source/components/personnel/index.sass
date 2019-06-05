@@ -45,8 +45,17 @@
     height: 729px
 
 .personnel-tile__image
-  height: 100%
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
   pointer-events: none
+  +media-query($desktop)
+    position: relative
+    left: auto
+    top: auto
+    height: 100%
+    width: auto
 
 .personnel-tile__content
   color: $white-color

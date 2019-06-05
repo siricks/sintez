@@ -10,7 +10,7 @@ if (window.innerWidth < 1200) {
 		let {textarea} = props
 
 		textarea.style.height = "23px";
-		textarea.style.height = (textarea.scrollHeight + 3) + "px";
+		textarea.style.height = (textarea.scrollHeight + 3) + "px"
 	}
 
 	for (let textarea of textAreas) {
@@ -42,3 +42,21 @@ if (window.innerWidth < 1200) {
 		})
 	}
 }
+
+let forms = document.querySelectorAll('.form')
+
+for (let form of forms) {
+	form.addEventListener('submit', (e) => {
+		let popup = form.querySelector('.form__popup')
+
+		e.preventDefault()
+		form.reset()
+		popup.classList.add('active')
+		form.classList.add('active')
+		setTimeout(() => {
+			popup.classList.remove('active')
+			form.classList.remove('active')
+		}, 1500)
+	})
+}
+

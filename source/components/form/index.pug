@@ -4,6 +4,8 @@ mixin form(props)
 	-var {img, title, opacity, withoutWrapper, withoutWrapperTitle} = props
 	if(withoutWrapper)
 		form.form(class={'form_opacity': opacity})
+			.form__popup
+				.form__popup-inner Ваша заявка отправлена!
 			fieldset.form__fieldset
 				legend.form__title
 					if(withoutWrapperTitle)
@@ -20,6 +22,8 @@ mixin form(props)
 	else
 		+form-wrapper(props)
 			form.form(class={'form_opacity': opacity})
+				.form__popup
+					.form__popup-inner Ваша заявка отправлена!
 				fieldset.form__fieldset
 					legend.form__title Оставьте заявку, и мы свяжемся с вами
 						br

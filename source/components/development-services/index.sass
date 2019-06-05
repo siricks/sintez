@@ -3,6 +3,9 @@
 .development-services
   padding:
     bottom: 48px
+  &:not(.industrial-tiles)
+    .wrapper__inner
+      width: 100%
   &.industrial-services
     margin:
       top: 20px
@@ -22,6 +25,9 @@
     padding:
       top: 9rem
       bottom: 7rem
+    &:not(.industrial-tiles)
+      .wrapper__inner
+        width: 1200px
     &.industrial-services
       margin:
         top: 0
