@@ -27,7 +27,8 @@ const path = require('path'),
 				PATHS.src + '/pages/services/index.js',
 				PATHS.src + '/pages/development/index.js',
 				PATHS.src + '/pages/industrial/index.js',
-				PATHS.src + '/pages/ar/index.js'
+				PATHS.src + '/pages/ar/index.js',
+				PATHS.src + '/pages/article/index.js'
 			],
 			output: {
 				publicPath: '',
@@ -94,6 +95,10 @@ const path = require('path'),
 				new HtmlWebpackPlugin({
 					filename: 'ar.html',
 					template: PATHS.src + '/pages/ar/index.pug'
+				}),
+				new HtmlWebpackPlugin({
+					filename: 'article.html',
+					template: PATHS.src + '/pages/article/index.pug'
 				})
 			]
 		},

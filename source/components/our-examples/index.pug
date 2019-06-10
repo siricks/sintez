@@ -1,7 +1,10 @@
 mixin sectionWithExamples(props)
 	-var {examples, title} = props
-	section.our-examples.wrapper.padding-bottom
-		h2.title=title
+	section.our-examples.wrapper.padding-bottom(class={'our-examples_article': !title})
+		if(title)
+			h2.title=title
+		else
+			h1.title=examples[0].exampleTitle
 		.our-examples-wrapper
 			-for(var example of examples)
 				-var {exampleTitle, descriptionItems, summaryItemLeft, summaryItemRight} = example
@@ -9,7 +12,8 @@ mixin sectionWithExamples(props)
 					.our-examples__image-wrapper
 						img.our-examples__image(src=require(`../../components/our-examples/for-marketing-example.png`))
 					.our-examples__content
-						.our-examples__title=exampleTitle
+						if(title)
+							.our-examples__title=exampleTitle
 						.our-examples__description
 							-for(var descriptionItem of descriptionItems)
 								p.our-examples__description-item !{descriptionItem}
@@ -26,5 +30,6 @@ mixin sectionWithExamples(props)
 									className: 'our-examples__summary-item-icon'
 								})
 								.our-examples__summary-item-content !{summaryItemRight}
-						a.btn.btn_white.our-examples__desktop-link(href="/example") Узнать больше
-						a.link.our-examples__mobile-link(href="/example") Узнать больше
+						if(title)
+							a.btn.btn_white.our-examples__desktop-link(href="/example") Узнать больше
+							a.link.our-examples__mobile-link(href="/example") Узнать больше

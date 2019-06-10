@@ -3,6 +3,18 @@
 .our-examples
   flex-flow: column
   align-items: center
+  &.our-examples_article
+    align-items: center
+    margin:
+      top: 5rem
+    .title
+      width: 100%
+      padding: 0 2rem
+    .our-examples__description-item
+      display: block
+      &:first-of-type
+        margin:
+          top: 0
   & + .implementation-options
     margin:
       top: 3rem
